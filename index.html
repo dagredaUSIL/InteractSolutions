@@ -39,8 +39,8 @@
               '<service>ws.bpm</service>'+
               '<application>BPMDayLima</application>'+
               '<secret>FiNeFmFiIaFhKjJcCmFaNaBaBcBeOpLkKlPoEbCbAbAnAfMcCdJcHmAiIfMfEnIf</secret>'+
-              '<mnemonic>ComprasDGD</mnemonic>'+
-              '<name>Solicitud de Compras BPM Day Lima</name>'+
+              '<mnemonic>solicitudcomprabpmday2</mnemonic>'+
+              '<name>Procedure to Pay</name>'+
               '<attributes>'+
               '<name>solicitante</name>'+
               '<value>'+ solicitante + '</value>'+
@@ -91,7 +91,7 @@
               xhr.onload = function CADENA(){
               //var results = xhr.responseText;
               var results = xhr.responseText;
-              cadena = results.slice(204,219);
+              cadena = results.slice(204,212);
               alert("Registrada, solicitud abierta "+ cadena);
               console.log(cadena);
               }
