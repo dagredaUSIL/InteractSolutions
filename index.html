@@ -39,8 +39,8 @@
               '<service>ws.bpm</service>'+
               '<application>BPMDayLima</application>'+
               '<secret>FiNeFmFiIaFhKjJcCmFaNaBaBcBeOpLkKlPoEbCbAbAnAfMcCdJcHmAiIfMfEnIf</secret>'+
-              '<mnemonic>ComprasDGD</mnemonic>'+
-              '<name>Solicitud de Compras BPM Day Lima</name>'+
+              '<mnemonic>ptp_unicomer</mnemonic>'+
+              '<name>Procure to Pay</name>'+
               '<attributes>'+
               '<name>solicitante</name>'+
               '<value>'+ solicitante + '</value>'+
@@ -91,7 +91,7 @@
               xhr.onload = function CADENA(){
               //var results = xhr.responseText;
               var results = xhr.responseText;
-              cadena = results.slice(204,219);
+              cadena = results.slice(204,212);
               alert("Registrada, solicitud abierta "+ cadena);
               console.log(cadena);
               }
@@ -160,24 +160,24 @@
 
         <form action="">
           <fieldset>
-            <legend>Solicitud de compra</legend>
+            <legend>Purchase Request</legend>
 
             <div class="input-block">
-              <label for="solicitante">Solicitante</label>
+              <label for="solicitante">Applicant</label>
               <input id="solicitante" name="solicitante" required />
             </div>
             
             <div class="input-block">
-              <label for="email">E-mail del solicitante</label>
+              <label for="email">Applicant's email</label>
               <input id="email" name="email" required />
             </div>
 
             <div class="input-block">
-              <label for="product">Producto</label>
+              <label for="product">Product</label>
               <br>
               <!--<input id="product" name="product" required/>-->
               <select class="barra" name="product" id="product" >
-              <option value="" disabled selected hidden> Productos</option>
+              <option value="" disabled selected hidden> Products</option>
               <option value="Xiaomi Redmi Note 8">Xperia Z2 Tablet</option>
               <option value="Samsung Galaxy S5">Xperia Tablet Z</option>
               <option value="Smartphone Asus Zenfone">SGPT112BR/S</option>
@@ -186,17 +186,17 @@
             </div>
 
             <div class="input-block">
-              <label for="price_project">Valor estimado</label>
+              <label for="price_project">Estimated value</label>
               <input id="price_project" name="price_project" required />
             </div>
 
             <div class="input-block">
               <label for="justify"
-                >Comentarios <span>Máximo de 300 caracteres</span></label>
+                >Comments<span>300 characters maximum</span></label>
               <textarea id="justify" name="justify" required></textarea>>
             </div>
           <!--<button type="submit" class="primary-button">Solicitar</button>-->
-          <input class="primary-button" type="button" name="" value="Solicitar" onclick="soapRequest();">
+          <input class="primary-button" type="button" name="" value="Request" onclick="soapRequest();">
           </fieldset>
         </form>
       </main>
