@@ -21,6 +21,7 @@
     />
 
     <script>
+<<<<<<< HEAD
       var description = ''
       global_var = 'cadena'
       function soapRequest() {
@@ -102,6 +103,133 @@
             console.log('CORS not supported')
             alert('CORS not supported')
             xhr = null
+=======
+      var description = "";
+      global_var = 'cadena';
+            function soapRequest(){
+              var solicitante = document.getElementById("solicitante").value;
+              var email = document.getElementById("email").value;
+              var product = document.getElementById("product").value;
+              var price_project = document.getElementById("price_project").value;
+              var justify = document.getElementById("justify").value;
+              var str = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bpm="http://bpm.ws.sas.interact.com/">' +
+              '<soapenv:Header/>'+
+              '<soapenv:Body>'+
+              '<bpm:startProcessWithAttributesNS>'+
+              '<contract>aebb0712-fb75-45ac-83dc-bb067146daa5</contract>'+
+              '<service>ws.bpm</service>'+
+              '<application>BPMDayLima</application>'+
+              '<secret>FiNeFmFiIaFhKjJcCmFaNaBaBcBeOpLkKlPoEbCbAbAnAfMcCdJcHmAiIfMfEnIf</secret>'+
+<<<<<<< HEAD
+              '<mnemonic>ptp_unicomer</mnemonic>'+
+              '<name>Procure to Pay</name>'+
+=======
+              '<mnemonic>solicitudcomprabpmday2</mnemonic>'+
+              '<name>Procedure to Pay</name>'+
+>>>>>>> c95838ad6c30c43ecc020bf1b4caa575dbb4096d
+              '<attributes>'+
+              '<name>solicitante</name>'+
+              '<value>'+ solicitante + '</value>'+
+              '</attributes>'+
+                '<attributes>'+
+                  '<name>email</name>'+
+                  '<value>'+ email + '</value>'+
+                '</attributes>'+
+                '<attributes>'+
+                  '<name>product</name>'+
+                  '<value>'+ product + '</value>'+
+                '</attributes>'+
+                '<attributes>'+
+                  '<name>price_project</name>'+
+                  '+<value>'+ price_project + '</value>'+
+                '</attributes>'+
+                '<attributes>'+
+                  '<name>justify</name>'+
+                  '<value>'+ justify + '</value>'+
+                '</attributes>'+
+              '</bpm:startProcessWithAttributesNS>'+
+            '</soapenv:Body>'+
+          '</soapenv:Envelope>';
+
+          function createCORSRequest(method, url) {
+                var xhr = new XMLHttpRequest();
+                if ("withCredentials" in xhr) {
+                  xhr.open(method, url, false);
+                } else if (typeof XDomainRequest != "undefined") {
+                  alert
+                  xhr = new XDomainRequest();
+                  xhr.open(method, url);
+                } else {
+                  console.log("CORS not supported");
+                  alert("CORS not supported");
+                  xhr = null;
+                }
+                return xhr;
+              }
+              var xhr = createCORSRequest("POST", "https://latam.interact.com.br/sa/ws/bpm?wsdl");
+              
+    
+              if(!xhr){
+              console.log("XHR issue");
+              return;
+              }
+    
+              xhr.onload = function CADENA(){
+              //var results = xhr.responseText;
+              var results = xhr.responseText;
+              cadena = results.slice(204,212);
+              alert("Registrada, solicitud abierta "+ cadena);
+              console.log(cadena);
+              }
+              xhr.setRequestHeader('Content-Type','text/xml');
+              xhr.send(str);
+             // console.log(cadena);
+              var finaltask = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bpm="http://bpm.ws.sas.interact.com/">'+
+              '<soapenv:Header/>'+
+              '<soapenv:Body>'+
+              '<bpm:finishTaskNS>'+
+              '<contract>aebb0712-fb75-45ac-83dc-bb067146daa5</contract>'+
+              '<service>ws.bpm</service>'+
+              '<application>BPMDayLima</application>'+
+              '<secret>FiNeFmFiIaFhKjJcCmFaNaBaBcBeOpLkKlPoEbCbAbAnAfMcCdJcHmAiIfMfEnIf</secret>'+
+              '<task>'+cadena+':sol_compra</task>'+
+              '</bpm:finishTaskNS>'+
+              '</soapenv:Body>'+
+              '</soapenv:Envelope>';
+
+              function createCORSRequest2(method, url) {
+                var xhr = new XMLHttpRequest();
+                if ("withCredentials" in xhr) {
+                  xhr.open(method, url, false);
+                } else if (typeof XDomainRequest != "undefined") {
+                  alert
+                  xhr = new XDomainRequest();
+                  xhr.open(method, url);
+                } else {
+                  console.log("CORS not supported");
+                  alert("CORS not supported");
+                  xhr = null;
+                }
+                return xhr;
+              }
+              var xhr = createCORSRequest2("POST", "https://latam.interact.com.br/sa/ws/bpm?wsdl");
+              
+    
+              if(!xhr){
+              console.log("XHR issue");
+              return;
+              }
+    
+              xhr.onload = function (){
+              //var results = xhr.responseText;
+              var results = xhr.responseText;
+              //var cadena = results.slice(204,219);
+              //alert("Registrada, solicitud abierta "+ cadena);
+              }
+              xhr.setRequestHeader('Content-Type','text/xml');
+              xhr.send(finaltask);
+              location.reload();
+>>>>>>> 5c2ef42c103831b8efc6f77966fe287ef061ea7a
           }
           return xhr
         }
@@ -191,14 +319,20 @@
 
         <form action="">
           <fieldset>
-            <legend>Solicitud de compra</legend>
+            <legend>Purchase Request</legend>
 
             <div class="input-block">
+<<<<<<< HEAD
               <label for="solicitante">Solicitante</label>
               <input id="solicitante" type="text" name="solicitante" required />
+=======
+              <label for="solicitante">Applicant</label>
+              <input id="solicitante" name="solicitante" required />
+>>>>>>> 5c2ef42c103831b8efc6f77966fe287ef061ea7a
             </div>
 
             <div class="input-block">
+<<<<<<< HEAD
               <label for="email">E-mail del solicitante</label>
               <input id="email" name="email" type="email" required />
             </div>
@@ -213,10 +347,27 @@
                 <option value="Samsung Galaxy S5">Xperia Tablet Z</option>
                 <option value="Smartphone Asus Zenfone">SGPT112BR/S</option>
                 <option value="Iphone 5s">Xperia Z3 Tablet Compact</option>
+=======
+              <label for="email">Applicant's email</label>
+              <input id="email" name="email" required />
+            </div>
+
+            <div class="input-block">
+              <label for="product">Product</label>
+              <br>
+              <!--<input id="product" name="product" required/>-->
+              <select class="barra" name="product" id="product" >
+              <option value="" disabled selected hidden> Products</option>
+              <option value="Xiaomi Redmi Note 8">Xperia Z2 Tablet</option>
+              <option value="Samsung Galaxy S5">Xperia Tablet Z</option>
+              <option value="Smartphone Asus Zenfone">SGPT112BR/S</option>
+              <option value="Iphone 5s">Xperia Z3 Tablet Compact</option>
+>>>>>>> 5c2ef42c103831b8efc6f77966fe287ef061ea7a
               </select>
             </div>
 
             <div class="input-block">
+<<<<<<< HEAD
               <label for="fecha_solicitud">Fecha de solicitud de compra</label>
               <input
                 id="fecha_solicitud"
@@ -239,10 +390,15 @@
                 name="price_project"
                 required
               />
+=======
+              <label for="price_project">Estimated value</label>
+              <input id="price_project" name="price_project" required />
+>>>>>>> 5c2ef42c103831b8efc6f77966fe287ef061ea7a
             </div>
 
             <div class="input-block">
               <label for="justify"
+<<<<<<< HEAD
                 >Justificación de la compra<span
                   >Máximo de 300 caracteres</span
                 ></label
@@ -265,6 +421,13 @@
             >
               Solicitar
             </button>
+=======
+                >Comments<span>300 characters maximum</span></label>
+              <textarea id="justify" name="justify" required></textarea>>
+            </div>
+          <!--<button type="submit" class="primary-button">Solicitar</button>-->
+          <input class="primary-button" type="button" name="" value="Request" onclick="soapRequest();">
+>>>>>>> 5c2ef42c103831b8efc6f77966fe287ef061ea7a
           </fieldset>
         </form>
       </main>
