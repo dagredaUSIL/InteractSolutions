@@ -1,0 +1,78 @@
+
+Ruta para el caso 1:
+- Performance Manager , 
+	- Administrador
+		- Ingresar al administrador y visualizar el modelo Unicomer Group Planning Strategic Development Plan
+		- Ingresar a pestaña Operacional y 3P´S Office/Process Office BPO
+		- Mostrar el mapa de macroprocesos
+		- El proceso PMO con su jerarquia.
+		- Mostramos que tiene reglas(gateways) y notificaciones.
+- System Manager, 
+	- Colaboradores	
+		- Mostramos como esta compuesto la estructura organizacional en los Colabores por departamento.
+
+- Mostramos como se compone la Suite SA
+
+Ruta para el caso 2:
+- Process Manager
+	- Administrador de procesos
+		- Mostrar el proceso Procedure To Pay v2
+		- Mostrar las versiones del proceso.
+		- Editar el proceso, para ver la pestaña Responsables.
+		- Explicar los usuarios de modelado y seguimiento.
+		- Enviar un mensaje al usuario de raquel.estrada@unicomer.com
+
+	- Monitoreo de proceso
+		- Pestaña Procesos
+		- Procedure to Pay para mostrar las instancias
+		- Comentar acá la jerarquia que hay desde procesos, instancias y actividades.
+		
+
+Ruta para el caso 4 : 
+
+- Mostrar el Flujo Ludico (mostrar las actividades, descripción y responsables).
+- Mostrar el proceso funcionando la version 2. 
+	Usuarios(rauagreda,9876543210.)
+		(gabbomf,9876543210.)
+- Process Manager
+	- Administración de procesos
+		- Crear el proceso Procedure To Pay 08012022
+		- Crear responsables de usuario de modelado y seguimiento.
+	- Modelamiento de procesos
+		- Modelar procesos
+		- Diseñar el proceso
+		- Crear los roles del proceso.
+		- Importar formularios.
+		- Agregar roles a cada actividad
+		- Vincular riesgos y documentos al proceso.
+		- Validar
+	- Administración de procesos.
+		- Adjuntar documentos al proceso
+		- Agregar anotaciones al proceso.
+		- Cambiar estado de homologación a producción.
+		- Mostrar linea del tiempo.
+		- Crear una nueva versión.
+		- Crear una metrica.
+		- Mostrar el informe del proceso.
+
+- Empezar el proceso desde un webservice
+- Explicar el process Gobervance, que es como se trabajaria para un cambio, nuevo o versionamiento de un proceso.
+
+- Ocurrence Manager 
+	- Ocurrence Manager (Gobernanza de procesos)
+	- Solicitar un proceso.
+
+
+Ruta para el caso 5: 
+- Process Manager
+	- Analisis de procesos
+		- Mostrar mapa de calor.
+	- Simulador de procesos
+		- Mostrar el proceso Procedure To pay
+
+- Analytic Manager
+	- Mostrar el dashboard de procesos.
+	
+
+
+
