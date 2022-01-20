@@ -1,0 +1,4 @@
+Conexion con Amazon AWS
+com.mysql.jdbc.Driver
+jdbc:mysql://database-2.c0odjaqxl3gz.us-west-2.rds.amazonaws.com/dbinteract?characterEncoding=ISO-8859-1
+admin

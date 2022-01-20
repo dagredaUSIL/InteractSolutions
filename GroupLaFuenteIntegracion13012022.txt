@@ -1,0 +1,168 @@
+Ejemplo 1,
+
+a = 10;
+
+for ( int i = 0;i<= a; i++)
+{
+print("valor de i = "+i);
+}
+
+Ejemplo 2,
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+user = userManager.getUserByLogin("davagre");
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+
+print("Name= " + user.getName());
+print("Login= " + user.getLoginName());
+print("Email= "+ user.getMailAddress());
+print("Sector= "+ sector);
+print("Department= "+ department);
+print("Unit= "+ unit);
+print("Function= "+ function);
+
+Ejemplo 3
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+// user = userManager.getUserByLogin("davagre");
+
+users = userManager.getUsers();
+
+
+for (user:users) {
+	
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+if(sector != null)
+	{
+	print("Name= " + user.getName());
+	print("Login= " + user.getLoginName());
+	print("Email= "+ user.getMailAddress());
+	print("Sector= "+ sector.getName());
+	print("Department= "+ department.getName());
+	print("Unit= "+ unit.getName());
+	print("Function= "+ function.getName());
+	print("-------------");
+	
+	}else{
+	print("usuario sin sector");
+	print("Name= " + user.getName());
+	print("-------------");
+	}
+	}
+Ejemplo 4
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+// user = userManager.getUserByLogin("davagre");
+
+//users = userManager.getUsers();
+
+users = SA.fetch("cmn:user","select id from cmn_users");
+
+for (user:users) {
+	try{
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+if(sector != null)
+	{
+	print("Name= " + user.getName());
+	print("Login= " + user.getLoginName());
+	print("Email= "+ user.getMailAddress());
+	print("Sector= "+ sector.getName());
+	print("Department= "+ department.getName());
+	print("Unit= "+ unit.getName());
+	print("Function= "+ function.getName());
+	print("-------------");
+	
+	}else{
+	print("usuario sin sector");
+	print("Name= " + user.getName());
+	print("-------------");
+	}
+	}
+	catch(Exception e){
+		print(e);
+	}
+	}
+
+Ejemplo 5
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+// user = userManager.getUserByLogin("davagre");
+
+//users = userManager.getUsers();
+
+//users = SA.fetch("cmn:user","select id from cmn_users");
+
+user = SA.user("davagre");
+
+	try{
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+if(sector != null)
+	{
+	print("Name= " + user.getName());
+	print("Login= " + user.getLoginName());
+	print("Email= "+ user.getMailAddress());
+	print("Sector= "+ sector.getName());
+	print("Department= "+ department.getName());
+	print("Unit= "+ unit.getName());
+	print("Function= "+ function.getName());
+	print("-------------");
+	
+	}else{
+	print("usuario sin sector");
+	print("Name= " + user.getName());
+	print("-------------");
+	}
+	}
+	catch(Exception e){
+		print(e);
+	}
+	
+Ejemplo 6
+indicators = SA.query("select id,name, mnemonic from bsc_indicators where id=5227").fetch();
+
+for(indicator:indicators){
+print(indicator);
+}
+
+
+Ejemplo 7 
+processes = SA.query("select id,name, mnemonic from bpm_processes where id=573").fetch();
+
+for(process:processes){
+print(process);
+}
+
+Ejemplo 8
+processes = SA.query("select id,name, mnemonic from bpm_processes where id=573").fetch();
+
+for(process:processes){
+print("id"+process[0]);
+print("name"+process[1]);
+print("mnemonic"+process[2]);
+}
+
+1.33 del video
