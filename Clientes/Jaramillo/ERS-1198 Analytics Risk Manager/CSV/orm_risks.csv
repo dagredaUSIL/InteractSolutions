@@ -1,0 +1,321 @@
+id,code,name,info,ref_tags,icon,state
+48,R99004,Inadecuada identificaci?n de la poblaci?n,,0,0,1
+49,R99003,Divulgaci?n deficiente,,0,0,1
+56,R9900,Perdida de Informaci?n,,0,0,1
+57,R99005,Otro,,0,0,1
+58,R99002,Vigencia contractual,,0,0,1
+59,R99001,Cambio no proyectado en la legislaci?n vigente,,0,0,1
+61,R1,Perdida de imagen y credibilidad y sanciones,Perdida de imagen y credibilidad y sanciones por la vinculacion de asociados con prop?sitos de realizar operaciones de LA/FT debido a que los asesores comerciales dan como prioridad la obtenci?n de una comisi?n dejando en segundo lugar el perfil del asociado.,0,0,1
+62,R10,Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados,Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados que se encuentran en listas vinculantes o restrictivas por desconocimiento del proceso de vinculaci?n por parte de los funcionarios que realizan el proceso.,0,0,1
+63,R100,perdida de imagen,perdida de imagen debido a divulgaci?n en medios de comunicaci?n de que a traves de la Cooperativa se realizan actividades de laft,0,0,1
+64,R101,sanciones legales,sanciones legales debido al incumplimiento de las normas vigentes de prevencion de laft por prioridades que compiten,0,0,1
+65,R102,perdida de imagen,perdida de imagen debido a que la imagen de la Cooperativa se ve relacionada con empresas convenio involucradas en delitos de laft,0,0,1
+66,R11,Perdida de imagen y credibilidad  por vinculaci?n de personas juridicas fachada  sin ?nimo de lucro,"Perdida de imagen y credibilidad por vinculaci?n de personas juridicas fachada  sin ?nimo de lucro, con prop?sito de realizar operaciones de la/ft, debido al desconocimiento  de este tipo de entidades por parte del funcionario que realiza el proceso de vinculaci?n",0,0,1
+67,R12,Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados,"Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados cuyo perfil PEP no fue identificado previamente por desconocimiento de la normatividad vigente, por parte del funcionario encargado del proceso de vinculaci?n",0,0,1
+68,R14,perdida de imagen y credibilidad por la vinculaci?n de asociados,perdida de imagen y credibilidad por la vinculaci?n de asociados que son empleados de empresas fachada con las que la Cooperativa tiene convenio de libranza debido a negligencia por parte del personal responsable del proceso de convenios,0,0,1
+69,R13,Perdida de imagen y ser sujeto de sanciones,Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados relacionados en listas por vinculos en actividades LA/FT por negligencia del funcionario encargado del proceso de vinculaci?n.,0,0,1
+70,R15,perdida de imagen y credibilidad,perdida de imagen y credibilidad por la divulgacion de informaci?n falsa a los medios de comunicaci?n que la entidad tiene v?nculos con personas relacionadas con actividades il?citas,0,0,1
+71,R16,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a asociados con el prop?sito de financiar actividades ilicitas por desconocimiento del prop?sito o destino real del credito,0,0,1
+72,R17,Perdida de imagen o credibilidad y ser sujeto de sanciones ,"Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar cr?ditos a asociados con el prop?sito de lavar dinero, a traves del pronto pago de las obligaciones crediticias",0,0,1
+73,R18,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar cr?ditos a asociados que ofrecen como garant?as bienes de origen il?cito y que entran en cesacion de pagos,0,0,1
+74,R19,Perdida de imagen y ser sujeto de sanciones,"Perdida de imagen y ser sujeto de sanciones por otorgar creditos a asociados , quienes son utilizados por terceros para financiar actividades de laft a cambio de pago de dadivas",0,0,1
+75,R2,Perdida de imagen y credibilidad,Perdida de imagen y credibilidad por la vinculacion de asociados con prop?sitos de realizar operaciones de LA/FT debido a la colusion entre el asociado y el asesor comercial,0,0,1
+76,R20,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a asociados cuyo desembolso es girado a familiares o allegados vinculados con actividades il?citas,0,0,1
+77,R21,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a asociados con prop?sitos de financiar actividades il?citas cuyo desembolso es girado a empresas fachada,0,0,1
+78,R22,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a personas que tienen el objetivo de lavar dinero a traves de prepagos de cartera por suplantaci?n de identidad de asociados,0,0,1
+79,R23,Perdida de imagen o credibilidad y ser sujeto de sanciones ,Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a nombre de asociados  quienes otorgan poder a un tercero  y este apoderado utiliza el poder otorgado para realizar actividades de laft,0,0,1
+80,R24,"Perdida de imagen, credibilidad y ser sujeto de sanciones","Perdida de imagen, credibilidad y ser sujeto de sanciones por otorgar cr?ditos a asociados que estan en listas asociadas a LAFT, debido a negligencia del funcionario responsable del proceso",0,0,1
+81,R25,perdida de imagen y credibilidad,perdida de imagen y credibilidad por la divulgacion en los medios de comunicaci?n por los convenios comerciales que se tienen con empresas fachada para ofrecer beneficios de los asociados ,0,0,1
+82,R26,"perdida de imagen, credibilidad y sanciones","perdida de imagen, credibilidad y sanciones por la contratacion de proveedores que son empresas fachada con el prop?sito de laft, debido al pago u ofrecimiento de dinero al funcionario responsable de las compras, por parte del proveedor",0,0,1
+83,R27,"Perdida de imagen, credibilidad y sanciones","perdida de imagen, credibilidad y sanciones por la contratacion de proveedores con intenci?n laft por presiones por parte de altos directivos hacia los funcionarios responsables de la contratacion",0,0,1
+84,R28,"Legal Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de proveedores con prop?sitos de realizar actividades ilicitas, que presentan documentaci?n falsa o de dificil verificaci?n",0,0,1
+85,R29,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de proveedores con prop?sitos de realizar actividades il?citas, debido a las amenazas y/o presiones a los funcionarios por parte de los proveedores.",0,0,1
+86,R3,Perdida de imagen y credibilidad,Perdida de imagen y credibilidad por la vinculacion de asociados con prop?sito de realizar operaciones de laft debido a presiones y sobornos por parte de los miembros del Consejo o Alta gerencia hacia el personal responsable del proceso de vinculaci?n,0,0,1
+87,R30,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de proveedores vinculados con actividades il?citas, debido al origen de los productos de contrabando",0,0,1
+88,R31,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de proveedores de bienes y servicios con prop?sitos de realizar operaciones laft debido a la conseci?n de favores o prevendas a familiares o allegados",0,0,1
+89,R32,Perdida de imagen,"Perdida de imagen, credibilidad y sanciones por la contrataci?n de funcionarios que se encuenran en listas LA/FT debido a presi?n de altos directivos ",0,0,1
+90,R33,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contrataci?n de funcionarios que se encuentran en listas LA/FT debido a negligencia del funcionario responsable del proceso ",0,0,1
+91,R34,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contrataci?n de funcionarios que presentan documentacion falsa al momento de la vinculaci?n",0,0,1
+92,R35,"Perdida de imagen, credibilidad y sancione","Perdida de imagen, credibilidad y sanciones por la contratacion de funcionarios relacionados con operaciones laft debido a la conseci?n de favores o prevendas a familiares o allegados",0,0,1
+93,R36,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de funcionarios relacionados con operaciones laft a causa de amenzas  a la coordinadora de recursos humanos por parte de bandas criminales",0,0,1
+94,R37,Perdida de vidas humanas,Perdida de vidas humanas por atentado terrorista debido a que la entidad no se prest? para la contrataci?n de personal con nexos relacionados a laft,0,0,1
+95,R38,Perdida de vidas humanas,Perdida de vidas humanas por asesinato de un funcionario o familiar secuestrado debido a la entrega de informaci?n financiera y personal de empleados por parte del funcionario encargado de la nomina a bandas criminales.,0,0,1
+96,R39,Perdida de imagen o credibilidad y ser sujeto de sanciones ,"Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a nombre de asociados relacionados con actividades de ft, debido a presiones de la alta direcci?n",0,0,1
+97,R4,Perdida de imagen y ser sujeto de sanciones,Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados que se encuentran en listas vinculantes o restrictivas por la desactualizacion de las listas que son suministradas a trav?s del software de listas,0,0,1
+98,R40,Perdida de imagen o credibilidad y ser sujeto de sanciones,"Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a nombre de asociados relacionados con actividades de ft, debido a negliencia del funcionario responsable",0,0,1
+99,R41,Perdida de imagen o credibilidad y ser sujeto de sanciones,"Perdida de imagen o credibilidad y ser sujeto de sanciones al otorgar creditos a nombre de asociados relacionados con actividades de ft, debido a amenazas por parte de bandas criminales al funcionario responsable",0,0,1
+100,R42,Perdida de vidas humanas,"Perdida de vidas humanas por el asesinato de funcionarios responsables de las operaciones de credito,  por parte de bandas criminales debido a  no otorgamiento de creditos a nombre de asociados relacionados con actividades de ft",0,0,1
+101,R43,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al realizar contratos de compraventa o arrendamiento de bienes muebles o inmuebles cuyo propietario o propietarios estan relacionados en actividades laft,0,0,1
+102,R44,Perdida de imagen o credibilidad y ser sujeto de sanciones,Perdida de imagen o credibilidad y ser sujeto de sanciones al ejecutar contratos sin la debida formalizacion (suscripcion)de los mismos por afanes o premuras de los due?os de procesos en donde la contraparte de la Cooperativa este relacionada en actividades laft,0,0,1
+103,R45,Perdida de imagen o credibilidad y ser sujeto de sanciones,"Perdida de imagen o credibilidad y ser sujeto de sanciones por no atender requerimientos judiciales o administrativos  relacionados con delitos fuente de laft, en los cuales se involucren asociados o personas naturales o juridicas que tengan o hayan tenido algun vinculo con la cooperativa ",0,0,1
+104,R46,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contrataci?n de abogados  externos que presentan documentacion falsa al momento de la vinculaci?n y se encuentran relacionados con actividades laft",0,0,1
+105,R47,"Perdida de imagen, credibilidad y sanciones ","Perdida de imagen, credibilidad y sanciones por la contrataci?n de abogados  externos que se encuentran relacionados con actividades laft debido a la negligencia del funcionario responsable del proceso de contrataci?n",0,0,1
+106,R48,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la realizacion de transacciones ilicitas a traves de las cuentas de la Cooperativa debido a la colusion entre la tesoreria y terceros a cambio de pago de comisiones ",0,0,1
+107,R49,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones  por  la devolucion de dineros  consignados en las  cuentas de la Cooperativa  con prop?sitos de laft debido al ingreso de dinero a una cuenta de la cooperativa por parte de delincuentes y luego realizar la reclamaci?n de estos mismos para dar legalidad al dinero ",0,0,1
+108,R5,Perdida de imagen y ser sujeto de sanciones,"Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados que se encuentran en listas vinculantes o restrictivas por alteracion de manera deliberada de los parametros de vinculaci?n en el sistema de informaci?n, por parte de los funcionarios.",0,0,1
+109,R50,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones  por  la recepcion de recursos de dudosa procedencia  en las  cuentas de la Cooperativa debido a transacciones  realizadas por la entidad financiera, desconociendo el origen real de la procedencia de dichos recursos",0,0,1
+110,R51,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones  por  la realizacion de inversiones en empresas comprometidas en actividades laft  a causa  de la colusion entre directivos y terceros",0,0,1
+111,R52,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones  por  la realizacion de inversiones en empresas comprometidas en actividades laft  a causa  de presiones de la alta gerencia hacia los responsables de la tesoreria",0,0,1
+112,R53,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones  por  la realizacion de inversiones en empresas comprometidas en actividades laft  debido a negligencia de los responsables de la tesoreria",0,0,1
+113,R54,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones  por el  giro de recursos a un tercero involucrado en actividades ft por orden del proveedor destinatario del pago",0,0,1
+114,R55,Sanciones legales,Sanciones legales por ingreso de recursos ilicitos a las cuentas de ahorros de los asociados debido al desconocimiento del origen real de los recursos,0,0,1
+115,R56,Ser sujeto de sanciones,Ser sujeto de sanciones por el ingreso de recursos de procedencia ilicita a las cuentas del asociado por desconocimiento de los procedimientos sarlaft por parte del funcionario responsable,0,0,1
+116,R57,Perdida de imagen y sanciones legales,Perdida de imagen y sanciones legales por la realizaci?n de operaciones a trav?s de las cuentas de ahorros con prop?sitos laft debido a colusion entre asociados y funcionarios,0,0,1
+117,R58,Perdida de imagen y sanciones legales,Perdida de imagen y sanciones legales por la utilizacion de las cuentas de ahorros de los asociados con fines laft a trav?s de la suplantacion de titulares,0,0,1
+118,R59,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas a las cuentas de ahorros a causa de amenazas ejercidas por los asociados",0,0,1
+119,R6,Perdida de imagen y credibilidad,Perdida de imagen y credibilidad por la vinculacion de asociados con prop?sito de realizar operaciones de laft debido a la presentacion de documentaci?n falsa por parte del prospecto,0,0,1
+120,R60,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas a las cuentas de ahorros debido a presiones ejercidas por los directivos hacia los funcionarios",0,0,1
+121,R61,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas a las cuentas de ahorros debido a la presentaci?n de documentaci?n falsa como soporte de la declaracion de origen de fondos",0,0,1
+122,R62,"Perdida de imagen, credibilidad y sanciones legales ","Perdida de imagen, credibilidad y sanciones legales por la apertura y manejo de las cuentas de ahorro cuyo alternante pretende ingresar recursos provenintes de operaciones laft ",0,0,1
+123,R63,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la apertura de  multiplicidad de cuentas de ahorro para el ocultamiento de trasacciones de laft por parte de titulares de las cuentas.",0,0,1
+124,R64,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la utilizacion de cuentas inactivas con fines laft por parte de los funcionarios que tienen las atribuciones para la activacion de las mismas.",0,0,1
+125,R65,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas a las cuentas de ahorros a causa de amenazas ejercidas por parte de terceros a los asociados",0,0,1
+126,R66,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la autorizacion de giros de las cuentas de ahorro de los asociados  a  terceros  involucrados en actividades ilicitas.",0,0,1
+127,R67,Sanciones legales,Sanciones legales por ingreso de recursos ilicitos en la apertura de CDAT de los asociados debido al desconocimiento del origen real de los recursos,0,0,1
+128,R68,Ser sujeto de sanciones,Ser sujeto de sanciones por el ingreso de recursos de procedencia ilicita en la constitucion de CDAT por desconocimiento de los procedimientos sarlaft por parte del funcionario responsable,0,0,1
+129,R69,Perdida de imagen y sanciones legales,Perdida de imagen y sanciones legales por la realizaci?n de operaciones a trav?s de los CDAT con prop?sitos laft debido a colusion entre asociados y funcionarios,0,0,1
+130,R7,Incremento en costos operacionales,"Incremento en costos operacionales por el reproceso en la contrataci?n de asesores comerciales que no cumplen con el perfil, debido a que se vinculan por recomendaciones de familiares y amigos de directivos",0,0,1
+131,R70,Perdida de imagen y sanciones legales,Perdida de imagen y sanciones legales por la apertura de CDAT a nombre de asociados con fines laft a trav?s de la suplantacion de titulares,0,0,1
+132,R71,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas en la apertura de CDAT a causa de amenazas ejercidas por los asociados",0,0,1
+133,R72,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas en la apertura de CDAT debido a presiones ejercidas por los directivos hacia los funcionarios",0,0,1
+134,R73,"Perdida de imagen, credibilidad y sanciones legales ","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas en la apertura de CDATdebido a la presentaci?n de documentaci?n falsa como soporte de la declaracion de origen de fondos",0,0,1
+135,R74,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la apertura de CDAT  por parte de los alternantes para realizar operaciones laft ",0,0,1
+136,R75,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la apertura de  multiplicidad de CDAT para el ocultamiento de trasacciones de laft por parte de titulares de las cuentas.",0,0,1
+137,R77,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la realizacion de operaciones laft debido al ingreso de recursos procedentes de actividades ilicitas en CDAT a causa de amenazas ejercidas por parte de terceros a los asociados",0,0,1
+138,R78,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la autorizacion de giros por cancelaci?n de CDAT de los asociados  a  terceros  involucrados en actividades ilicitas.",0,0,1
+139,R79,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de proveedores con prop?sitos de realizar actividades il?citas, debido a la negligencia de los funcionarios encargados del proceso de contrataci?n.",0,0,1
+140,R8,Perdida de imagen y ser sujeto de sanciones,Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados que se encuentran en listas vinculantes o restrictivas por fallas presentadas en los parametros del modulo de vinculaci?n.,0,0,1
+141,R80,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad y sanciones por la contratacion de proveedores con prop?sitos de realizar actividades il?citas, debido al desconocimiento de la normatividad vigente sarlaft por parte de los funcionarios encargados del proceso de contrataci?n.",0,0,1
+142,R81,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la autorizaci?n del proveedor a girar a cuentas diferentes a la inicialmente reportada que se encuentra a nombre de terceros  involucrados en actividades ilicitas.",0,0,1
+143,R82,"Perdida de imagen, sanciones y perdida de la inversi?n","Perdida de imagen, sanciones y perdida de la inversi?n por la adquisici?n de bienes con medidas de restricci?n comercial o legal debido a deconocimiento de las normas vigentes del SARLAFT",0,0,1
+144,R83,"Perdida de imagen, sanciones y perdida de la inversi?n","Perdida de imagen, sanciones y perdida de la inversi?n por la adquisici?n de bienes con medidas de restricci?n comercial o legal debido a la negligencia de funcionarios responsables",0,0,1
+145,R84,"Perdida de imagen, sanciones y perdida de la inversi?n","Perdida de imagen, sanciones y perdida de la inversi?n por la adquisici?n de bienes con medidas de restricci?n comercial o legal a causa de presiones de la alta direcci?n hacia el funcionario responsable",0,0,1
+146,R85,"Perdida de imagen, sanciones y perdida de la inversi?n","Perdida de imagen, sanciones y perdida de la inversi?n por la adquisici?n de bienes con medidas de restricci?n comercial o legal a causa de la colusi?n entre el vendedor y el funcionario responsable",0,0,1
+147,R86,"Perdida de imagen, sanciones y perdida de la inversi?n","Perdida de imagen, sanciones y perdida de la inversi?n por la adquisici?n de bienes con medidas de restricci?n comercial o legal a causa de favorecimientos de familiares o allegados",0,0,1
+148,R87,"Perdida de imagen, credibildad y sanciones","Perdida de imagen, credibildad y sanciones por entrega de informaci?n confidencial a terceros involucrados en actividades laft de manera intencional del funcionario que tiene aceso a la informaci?n de la base de datos de los asociados, por colusi?n",0,0,1
+149,R88,"Perdida de imagen, credibildad y sanciones","Perdida de imagen, credibildad y sanciones por entrega de informaci?n confidencial a terceros involucrados en actividades laft debido a presiones al funcionario que tiene acceso a la informaci?n",0,0,1
+150,R89,"Perdida de imagen, credibildad y sanciones","Perdida de imagen, credibildad y sanciones por manupulaci?n de la informaci?n y parametrizaci?n de la informacion SARLAFT, con el prop?sito de ocultamiento de operaciones laft, debido a la colusion de terceros con el funcionario que tiene acceso la informaci?n",0,0,1
+151,R9,Perdida de imagen y ser sujeto de sanciones,"Perdida de imagen y ser sujeto de sanciones por vinculaci?n de asociados que se encuentran en listas vinculantes o restrictivas por la modificacion de los parametros del modulo de vinculaci?n, debido a presiones por parte de los directivos",0,0,1
+152,R90,"Perdida de imagen, credibildad y sanciones","Perdida de imagen, credibildad y sanciones por entrega de informaci?n confidencial por parte de proveedores que custodian la informaci?n de la entidad a terceros con el prop?sito de realizar actividades ilicitas ",0,0,1
+153,R91,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la autorizaci?n del beneficiario del pago de auxilios para girar a terceras personas involucrados en actividades ilicitas.",0,0,1
+154,R92,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por el pago de auxilios a personas beneficiarias del asociado o terceras personas (representantes de beneficiarios)  involucrados en actividades ilicitas.",0,0,1
+155,R93,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por la intermediaci?n por parte del asociado para la constitucion de polizas a nombre de terceras personas involucradas en actividades laft",0,0,1
+156,R94,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales por el recaudo de pagos de polizas de seguros tomadas por terceros no asociados a la Cooperativa y que se encuentran involucradas en actividades laft",0,0,1
+157,R96,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales debido al pago de obligaciones estatutarias y crediticas por los diferentes medios de recaudo de efectivo (baloto, jumbo, metro, serlogyc) con recursos procedentes de actividades ilicitas por parte del asociado o terceras personas",0,0,1
+158,R97,"Perdida de imagen, credibilidad y sanciones legales","Perdida de imagen, credibilidad y sanciones legales debido al pago de obligaciones estatutarias y crediticas por los diferentes medios de recaudo de efectivo (baloto, jumbo, metro, serlogyc) con recursos procedentes de actividades ilicitas por parte del asociado o terceras personas",0,0,1
+159,R98,Perdida de imagen,Perdida de imagen debido a que un integrante del Consejo de Administraci?n y Junta de Vigilancia resulta involucrado en un proceso de judicializacion por laft,0,0,1
+160,R99,Perdida de imagen,Perdida de imagen debido a que un integrante de la alta direcci?n y funcionarios resulta involucrado en un proceso de judicializacion por laft ,0,0,1
+161,R105,Prueba,prueba,0,0,1
+162,Febor_R1,Perdida de credibilidad o sanciones por el ingreso de recursos ilicitos,Perdida de credibilidad o sanciones por el ingreso de recursos ilicitos debido a la presentaci?n de documentaci?n falsa al momento de la vinculaci?n de asociados - empleados - proveedores que hayan obtenido sus recursos a trav?s de la ejecuci?n de  actividades delictivas. ,0,0,1
+163,Febor_R10,Perdida de imagen y credibilidad,Perdida de imagen y credibilidad - sanciones  por omisi?n en la entrega de informaci?n o reportar novedades a los entes de control cuando un asociado aparece en listas restrictivas. š,0,0,1
+164,Febor_R21,Perdida de imagen y credibilidad ,"Perdida de imagen y credibilidad, sanciones por vinculaci?n de proveedores que se encuentran en listas debido a colusi?n entre proveedor y funcionario",0,0,1
+165,Febor_R22,Vinculacion de clientes  de LAFT,"Vincular clientes y/o proveedores que utilicen a la compa??a como instrumento para lavar activos o financiar el terrorismo realizando el  an?lisis SARLAFT de forma parcial o err?nea, sin reportar la debida informaci?n financiera, las operaciones inusuales y/o sospechosas.",0,0,1
+166,Febor_R2,Perdida de credibilidad o sanciones ,Perdida de credibilidad o sanciones por el ingreso de recursos ilicitos por la vinculaci?n de personas que hayan obtenido sus recursos a trav?s de la ejecuci?n de  actividades delictivas Por la entrega de datos o documentos falsos o por errores en el diligenciamiento del formulario de vinculaci?n,0,0,1
+167,Febor_R3,Perdida de imagen y credibilidad ,Perdida de imagen y credibilidad - sanciones debido al desconocimiento de la normatividad vigente relacionada con PEPS por parte del funcionario responsable del proceso de  vinculaci?n sin la debida diligencia ,0,0,1
+168,Febor_R4,Perdida de imagen y credibilidad -,Perdida de imagen y credibilidad - sanciones por omisi?n en el proceso de verificaci?n de documentos y consulta en centrales de riesgo para identificaci?n de PEPS por parte del funcionario responsable del proceso de  vinculaci?n ,0,0,1
+169,Febor_R5,Perdida de imagen y credibilidad -,"Perdida de imagen y credibilidad - sanciones debido a la presentaci?n de documentaci?n falsa al momento de realizar la apertura de productos de ahorro (ahorro contractual, cdats, ahorro voluntario).  š š",0,0,1
+170,Febor_R6,P?rdida de imagen y sanciones,P?rdida de imagen y sanciones emitidas por el ente de supervisi?n por la realizaci?n de transacciones originadas de dineros provenientes de actividades il?citas debido a asociados que prestan sus cuentas de ahorros en colusi?n con terceros ajenos a la entidad. ,0,0,1
+171,Febor_R7,Sanciones ,Sanciones debido a la omisi?n por parte de los funcionarios en la solicitud de la declaraci?n de origen de fondos al momento de realizar una transacci?n en efectivo,0,0,1
+172,Febor_R8,Sanciones ,Sanciones cuando el asociado se niega a diligenciar la declaraci?n de origen de fondos y no se cuenta con la evidencia que justifique la solicitud por parte del funcionario en el momento de realizar una transacci?n en efectivo  š šš,0,0,1
+173,Febor_R9,Sanciones,"Sanciones por no identificar situaciones tales como el  fraccionamiento del pago reiterativo de la deuda por debajo de los l?mites definidos por la norma, al momento de realizar transacciones en efectivo a trav?s de la caja de la cooperativa o recaudos por convenio ",0,0,1
+174,Febor_R11,Perdida de imagen y credibilidad ,Perdida de imagen y credibilidad - sanciones debido a la omisi?n por parte de los funcionarios en el diligenciamiento del formulario de vinculaci?n y la consulta en centrales de riesgo  de proveedores asociados a organizaciones criminales ,0,0,1
+175,Febor_R12,Perdida de imagen y credibilidad ,"Perdida de imagen y credibilidad, sanciones por vinculaci?n de personas que se encuentran en listas  debido a la presentaci?n de documentaci?n falsa, adulterada o ilegible al momento de la vinculaci?n",0,0,1
+176,Febor_R13,Sanciones,"Sanciones por vinculaci?n de asociados, empleados y proveedores que se encuentran en listas debido a negligencia del funcionario de acuerdo a los procedimientos definidos por la entidad ",0,0,1
+177,Febor_R14,Perdida de imagen y credibilidad,"Perdida de imagen y credibilidad - sanciones debido al desconocimiento de la normatividad vigente con respecto a SARLAFT para la vinculaci?n de proveedores y empleados, por parte del funcionario responsable del proceso š",0,0,1
+178,Febor_R15,Sanciones,"Sanciones por vincular asociados, proveedores y empleados con prop?sitos de realizar actividades ilicitas debido a presi?n y sobornos por parte de directivos y otras personas para dicha vinculaci?n ",0,0,1
+179,Febor_R16,Sanciones,Sanciones por vincular asociados con prop?sito de realizar actividades ilicitas debido a suplantaci?n de identidad en el momento de su vinculaci?n apropiandos? de documentaci?n o falsificando la misma,0,0,1
+180,Febor_R17,Sanciones ,Sanciones por  realizar transacciones con prop?sitos de LAFT a trav?s de dep?sitos de ahorros (CDATS- Contractual) al momento de solicitar estos productos como favores para familiares allegados al asociado ,0,0,1
+181,Febor_R18,Sanciones ,"Sanciones por vincular asociados con prop?sitos de realizar actividades ilicitas debido a amenazas por grupos al margen de la ley hacia las personas responsables del proceso de vinculaci?n y allegados (familiares, amigos, otros colaboradores)",0,0,1
+182,Febor_R19,Perdida de vidas humanas,"Perdida de vidas humanas por ataques debido a retaliaciones de bandas criminales  por la negaci?n de vinculaci?n de asociados, proveedores y empleados con prop?sito de realizar actividades ilicitas š",0,0,1
+183,Febor_R20,Sanciones,"Sanciones por vinculaci?n de personas (empleados, proveedores, asociados) que se encuentran en listas debido a la desactualizaci?n de las bases de consulta contratadas con proveedores externos ",0,0,1
+184,Febor_R23,Sanciones,"Sanciones por adquisi?n de bienes provenientes de actividades ilicitas  (contrabando, LA-FT) debido a desconocimiento por parte del colaborador del procedimiento de selecci?n y contrataci?n de proveedores ",0,0,1
+185,Febor_R24,Sanciones,Sanciones por vincular proveedores con prop?sitos de realizar actividades ilicitas debido a suplantaci?n de identidad del proveedor - apropiando documentaci?n o falsificando la misma al momento de la vinculaci?n ,0,0,1
+186,Febor_R25,Perdida de imagen y credibilidad,Perdida de imagen y credibilidad por contratar con proveedores que prestan su servicio a trav?s de terceros vinculados en actividades ilicitas debido al desconocimiento de estas actividades por parte del personal responsable,0,0,1
+187,Febor_R26,Sanciones ,"Sanciones por vincular proveedores y empleados con prop?sitos de realizar actividades ilicitas debido a amenazas por grupos al margen de la ley hacia las personas responsables del proceso de contrataci?n y allegados (familiares, amigos, otros colaboradores)",0,0,1
+188,Febor_R27,Sanciones ,Sanciones por no aplicar las metodologias requeridas por la normatividad vigente de SARLAFT dentro del funcionamiento de la cooperativa ,0,0,1
+189,Febor_R28,Sanciones , Sanciones por omisi?n en la realizaci?n de la evaluaci?n de riesgos asociados a LA-FT  en la creaci?n de nuevos productos y servicios que incursionan en el portafolioš,0,0,1
+190,Febor_R29,Sanciones,Sanciones por omisi?n en la realizaci?n del monitoreo requerido en la normatividad de SARLAFT por desconocimiento de los procedimientos por parte de los funcionarios ,0,0,1
+191,Febor_R30,Sanciones,Sanciones por omisi?n en la realizaci?n del monitoreo requerido en la normatividad de SARLAFT por ausencia de reportes en el software corporativo ,0,0,1
+192,Febor_R31,Vincular clientes y/o proveedores que utilicen a la compa??a como instrumento para lavar activos o financiar el terrorismo,"Vincular clientes y/o proveedores que utilicen a la compa??a como instrumento para lavar activos o financiar el terrorismo realizando el  an?lisis SARLAFT de forma parcial o err?nea, sin reportar la debida informaci?n financiera, las operaciones inusuales y/o sospechosas.",0,0,1
+193,Febor_pruebariesgo1,Perdida de imagen y credibilidad por omisi?n de consultas,Este riesgo esta asociado al proceso de SAS,0,0,1
+194,Febor_pruebariesgo2,Sanciones por vinculaci?n de proveedores,Sanciones por vinculaci?n de proveedores que se encuentran en listas debido a negligencia del funcionario de acuerdo a los procedimientos definidos en la entidad,0,0,1
+195,Febor_R32,"Perdida de imagen, credibilidad y sanciones","Perdida de imagen, credibilidad  y sanciones  por  la realizaci?n de inversiones en empresas comprometidas en actividades laft  a causa  de la colusi?n entre directivos y terceros",0,0,1
+196,Febor_TI-R1,Perdida de informaci?n ,,0,0,1
+197,Prueba_GT,Prueba Continuidad,Sanciones Legales por incumlimiento de normatividad vigente-.....,0,0,1
+199,OR-03,Evaluate the product / service according to quality standards,Es la posibilidad de perdidas generadas por la incapacidad de las demas partes cumpliren con sus obligaciones con el banco.,0,0,1
+200,BAS-002,Presentaci?n de documentos falsos,"Riesgo de mantenimiento de distintas partes involucradas en las mismas actividades, en actividades en la misma zona geografica o que poseen caracteristicas similares",0,0,1
+201,BAS-003,Cambio de Precios de Acciones,,0,0,1
+202,BAS-004,Cambio en la tasa de inter?s,,0,0,1
+203,BAS-005,Cambio en la tasa de conversi?n de monedas,,0,0,1
+204,BAS-006,Cambio en el spread de credito,,0,0,1
+205,BAS-007,Cambio en el precio de las commodities,,0,0,1
+206,BAS-008,Cambio en el valor de operaci?n de los activos en madurez,,0,0,1
+207,BAS-009,Incapacidad de cumplir obligaciones financieras en el plazo,,0,0,1
+208,BAS-010,Perdida de liquidez de mercado,Riesgo de que la liquidez en los mercados financieros pueda reducirce significativamiente,0,0,1
+209,BAS-011,Falla procesual interna,Falla resultante de los procesos internos,0,0,1
+210,BAS-012,Falla humana,,0,0,1
+211,BAS-013,Falla de sistema,,0,0,1
+212,BAS-014,Falla por proceso externo,,0,0,1
+213,BAS-015,Incapacidad de cumplir las reglamentaciones y codigos de conducta,Incapacidad de cumplir las reglamentaciones y codigos de conducta relaccionados a sus actividades de negocios (no incluye fallas de riesgos operacionales) y incluye expectativas corporativas,0,0,1
+214,BAS-016,Lavado de Dinero,,0,0,1
+215,BAS-017,Financiamiento de Terrorismo,,0,0,1
+216,BAS-018,Corrupci?n y Coima,,0,0,1
+217,BAS-019,Cambios en las condiciones macroeconomicas,,0,0,1
+218,BAS-020,Cambios Tecnologicos,,0,0,1
+219,BAS-021,Cambios Regulamentarios,,0,0,1
+220,BAS-022,Cambios Politicos,,0,0,1
+221,BAS-023,Cambios de Tendencias Sociales,,0,0,1
+222,BAS-024,Cambios ambientales,,0,0,1
+223,BAS-025,Debilidades internas,"Cambios generados por debilidades internas, como estrategias fallas o de debil implementacion.",0,0,1
+224,DCE-1,Perdida de informaci?n,Riesgo de Tecnologia de la informaci?n para todos los procesos,0,0,1
+225,DCE - 2,Desalineaci?n Estrategica,Aqui iria la descripci?n de la familia del riesgo con la que se clasificar los riesgos en la matriz inicial ,0,6,1
+226,DCE-3,Poco Impacto de la estrategia,No esta clara la definici?n de la estrategia y para que esta constituida,0,0,1
+227,DCE-10,Identificacion tardia de necesidades,Corresponde a la ejecucion de proyectos en la organizacion,0,0,1
+228,DCE-5,Perdida de credibilidad ,Credibilidad t?cnica puesta en duda dados los resultados de proyectos medidos en el cumplimiento de tiepos establecidos.,0,0,1
+229,DCE-6,No ser vistos como facilitadores - Poco interes de las areas en involucrar  SGE en desarrollo de proyectos -solo se involucran al final,Poco interes de las areas en involucrar  SGE en desarrollo de proyectos -solo se involucran al final,0,0,1
+230,LF_R1_GP,DESALINEACION ESTRAT?GICA,"Incumplimiento del Objetivo Estrat?gico debido a ;
+
+1. El l?der del proyecto no est? definido correctamente.
+2. El objetivo no es lo suficientemente claro para el equipo de trabajo.
+3. El alcance no est? definido correctamente seg?n el objetivo, expectativas y necesidades del proyecto.
+4. No contar con la participaci?n activa de todos los involucrados en el equipo de trabajo necesario.
+5. Incumplimiento de tiempos pactados.
+6. Incumplimientos a promesas de servicio y compromisos adquiridos por parte de proveedores (software).",0,0,1
+231,LF_R2_GP,LEGAL,"Generar un incumplimiento legal debido a:
+
+1. Falta de soporte legal en la organizaci?n
+2. Desconocimiento de cambios en la legislaci?n.
+3. Realizar cambios en los procesos sin tener en cuenta el soporte legal.
+4. Falta de comunicaci?n.
+5. Omisi?n de controles y procedimientos documentados.",0,0,1
+232,LF_R3_GP,PERDIDA DE IMAGEN O CREDIBILIDAD PUBLICA,"Perdida de credibilidad t?cnica debido a:
+
+1. Falta de conocimiento en software principal de la empresa.
+2. Perdidas de tiempo en recopilaci?n de la informaci?n necesaria.
+3. Carga de trabajo 
+4. Planeaci?n inadecuada de tiempos y compromisos.
+5. No contar con la participaci?n activa de todos los involucrados en el equipo de trabajo necesario.
+6. No contar con documentaci?n existente al inicio del proyecto y al final.
+7. Falta de cobertura en la documentaci?n",0,0,1
+233,LF_R4_GP,OPERATIVO,"Implementacion inadecuada de los proyectos dentro de los procesos debido a :
+
+1. Planeaci?n inadecuada del proyecto.
+2. Ausencia de metodolog?a.
+3. Falta de transversalidad y visi?n y enfoque a procesos.
+4. No tener en cuenta documentaci?n existente.
+5. Atenci?n a los requerimientos de forma puntual.
+6. Falta de capacitaci?n met?dica
+7. No contar con la participaci?n activa de todos los involucrados en el equipo de trabajo necesario.
+8. Definici?n inadecuada de roles y asignaci?n de responsabilidades en la ejecuci?n y sostenimiento de los proyectos.
+9. Ausencia de empoderamiento de los l?deres de procesos impactados.
+10. Omisi?n de controles y procedimientos documentados.
+11. Sobre carga de proyectos dentro de un proceso.",0,0,1
+234,LF_R5_GP,OPERATIVO,"Conflicto de intereses  debido a:
+1. Ausencia de controles en proceso.
+2. Definici?n inadecuada de roles y asignaci?n de responsabilidades en la ejecuci?n y sostenimiento de los proyectos.
+3. Urgencia de implementaci?n.",0,0,1
+235,LF_R6_GP,OPERATIVO,"Ausencia de gestion del conocimiento debido a:
+
+1. Falta de documentaci?n oficializada y divulgada.
+2. Falta de credibilidad t?cnica en el equipo
+3. Falta de apropiaci?n y conciencia de los due?os de procesos
+4. Duplicidad de documental.",0,0,1
+236,LF_R7_GP,TECNOLOGIA DE LA INFORMACION,"Desintegraci?n de aplicaciones de software  debido a:
+
+1. Desarrollo de aplicaciones personalizadas
+2. Soluciones actualizadas en las aplicaciones.
+3. Desconocimiento de la funcionalidad de aplicaciones existentes (Centralizaci?n del conocimiento de las funciones de aplicaciones).
+4. Ausencia de soporte documental de las aplicaciones.",0,0,1
+237,LF_R8_GP,OPERATIVO,"Asignacion inadecuada de las responsabilidades debido a:
+
+1. Debilidad o falta de capacitaci?n y entrenamiento.
+2. Por errores, omisiones o descuidos en los procesos.
+3. Desconocimiento de las funciones.",0,0,1
+238,LF_R9_GP,OPERATIVO,"Asumir funciones o responsabilidades que le corresponde a otras ?reas debido a:
+
+1. Falta de planeaci?n y duraci?n de las etapas.
+2. Falta de metodologia de los proyectos.
+3. Proactividad de lideres de proceso.
+4. Multiplicidad de proyectos dentro de una misma area
+
+",0,0,1
+239,LF_R10_GP,OPERATIVO,"Deficiencias o falla en maquinas y equipos debido a:
+
+1. Inadecuada capacitacion tecnica para la manipulacion y operacion de equipos de produccion
+2. Falta de inspeccion en la llegada del equipo.
+3. Desconocimiento de informacion tecnica relevante para la manipulacion de los equipos
+4. Falta de repuestos o piezas de la maquina",0,0,1
+240,LF_R11_GP,FINANCIERO,"Escases de presupuesto en la gestion del proyecto,  debido a:
+1. Inadecuada gestion de los recursos del proyecto.
+2. Toma de decisiones erroneas que afectan la rentabilidad.
+3. Analisis inadecuado en las inversiones de los proyectos
+4. Falta de garantias por parte de los proveedores",0,0,1
+241,LF_R12_GP,FINANCIERO,"Perdida de dinero en la gesti?n del proyecto debido a:
+
+1. Falta de planificaciones en las inversiones
+2. Errores en las negociaciones con proveedores, contratistas o clientes",0,0,1
+242,LF_R13_GP,SEGURIDAD Y SALUD EN EL TRABAJO,"Da?os fisicos (Lesiones) al personal debido a:
+1. Falta de conocimiento en materia de SST
+2. No contar con el area especifica de SST
+3. Falta de documentaci?n necesaria para el control de accidentalidad",0,0,1
+243,LF_R14_GP,AMBIENTAL,"Da?os ambientales debido a una accion humana debido a:
+1. Alteracion de la calidad ambiental
+2. Cambio negativo en la salud o bienestar de las personal",0,0,1
+244,Estatal_R1,Parada de Planta,,0,0,1
+245,Estatal_R2,Intrusion,"Riesgo Observado - intrusi?n o ingreso o salida de personas o
+elementos no autorizado",0,0,1
+246,RA001,Alteraci?n de la calidad ambiental por emisiones de Carbono,,0,8,1
+247,R002,Parada de Planta,,0,0,1
+248,Estatal_r3,Riesgo de Acceso,,0,0,1
+249,OR-04,Loss of Merchandise,Riesgo generado por mala recepcion de facturas etc ,0,0,1
+250,BCP-001,Publicaci?n de documentos personales sin autorizaci?n,,0,0,1
+251,fonaviemcali_01,Capacidad de descuento,No se evidencie la capacidad de descuento en el an?lisis del crediro,0,0,1
+252,UNIANRr001,Perdida de Informaci?n,La perdida de informaci?n respecto a los activos identificados en el centro de computa de Bogota,0,0,1
+253,RIS-001,Riesgo Operacional,,0,0,1
+254,RACH001,P?rdida de informaci?n,La materializaci?n de la p?rdida de informaci?n en el caso de ACH puede conllevar a p?rdidas econ?micas y da?o reputacional ,0,0,1
+255,ACH-R-001,Perdidas de informaci?n en servidor cr?ticos,,0,0,1
+256,OR-02,Purchase of the correct order quantity,,0,0,1
+257,ACH-R-003,Perdidas de movimientos hist?ricos ,,0,0,1
+258,ACH-R-004,Alteraci?n de la informaci?n de terceros actualizo,,0,0,1
+259,ACH-R-005,P?rdida de la confidencialidad de la informaci?n,,0,0,1
+260,ACH-R-006,Imposibilidad de  dispersar las transacciones,,0,0,1
+261,ACH-R-007,Imposibilidad de  dispersar las transacciones,,0,0,1
+262,ACH-R-008,Da?o f?sico intencional o accidental al HW. ,,0,0,1
+263,INF-0001,Malas pr?cticas de desarrollo 5555,,0,0,1
+264,prv-10,Inadecuada selecion del grupo de expertos,,0,0,1
+265,prv-11,Insuficiente personal de expertos,,0,0,1
+266,prv-20,Inexactitud en el levantamiento de requerimientos tecnicos,,0,0,1
+267,OR-01,Wrong Product / Service Identification,Operational risk,0,0,1
+268,prv-30,Insuficientes criterios relevantes para la seleccion de proveedores,,0,0,1
+269,prv-40,Inventario de Proveedores Desactualizado,,0,0,1
+270,prv-50,Deficiente toma de valores de los criterios de cada proveedor,,0,0,1
+271,prv-60,Definici?n errada de un m?todo multicriterio para seleccionar el proveedor,,0,0,1
+272,prv-70,Riesgo Prueba,,0,0,1
+273,GTB-RISK-0001,Selecci?n de proveedores,"Selecci?n de proveedores que re?nan  los requisitos establecidos por la organizaci?n.
+
+Posibles causas: Selecci?n inadecuada de un proveedor, escases de proveedores
+para abastecerse de productos, bajo nivel de los proveedores que limita las opciones.
+
+Efectos mas comunes: Retrasos en los procesos de la entidad, ineficiencia administrativa, mala 
+ imagen corporativa.",0,0,1
+274,GTB-RISK-0002,Calidad y garant?a de productos y servicios,"Incumplimiento de garant?acalidad y  de los productos y servicios adquiridos.
+
+Posibles causas: Prueba insuficiente de la calidad de los productos, recepci?n de productos y servicios defectuosos sin revisi?n.
+
+Efectos mas comunes: Retrasos en la prestaci?n del servicio, p?rdida econ?mica, conflictos
+comerciales entre las partes.",0,0,1
+275,GTB-RISK-0003,Incumplimiento en los tiempos de entrega,"
+Posibles causas: Proveedores con retraso en la entrega de suministros, escases de
+productos para servir a los usuarios.
+
+Efectos mas comunes: Disminuci?n de los ingresos, conflictos con los usuarios, mala
+imagen institucional.",0,0,1
+276,GTB-RISK-0004,Variaci?n en precios,"Productos  y servicios a precios que impiden ser eficientes y eficaces.
+
+
+Posibles causas: Proveedores poco competitivos en materia de precios de los productos y servicios.
+
+Efectos mas comunes: Reducci?n de la capacidad de compra y resoluci?n de necesidades internas.",0,0,1
+277,OR-001,Wrong Product / Service Identification,Operational risk,0,0,1
+278,OR-002,Purchase of the correct order quantity,,0,0,1
+279,OR-003,Evaluate the product / service according to quality standards,,0,0,1

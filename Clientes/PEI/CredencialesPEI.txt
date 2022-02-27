@@ -1,0 +1,16 @@
+Ambiente Productivo:          https://sa.peiam.app-digidata.co:8443/sa
+
+Ambiente de Homologación :    https://sa.peiam.app-digidata.co:8444/sa
+
+User: admconsultores
+Pass: cambiar12345
+
+IPs
+
+Homologación : https://132.145.197.85:8444/sa
+Producción : https://132.145.197.85:8443/sa
+
+Prod: https://sa.peiam.app-digidata.co:8443/sa
+Homolog: https://sa.peiam.app-digidata.co:8444/sa
+User: admconsultores
+Pass: cambiar12345
