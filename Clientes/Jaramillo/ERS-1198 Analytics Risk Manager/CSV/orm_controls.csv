@@ -1,0 +1,192 @@
+"id","code","name","description","instructions","classification","frequency","mnemonic","state"
+"1","ZControl N6","Otro","","Por confirmar","","","#1","1"
+"2","ZControl N10","Otro","","Por confirmar","","","#2","1"
+"3","ZControl N7","Otro","","Por confirmar","","","#3","1"
+"4","Zcontrol N20","otro","Mantenimiento quincenal de la infraestructura interna de los telefonos","Verificar los formularios de mantenimiento y las actividades hechas
+Validar las fechas en que fue efectuado el mantenimiento","","","#4","1"
+"5","ZControl N50","Otro","","semanales","","","#5","1"
+"6","Zcontrol N40","Otro","Mantenimiento bimensual de la infraestructura externa de los teléfonos","Por confirmar","","","#6","1"
+"7","ZControl N9","Otro","","Por Confirmar","","","#7","1"
+"8","ZControl N2","Otro","","Por confirmar","","","#8","1"
+"9","ZControl N60","Otro","","Por confirmar","","","#9","1"
+"10","ZControl N1","Otro","","Por confirmar","","","#10","1"
+"11","ZControl N8","Otro","","Por confirmar","","","#11","1"
+"12","ZControl N4","Otro","Conciliar la caja y cartera de los clientes diariamente","Por confirmar","","","#12","1"
+"13","Zcontrol N30","Otro","Efectuar limpieza y aseo regularmente (diario)","- Verificar con la persona de aseo y cafeteria el control diario","","","#13","1"
+"14","ZControl N3","Otro","","Modelos implementados sobre las normas especiales para el sector Solidario","","","#14","1"
+"15","ZControl N5","Otro","","Por confirmar","","","#15","1"
+"16","CTRL001","Protocolo de Comunicación","","Por confirmar","","","#16","1"
+"17","CTRL002","Capacitación Inducción SARLAFT","","Por confirmar","","","#17","1"
+"18","CTRL003","Validación previa en listas","","Por confirmar","","","#18","1"
+"19","CTRL004","Verficacion de información","","Por confirmar","","","#19","1"
+"20","CTRL005","Código de buen gobierno","","Por confirmar","","","#20","1"
+"21","CTRL006","Verificación aleatoría de nuevas personas incluidas en listas","","Por confirmar","","","#21","1"
+"22","CTRL007","Validación anual base de asociados","","Por confirmar","","","#22","1"
+"23","CTRL008","Política de administración de cambios","","Por confirmar","","","#23","1"
+"24","CTRL009","Validación base de asociados posterior","","Por confirmar","","","#24","1"
+"25","CTRL010","Identificación biométrica","","Por confirmar","","","#25","1"
+"26","CTRL011","Validación de perfil","","Por confirmar","","","#26","1"
+"27","CTRL013","Visita a instalaciones","","Por confirmar","","","#27","1"
+"28","CTRL014","Validación de Documentos (Jurídico y Financiero)","","Por confirmar","","","#28","1"
+"29","CTRL015","Verificación de documentos y referencias","","Por confirmar","","","#29","1"
+"30","CTRL016","Estudio de Titulos","","Por confirmar","","","#30","1"
+"31","CTRL017","Gestión Juridíca","","Por confirmar","","","#31","1"
+"32","CTRL018","Validación del Poder","","Por confirmar","","","#32","1"
+"33","CTRL019","Validación periódica lista OFAC","","Por confirmar","","","#33","1"
+"34","CTRL020","Clausula Contractual Prevención LAFT","CLAUSULA CONTRACTUAL PREVENCION LAF","Por confirmar","","","#34","1"
+"35","CTRL021","Comparativo de cotizaciones","","Por confirmar","","","#35","1"
+"36","CTRL022","Nivel de atribuciones","","Por confirmar","","","#36","1"
+"37","CTRL023","Validación Anual de la Bases","","Por confirmar","","","#37","1"
+"38","CTRL024","Brigadas de Emergencia","","Por confirmar","","","#38","1"
+"39","CTRL025","Poliza de Vida Empleados","","Por confirmar","","","#39","1"
+"40","CTRL026","Clausula Contractual Prevención LAFT","","Por confirmar","","","#40","1"
+"41","CTRL027","Control de Requerimientos","CONTROL DE REQUERIMIENTOS","Por confirmar","","","#41","1"
+"42","CTRL028","Segregación de funciones","","Por confirmar","","","#42","1"
+"43","CTRL029","Nivel de atribuciones","","Por confirmar","","","#43","1"
+"44","CTRL030","Verificacion con entidad bancaria","","Por confirmar","","","#44","1"
+"45","CTRL031","Actualizacion de Datos y Origen de Fondos ","","Por confirmar","","","#45","1"
+"46","CTRL032","Carta de Conocimiento y Soporte","","Por confirmar","","","#46","1"
+"47","CTRL033","Capacitación Procedimiento de Ahorros","","Por confirmar","","","#47","1"
+"48","CTRL034","Capacitación Periódica de Sarlaft","","Por confirmar","","","#48","1"
+"49","CTRL035","Código de Ética","","Por confirmar","","","#49","1"
+"50","CTRL036","Sanciones Disciplinarias y Administrativas","","Por confirmar","","","#50","1"
+"51","CTRL037","Carta de Conocimiento y Soporte","","Por confirmar","","","#51","1"
+"52","CTRL038","Validacion de pagos a terceros no asociados","","Por confirmar","","","#52","1"
+"53","CTRL039","Montos maximos de recaudo","","Por confirmar","","","#53","1"
+"54","CTRL040","Cronograma Reportes","","Por confirmar","","","#54","1"
+"55","CTRL041","Validación en listas","","Por confirmar","","","#55","1"
+"56","Febor_Control_1","Elaboración de reportes mensuales","Febor da cumplimiento a lo establecido por la norma respecto de los reportes","Por confirmar","","","#56","1"
+"57","Febor_Control_2","Base de datos Banco de la República","Se tiene una base de datos con la información de empleados del Banco de la República y el registro histórico de asociados empleados y pensionados","Base de Datos","","","#57","1"
+"58","Febor_Control_3","Consulta en Listas","Se realiza la consulta a través de Consulta Efectiva a fin de conocer antecedentes de los posibles asociados","Base de Datos","","","#58","1"
+"59","Febor_Control_21","Procedimiento de reportes para entes de control ","De acuerdo a la periodicidad establecida por la normatividad es necesario realizar los correspondientes reportes de acuerdo a lo que requerido por los entes de control","Por confirmar","","","#59","1"
+"60","Febor_Control_22","Analisis de información - segmentación y operaciones mensuales","El Oficial de Cumplimiento revisa el origen de los recursos, la variación relativa, el promedio del sector y posibles señales de alerta. Cuando exista alguna operación inusual, se solicitará por medio de correo electrónico la explicación al asociado, si asi se considera necesario","Por confirmar","","","#60","1"
+"61","Febor_Control_4","Soporte de Listas","El Analista realiza las consultas de los clientes en las listas restrictivas ingresando los números de identificación reportados en los documentos.  Una vez realizada la consulta, se deja evidencia de la misma, de acuerdo al soporte que se genera en la base de consultas. 
+","Por confirmar","","","#61","1"
+"62","Febor_Control_5","Seguimiento Normatividad","El oficial de cumplimiento verifica listado de asociados ","Por confirmar","","","#62","1"
+"63","Febor_Control_6","Consulta de noticias relacionadas y consulta en listas","El oficial de cumplimiento consulta permanentemente noticias relacionadas con el Banco de la República y sus colaboradores que pueden ser catalogados como PEPS y que sean asociados a la Cooperativa o que se quieran vincular","Por confirmar","","","#63","1"
+"64","Febor_Control_7","Notificar novedades","Cuando un asociado aparece reportado en listas restrictivas se debe validar con el Oficial de Cumplimiento la novedad que se presenta y si esta amerita el rechazo de la vinculación del asociado u otra medida especial","Por confirmar","","","#64","1"
+"65","Febor_Control_8","Seguimiento Normatividad analista operativo","El analista operativo y cuando requiera con el apoyo del oficial de cumplimiento verifica listado de asociados y posible notificación de casos de asociados que puedan ser PEPS","Por confirmar","","","#65","1"
+"66","Febor_Control_9","Consulta de noticias relacionadas y consulta en listas Oficial Operativo","El analista operativo y cuando requiera con el apoyo del oficial de cumplimiento consulta permanentemente noticias relacionadas con el Banco de la República y sus colaboradores que pueden ser catalogados como PEPS y que sean asociados a la Cooperativa o que se quieran vincular","Por confirmar","","","#66","1"
+"67","Febor_Control_10","Monitoreo de transacciones en efectivo y a través de otros sistemas de recaudo ","Para el caso de montos superiores a $10.000.000 se solicita diligenciamiento de la Declaración de Origen de Fondos ","Por confirmar","","","#67","1"
+"68","Febor_Control_11","Diligenciamiento de formatos para la apertura de nuevos productos ","La cooperativa cuenta con los respectivos formatos aplicados para la apertura de productos de ahorro, crédito y servicios no financieros en donde se requiere información del asociado acompañados de firmas","Por confirmar","","","#68","1"
+"69","Febor_Control_12","Verificación diaria de movimientos de ahorros","El oficial de cumplimiento diariamente verifica movimientos cuando estos superan los $10,000,000 y el dinero que ingresa a través de Banco de Bogotá - Para el caso de montos superiores a $10.000.000 se solicita diligenciamiento de la Declaración de Origen de Fondos ","Por confirmar","","","#69","1"
+"70","Febor_Control_13","Verificación de archivo WOG vs Documento fisico ","Al finalizar el mes se debe cruzar el archivo de transacciones en efectivo generado por WOG contra las consignaciones fisicas reportadas a tesorería ","Por confirmar","","","#70","1"
+"72","Febor_Control_15","Verificación a través del archivo de recaudos con Banco aliado ","Diariamente se puede consultar el archivo compartido de recaudos generados a través del Banco aliado y verificar los casos con transacciones superiores a $10.000.000, sin embargo, estos casos no deben ser reportados a la UIAF","Por confirmar","","","#72","1"
+"73","Febor_Control_17","Validación en caja de monto de ingreso o retiro del asociado","El cajero cuando recibe el dinero que entrega el asociado o viceversa, si este es superior a $10.000.000 imprime el formato de declaración de origen de fondos y lo debe diligenciar el asociado","Por confirmar","","","#73","1"
+"74","Febor_Control_16","Notificación del cajero de la omisión por parte del asociado ","El cajero se comunica con el oficial de cumplimiento para notificar el caso que se presenta, de lo cual se procede por parte del oficial a realizar el requerimiento a través de carta dirigida al asociado ","Por confirmar","","","#74","1"
+"75","Febor_Control_18","Verificación del recaudo el día posterior y consolidación de transacciones ","Todos los días Tesorería actualiza el archivo de movimientos realizados por los asociados para verificar transacciones que superen los $10,000,000 o transacciones fraccionadas que superen este valor , esta verificación la realiza el Oficial de cumplimiento y se consolida mensualmente ","Por confirmar","","","#75","1"
+"76","Febor_Control_18","Verificación del recaudo el día posterior y consolidación de transacciones ","Todos los días Tesorería actualiza el archivo de movimientos realizados por los asociados para verificar transacciones que superen los $10,000,000 o transacciones fraccionadas que superen este valor , esta verificación la realiza el Oficial de cumplimiento y se consolida mensualmente ","Por confirmar","","","#76","1"
+"77","Febor_Control_19","Selección y verificación de información de proveedores - consulta en centrales","Febor ha desarrollado el procedimiento de contratación de proveedores que establece las actividades a desarrollar para garantizar la selección y contratación ","Por confirmar","","","#77","1"
+"78","Febor_Control_20","Proceso de Vinculación","Para la vinculación de asociados el estatuto establece la realización de las siguientes actividades: diligenciar formato de vinculación, validación de información en listas y aprobación por parte del consejo de administración de la vinculación ","Por confirmar","","","#78","1"
+"79","Febor_Control_23","Verificación de transacciones por tipo de depósito (ahorro contractual, CDATS)","Como parte de los controles diariamente se verifica el ingreso de depósitos a la cooperativa, a través de los diferentes canales y se tiene en cuenta montos, número de transacciones, saldo del asociado, etc, para el caso de transacciones superiores a $10.000.000 se requiere el diligenciamiento de la Declaración de Origen de Fondos","Por confirmar","","","#79","1"
+"80","Febor_Control_24","Acuerdos de Servicio","Se debe garantizar las condiciones de prestación de servicio por parte de los proveedores y la calidad de la información que ellos suministran para la consulta ","Por confirmar","","","#80","1"
+"81","Febor_Control_25","Procedimiento de selección y contratación de proveedores","El procedimiento establece las actividades que debe desarrollar los funcionarios encargados de contratar proveedores y dar cumplimiento de los requisitos establecidos para la selección ","Por confirmar","","","#81","1"
+"82","Febor_Control_26","Capacitación sobre conocimiento de procedimiento de selección y contratación de proveedores","Adicional a contar con el procedimiento de selección y contratación de proveedores es necesario realizar capacitaciones a los colaboradores sobre la aplicación del mismo y cumplimiento de lo establecido en el manual de compras","Por confirmar","","","#82","1"
+"83","Febor_Control_27","Seguimiento a contratos y ejecución de los mismos","Cada contrato cuenta con un lider de proceso responsable de su ejecución y debe estar atento desde el momento de la selección acompañando la verificación de información del proveedor","Por confirmar","","","#83","1"
+"84","Febor_Control_28","Procedimiento de selección y contratación de empleados","El procedimiento establece las actividades que debe desarrollarse para la contratación de empleados ","Por confirmar","","","#84","1"
+"85","Febor_Control_29","Cumplimiento y seguimiento de normatividad vigente","Teniendo en cuenta la normatividad establecida principalmente por la Superintendencia de Economía Solidaria se debe hacer seguimiento y aplicar los requerimientos establecidos, de acuerdo a los tiempos mencionados, permanentemente se debe consultar las fuentes de información ","Por confirmar","","","#85","1"
+"86","Febor_Control_30","Seguimiento a los compromisos del comité de gerencia y consejo de administración ","Dando cumplimiento a los requerimientos del Consejo de Administración y la Gerencia se ejecutan las actividades correspondientes con nuevos productos y servicios, a fin de garantizar, que se analice y evalue el riesgo de su puesta en marcha","Por confirmar","","","#86","1"
+"87","Febor_Control_31","Capacitación como minimo cada 6 meses relacionada con aspectos normativos y aplicación de SARLAFT ","Se realizan actividades de capacitación y seguimiento sobre la aplicación de los procedimientos relacionados con SARLAFT con el fin de garantizar que los colaboradores tengan el conocimiento necesario para su aplicación y evitar el incumplimiento o incurrir en faltas","Por confirmar","","","#87","1"
+"88","Febor_Control_32","Soporte de Consultas","El Analista realiza las consultas de los clientes en las listas restrictivas ingresando los números de identificación reportados en los documentos.  Una vez realizada la consulta, se deja evidencia de la misma, de acuerdo al soporte que se genera en la base de consultas. 
+
+","Por confirmar","","","#88","1"
+"89","ControlpruebaFebor1","Selección de proveedores","El funcionario encargado de realizar la compra debe aplicar el procedimiento para selección y contratación de proveedores siempre que haga una nueva contratación. ","Revisar la lista de proveedores vinculados y el proveedor seleccionado para validar que cumpla con el procedimiento establecido.","","","#89","1"
+"90","ControlpruebaFebor2","Elaboración de reportes mensuales","El  oficial de cumplimiento debe realizar mensualmente los reportes requeridos por la UIAF y dejar soporte del envío. ","Solicita copia de la confirmación de los reportes enviados a la UIAF. ","","","#90","1"
+"91","ControlFeborTI","Herramientas informáticas","Manejo de herramientas que permitan la seguridad de la información.","Seguimiento a los prestadores de servicio.
+Auditoria y mantenimiento.","","","#91","1"
+"92","GT_01","Gabriel Tavera","Esto es para ser efectivo","Tome el el formulario x","","","#92","1"
+"93","CTR-LAF-01","Documentación","Procedimientos documentados que describen métodos y actividades con responsabilidades y registros.","Listado maestro de documentos del proceso","","","#93","1"
+"94","DCE-1-C-1","T.I.","Manejo de la informacion por T.I.","Revision de politicas de la informacion, Back up","","","#94","1"
+"95","CTRL-LAF-3","VERIFICACION DE REGISTROS","Se realizara una verificacion al proceso","se debe tener un mejor manejo y control de la información validadndo y depurando las fuentes de registro","","","#95","1"
+"96","LF_CTRL1","Seguimiento de Proyectos","* Diligenciamiento de acta de proyectos al inicio del proyecto.
+* Reuniones periodicas de seguimiento.
+* Cronograma del proyecto.","Recolectar los indicadores y documentación del proyecto y confrontar lo estimado con lo real. Utilizar la herramienta tecnológica de proyectos.
+","","","#96","1"
+"97","LF_CTRL2","Controles de cada proceso","* Controles propios de cada dueño de proceso
+* Matriz de requisitos legales en construcción.","Establecer documentación de controles","","","#97","1"
+"98","LF_CTRL3","Procedimientos documentados"," Procedimientos documentados para la gestión de proyectos
+* Politicas de manejo de la información
+* Escogencia de lideres de proyectos idoneos.","Confirmar que los procedimientos aprobados se cumplan
+Establecer documentación necesaria para ajustar el proceso de conocimiento del software","","","#98","1"
+"99","LF_CTRL_4","Seguimiento a Procedimientos"," Procedimientos documentados para la gestión de proyectos
+* Formatos o plantillas para ayuda en la metodologia.
+* Actas de proyectos estandarizada.
+* Actas de seguimiento","Verificar cumplimiento de actas","","","#99","1"
+"100","LF_CTRL_5","Implementación de control de actividades","* Actas de constitucion de proyectos. 
+* Planeadores por ingeniero para el control de las actividades","Verificar planeadores y su cumplimiento","","","#100","1"
+"101","LF_CTRL_6","Gestión del Cambio y Gestión del Conocimiento","Procedimentos documentados para la gestión del cambio
+* Proyecto para la gestión del conocimento
+* Metodologia de proyectos documentada","Hacer seguimiento a Impactados y construir matriz de diagnostico de gestión del cambio","","","#101","1"
+"102","LF_CTRL7","Orientar en manipulacion de maquinas y equipos","Procedimientos y protocolos priopios de cada proceso
+* Guias de actuación para manipulacion de la maquinas y equipos","Evaluar conocimiento sobre Manipulación de  Maquinas a partir de los protocolos de cada proceso","","","#102","1"
+"103","LF_CTRL8","Documentacion SST","* Procedimiento de SST dpocumentados.x
+* Guias de actuacion para actividades de alto riesgo 
+* Programas de gestión de riesgos prioritarios","evaluar al personal  sobre el procedimiento de SST","","","#103","1"
+"104","Estatal_CRTL_1","CONTRATACION EMPRESAS RECONOCIDAS","","Por definir","","","#104","1"
+"105","Estatal_CTRL_2","VERIFICACIÓN DE ANTECEDENTES","","Registre fotos del cumplimiento, ","","","#105","1"
+"106","Estatal_CTRL_3","TRAYECTORIA EMPRESA","","Por definir","","","#106","1"
+"107","Estatal_CTRL_4","CUMPLIMIENTO SIPLAF","","Por definir","","","#107","1"
+"108","Estatal_CTRL_5","EMPRESAS CERTIFICADAS","","Por definir","","","#108","1"
+"109","Estatal_CRTL_6","REGISTRO MERCANTIL","","Por definir","","","#109","1"
+"110","Estatal_CRTL_7","PLANEACIÓN SEMANAL","","Por definir","","","#110","1"
+"111","Estatal_CTRL_8","NECESIDADES DE PRODUCCIÓN","","Por definir","","","#111","1"
+"112","Estatal_CRTL_9","ENLACES COORPORATIVOS","","Por definir","","","#112","1"
+"113","Estatal_CRTL_10","PLANEACIÓN ESTRATEGICA","","Por definir","","","#113","1"
+"114","Estatal_CTRL_11","IDENTIFICACIÓN DE NECESIDADES","","Por definir","","","#114","1"
+"115","Estatal_CTRL_12","VERIFICACIÓN ANTECEDENTES DEL CONDUCTOR","","Por definir","","","#115","1"
+"116","Estatal_CTRL_13","VINCULACIÓN DE PERSONAL IDONEO","","Por definir","","","#116","1"
+"117","Estatal_CTRL_14","EMPRESA DE PAPEL CERTIFICADA BASC","","Por definir","","","#117","1"
+"118","RA001","Reducir emisiones de Carbono en los procesos productivos","Las principales iniciativas para mitigar las emisiones se refieren al mejor aprovechamiento del gas y a la mejora de la eficiencia de las termoeléctricas.","Realizar una verificación de  emisiones de carbono segun la norma ISO 14064","","","#118","1"
+"119","R002","Mantenimiento Preventivo","Mantenimiento Preventivo de las máquinas que generan un riesgo mayor","Mantenimiento preventivo cada un mes ","","","#119","1"
+"120","estatal_ctrl10","verificacion de factura ","factura fisica entregada en porteria y sellada por vigilante ","registro en sistema de ingreso de mercancia ","","","#120","1"
+"121","BCP-001","Verificar autenticidad de los docs. ","Acciones para mitigar el riesgo","Verificación del cumplimiento de las acciones","","","#121","1"
+"122","UNIR-CTRL01","Copias de Seguridad","Se debe generar copias de seguridad periodicas de acuerdo a la politica establecidad","Verifique todas las copias de seguridad de la ultima semana","","","","1"
+"123","CONT-001","Proceso de Selección adecuado","Realiza controles en los procesos de selección ","Validar que los datos de los candidatos hayan sido corroborados","","","#123","1"
+"124","CONT","Control de Asistencia","Realiza el control de la asistencia a quienes están en las sucursales ","Planilla de control de asistencia semanal al área de cierre ","","","","1"
+"125","CONT-PROC","Control Procesos","Descripción","Evidencias","","","","1"
+"126","C001","Prueba","Prueba","Observación","","","","1"
+"127","CACH01","Copia de la BD en sitios alternos","Disponer de copias de las BD de las transacciones en el centro alterno o en lugares remotos a la sede principal de ACH","Visita presencial o consulta remota del sitio alterno y verificación de el hospedaje de las BD en los servidores de almacenamiento de ACH en el sitio alterno","","","","1"
+"128","ACH-CR-01","Copias de la BD en sitios alternos","","Ninguna","","","","1"
+"129","ACH-CR-02","Definición y asignación de perfiles de acceso ","","Ninguna","","","","1"
+"130","ACH-CR-03","Copia de la información histórica en sitios alternos","","Ninguna","","","","1"
+"131","ACH-CR-04","Definición y asignación de perfiles de acceso ","","Ninguna","","","","1"
+"132","ACH-CR-05","Configuración de seguridad del Firewall","","Ninguna","","","","1"
+"133","ACH-CR-06","Servidores de contingencia en sitios alternos","","Ninguna","","","","1"
+"134","ACH-CR-07","Infraestructura de comunicaciones de alta disponibilidad","","Ninguna","","","","1"
+"135","ACH-CR-08","Evaluación y selección de colaboradores","","Ninguna","","","","1"
+"136","CV-0001","Validación informaciones en el curriculo","Verificar la veracidad de las informaciones suministradas/consignadas en el currículo","Pedir una muestra de tres currículos y validar como fueron verificadas las informaciones contenidas en ellos.","","","","1"
+"137","CV-00002","Pruebas técnicas","Evidenciar que las habilidades técnicas de la persona están de acuerdo o responden a las necesidades de la vacante/proyecto.","Solicitar una muestra de tres pruebas/evaluaciones aplicadas a los últimos candidatos contratados en la organización.","","","","1"
+"138","CV-0002","Tener Inventariado los requerimientos tecnicos","Tener la lista de todos los requerimientos tecnicos, segun documento plantilla de requerimientos (FT-0003)","Validar que existan la lista de requerimientos","","","Inventario-requerimientos-tecnicos","1"
+"139","CV-0003","Validar documentación completa"," Documentación de acuerdo a plantilla requerimientos Digidata Formato0002","Validación  Documentación de acuerdo a plantilla requerimientos Digidata Formato0002","","","Doc-completa","1"
+"140","CV-0004","Documentación de los criterios de seleccion de los proveedores","# Documentar los criterios de selección 
+","Validar la Documentación de los criterios de selección ","","","Documentacioncriteriosselecc","1"
+"141","CRT-GTB-0001","Control Selección de Proveedores [Compras]","Vigilar que el proceso de selección de proveedores que se está desarrollando conforme lo expresa el manual de compras bajo los criterios de selección y evaluación de los mismos, mediante el procesamiento respectivo de sus formatos (CCMRCO-11 Y CCMRCO-12).","* Auditoria bimestral interna 
+
+* Auditoria cuatrimestral control interno
+
+* Auditoria externa de seguimiento certificación ISO-9000
+
+","","","#141","1"
+"142","CRT-GTB-0002","Control Calidad y garantía [Compras]","Tener en cuenta el criterio o el factor de calidad y garantía de productos y servicios establecidos en el manual de contratación y compras. Mediante la revisión periódica del proceso de
+ contratación y compras.","* Auditoria bimestral interna 
+
+* Auditoria cuatrimestral control interno
+
+* Auditoria externa de seguimiento certificación ISO-9000
+
+","","","#142","1"
+"143","CRT-GTB-0003","Control Oportunidad [Compras]","Monitorear el proceso de evaluación de proveedores en el cual se pondera el cumplimiento en los tiempos de entrega pactados para la prestación del servicio.
+","* Auditoria bimestral interna 
+
+* Auditoria cuatrimestral control interno
+
+* Auditoria externa de seguimiento certificación ISO-9000
+
+","","","#143","1"
+"144","CRT-GTB-0004","Control Precio [Compras]","Seguir las políticas y criterios de selección del factor económico establecidos en el manual de contratación y compras.
+","* Auditoria bimestral interna
+* Auditoria cuatrimestral control interno
+* Auditoria externa de seguimiento certificación ISO-9000
+
+","","","#144","1"
+"145","BCP-002","Monitoreo de docs","s","s","","","","1"
