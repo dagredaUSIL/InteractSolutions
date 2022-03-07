@@ -1,0 +1,7 @@
+"id","ref_parent","ref_owner","ref_team","ref_tags","restriction","classification","num_childs","name","parents","info"
+"1","0","463","0","0","0","0","0","Prueba","0.1",""
+"2","0","312","108","0","0","0","2","Gestión de Documentos","0.2",""
+"3","2","312","109","0","0","0","0","Mapa de Macroprocesos","0.2.3",""
+"4","2","312","110","0","0","0","2","Central GEL","0.2.4",""
+"5","4","312","111","0","2","0","0","Organigramas","0.2.4.5",""
+"6","4","312","112","0","0","0","0","Políticas","0.2.4.6",""
