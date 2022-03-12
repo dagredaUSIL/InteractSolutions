@@ -1,0 +1,29 @@
+Cuadro resumen con fechas de entrega y entregas
+por cliente
+Fecha de entrega
+ERS
+Fecha firmado por el cliente
+Pendiente por entregar
+Entregado
+
+Aprobados
+No Aprobados
+
+
+
+Fecha de registro Jaramillo
+23 de junio
+
+9 de Julio se elabora la ERS
+
+27 de Julio se envio la propuesta
+
+27 de Agosto se aprueba
+
+1 de Septiembre
+
+La entrega seria el 11 de Octubre
+
+
+
+

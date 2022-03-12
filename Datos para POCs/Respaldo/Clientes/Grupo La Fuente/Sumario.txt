@@ -1,0 +1,30 @@
+Sumario
+- Uso de la herramienta administración de procesos
+- Creación de tema
+- Agregar anexos a un proceso.
+- Enviar mensajes a los usuarios del sistema.
+- Creación de anotaciones.
+- Modelar procesos.
+- Creación de atributos
+- Simples
+- Compuestos
+- Creación de formularios
+- Uso de contenedores
+- Alertas
+- Reglas de formulario
+- Uso de Script en el formulario.
+- Laboratororio 1
+- Crear un proceso de compra.
+- Uso de Script en el formulario uso del OnEnter
+- Laboratorio 2
+- Proceso de compra con reglas.
+- Uso de Script en el formulario uso del OnLeave
+- Laboratorio 3
+- Crear una venta total --> cantidad * monto
+- Uso de Script en el formulario uso del OnValidate
+- Laboratorio 4
+- Crear una regla de 3
+- Creación de componentes locales
+- Registrar datos en un componente local
+- Leer datos de un un componente.
+- Registro automatico de datos.
