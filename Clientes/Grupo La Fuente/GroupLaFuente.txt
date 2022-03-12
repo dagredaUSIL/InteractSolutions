@@ -1,0 +1,105 @@
+Ejemplo 1,
+
+a = 10;
+
+for ( int i = 0;i<= a; i++)
+{
+print("valor de i = "+i);
+}
+
+Ejemplo 2,
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+user = userManager.getUserByLogin("davagre");
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+
+print("Name= " + user.getName());
+print("Login= " + user.getLoginName());
+print("Email= "+ user.getMailAddress());
+print("Sector= "+ sector);
+print("Department= "+ department);
+print("Unit= "+ unit);
+print("Function= "+ function);
+
+Ejemplo 3
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+// user = userManager.getUserByLogin("davagre");
+
+users = userManager.getUsers();
+
+
+for (user:users) {
+	
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+if(sector != null)
+	{
+	print("Name= " + user.getName());
+	print("Login= " + user.getLoginName());
+	print("Email= "+ user.getMailAddress());
+	print("Sector= "+ sector.getName());
+	print("Department= "+ department.getName());
+	print("Unit= "+ unit.getName());
+	print("Function= "+ function.getName());
+	print("-------------");
+	
+	}else{
+	print("usuario sin sector");
+	print("Name= " + user.getName());
+	print("-------------");
+	}
+	}
+Ejemplo 4
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+executiveManager = com.interact.sas.cmn.ModuleContext.getInstance().getExecutiveManager();
+
+// user = userManager.getUserByLogin("davagre");
+
+//users = userManager.getUsers();
+
+users = SA.fetch("cmn:user","select id from cmn_users");
+
+for (user:users) {
+	try{
+
+sector = userManager.getSectorByUser(user.getId());
+department = userManager.getDepartamentByUser(user.getId());
+unit = userManager.getUnitByUser(user.getId());
+function = executiveManager.getDefaultFunction(user);
+
+if(sector != null)
+	{
+	print("Name= " + user.getName());
+	print("Login= " + user.getLoginName());
+	print("Email= "+ user.getMailAddress());
+	print("Sector= "+ sector.getName());
+	print("Department= "+ department.getName());
+	print("Unit= "+ unit.getName());
+	print("Function= "+ function.getName());
+	print("-------------");
+	
+	}else{
+	print("usuario sin sector");
+	print("Name= " + user.getName());
+	print("-------------");
+	}
+	}
+	catch(Exception e){
+		print(e);
+	}
+	}
+
+Ejemplo 5
+
