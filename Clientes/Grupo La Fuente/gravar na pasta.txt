@@ -1,0 +1,234 @@
+/**
+ * Nome do Script: TID-01094 - Gravar Proposta na Pasta do Cliente e do Projeto
+ *
+ * Descrição: Script gera um novo documento no DM para o arquivo da proposta. Caso a proposta já exista, é gerada uma nova versão do mesmo documento.
+ *
+ * Criado em: 19/12/2018
+ *
+ * Versão: 1.0
+ *
+ * Autor: Arthur Meurer Saraiva
+ *
+ * Versão do SA: 7.0.21
+ *
+ * V: 1.1 - MN - 19/01/2022 - Alterado de acordo com a nova estrtura de clientes no SA-DM. 
+ *
+*/
+
+import com.interact.sas.web.zk.dms.util.DocumentManagerUtilities;
+import com.interact.sas.api.bpm.ProcessInstanceDocumentFiller;
+import com.interact.sas.web.zk.cmn.util.FileUtilities;
+import com.interact.sas.cmn.ConfigurationManager;
+import com.interact.sas.web.zk.cmn.util.ProtocolHelper;
+import com.interact.sas.web.zk.cmn.ApplicationContext;
+import com.interact.sas.bpm.data.ProcessInstance;
+import com.interact.sas.dms.data.DocumentFolder;
+import com.interact.sas.dms.db.DocumentManager;
+import com.interact.sas.cmn.ApplicationContext;
+import com.interact.sas.bpm.data.TaskInstance;
+import com.interact.sas.bsc.data.Indicator;
+import com.interact.sas.dms.data.Document;
+import com.interact.sas.cmn.data.Annotation;
+import com.interact.sas.cmn.util.Period;
+import com.interact.sas.bsc.data.Item;
+import java.sql.Date;
+import java.sql.Timestamp;
+
+
+a = SA.access( "attribute" );
+a.attach(CONTEXT.getAttribute( "@serial" ));
+
+
+pi = CONTEXT.getProcessInstance();
+
+serial = pi.getSerial();
+name = pi.getName();
+client = CONTEXT.getAttribute( "NomeCliente" );
+childFolderName = serial + "-" + name;
+
+dm = com.interact.sas.dms.ModuleContext.getInstance().getDocumentManager();
+
+	if(!client.equals("Interact"))
+	{
+				//pega a pasta pai no SA-DM
+				idCliente = CONTEXT.getAttribute("idCliente");
+				print(idCliente);
+
+				account = SA.fetch1("crm:account","SELECT \n" +
+								 "      map.ref_source \n" +
+								 "from cmn_tag_mappings\n" +
+								 "map join cmn_tag_kinds kind on (map.ref_kind = kind.id)join\n" +
+								 "cmn_tag_families family on (kind.ref_family = family.id)\n" +
+								 "where kind.mnemonic = 'CANAIS.CRM.CMN_UNITS'\n" + //alterar o nome do atributo
+								 "and family.mnemonic = 'CANAIS.CRM'\n" + //alterar o nome da familia
+								 "and map.type = 1000\n" +
+								 "and map.content =  '" + idCliente + "'");
+
+
+				idAccount = account.getId();
+
+				folders = SA.fetch1("dms:folder", "select \n" + 
+										"map.ref_source from cmn_tag_mappings \n" + 
+										"map  join cmn_tag_kinds kind \n" + 
+										"join cmn_tag_families family on (kind.ref_family = family.id)\n" + 
+										"where kind.mnemonic = 'CANAIS.CRM.CONTA'\n" + 
+										"and family.mnemonic = 'account'\n" + 
+										"and map.type = 200\n" + 
+										"and map.content =  '" + idAccount + "'");
+
+				folder = folders.getId();
+				print(folder);
+				//Pega a pastas definidas
+				parentFolder = dm.getFolder( folder );
+
+				folder = dm.getFolderByName( "Customizações e Ordem de Serviços", parentFolder.getId());
+				print(folder.getId());
+				
+				folder_2 = dm.getFolderByName( "Ordens de Serviços - OS", folder.getId());
+
+				print(folder_2.getId());
+
+				childFolder = dm.getFolderByName( childFolderName, folder_2.getId() );
+				
+		
+
+					//caso a pasta n exista, cria a pasta da intância 
+					if ( childFolder == null ) 
+					{
+						childFolder = new DocumentFolder( childFolderName );
+						dm.addFolder( folder_2, childFolder );
+					}
+	
+
+}
+
+
+categoryID = 150;
+
+cliente = CONTEXT.getAttribute( "cliente" );
+pagamento = CONTEXT.getAttribute("interactFatura");
+
+category = dm.getCategory( categoryID );
+
+docName = serial + " - " + cliente;
+genero = CONTEXT.getAttribute("generoProjeto");
+
+autor = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager().getUserByName(a.value("@taskClaimer[aguardaaprovacao]"));
+
+if( !a.value( "codigoProposta" ).isEmpty() )
+{
+	proposta = dm.getDocumentByCode( a.value( "codigoProposta" ) );
+}
+else
+{
+	proposta = null;	
+}
+
+document = new com.interact.sas.dms.data.Document();
+propostaVersion = 1;
+
+if( proposta != null )
+{
+	propostaVersion += Integer.parseInt( proposta.getVersion() );
+	serialDoc = proposta.getCode();
+	proposta.setState( Document.STATE_ARCHIVED );
+
+	dm.updateDocument( proposta );
+}
+else
+{
+	serialDoc = com.interact.sas.cmn.ModuleContext
+		.getInstance()
+		.getSerialNumberManager()
+		.generateSerialNumber( category.getSerialId() );
+}
+
+document.setFolder( childFolder.getId() );
+document.setVersion( ConfigurationManager.getInstance().getProperty( "DocumentEditor.defaultVersion", propostaVersion.toString() ) );
+document.setMedium( Document.MEDIUM_REPOSITORY );
+document.setState( Document.STATE_ELABORATING );
+document.setConversion( Document.CONVERSION_NONE );
+document.setCreationDate( SA.today() );
+document.setName( docName );
+document.setCode( serialDoc );
+document.setCategoryId( categoryID );
+document.setOwnerId( autor.getId() );
+document.setType( "PDF" );
+
+a.value( "codigoProposta", serialDoc );
+print(genero);
+
+
+if (genero.equals("3")){
+
+	file = a.object( "docproposta" );
+}
+
+else if (genero.equals("4")){
+
+	file = a.object( "docERS" );
+}
+
+
+form = new ProcessInstanceDocumentFiller( pi );  
+
+form.setTemplate( file );
+
+form.setValueFont(new Font("Arial", Font.PLAIN, 10 ));
+form.setLabelFont(new Font("Arial", Font.PLAIN, 10 ));
+form.setHeaderFont(new Font("Arial", Font.PLAIN, 10 ));
+
+form.renderLabel( serialDoc, 1, 62, 62.9 );
+if (pagamento.equals("1"))
+{ 
+	form.renderLabel(" A " + cliente + ", remete o seu aceite referente à proposta número " + serialDoc + ", para a prestação do serviços técnicos, concordando com os termos técnicos e comerciais da mesma. Também autoriza que todas as notas fiscais relacionadas a esta proposta, sejam faturadas pela Interact Solutions, CNPJ: 03.339.370/0001-46.", 4, 35, 95.7, 450, 150);
+}
+if (pagamento.equals("2") )
+{ 
+	form.renderLabel(" A " + cliente + ", remete o seu aceite referente à proposta número " + serialDoc + ", para a prestação do serviços técnicos, concordando com os termos técnicos e comerciais da mesma. Também autoriza que todas as notas fiscais relacionadas a esta proposta, sejam faturadas pela Interact Development, CNPJ: 07.458.353/0001-89.", 4, 35, 95.7, 450, 150);
+}
+if (pagamento.equals("3") )
+{ 
+	form.renderLabel(" A " + cliente + ", remete o seu aceite referente à proposta número " + serialDoc + ", para a prestação do serviços técnicos, concordando com os termos técnicos e comerciais da mesma. Também autoriza que todas as notas fiscais relacionadas a esta proposta, sejam faturadas pela Interact Consulting: 09.617.251/0001-94.", 4, 35, 95.7, 450, 150);
+}
+if (pagamento.equals("4"))
+{ 
+	form.renderLabel(" A " + cliente + ", remete o seu aceite referente à proposta número " + serialDoc + ", para a prestação do serviços técnicos, concordando com os termos técnicos e comerciais da mesma. Também autoriza que todas as notas fiscais relacionadas a esta proposta, sejam faturadas pela Interact Latam, CNPJ: 30.914.75110001-84.", 4, 35, 95.7, 450, 150);
+}
+
+form.saveToAttribute("docproposta");
+
+file = a.object( "docproposta" );
+
+dm.insertDocument( document );
+dm.importFile( autor, file, document );
+dm.createElaborationEvents( document, null, autor, null );
+
+de = DocumentManagerUtilities.getNextElaborationEvent( document );
+
+currentDate = SA.today();
+todayTimestamp = new Timestamp( currentDate.getTime() );
+de.setOcurredDate( todayTimestamp );
+dm.updateDocumentEvent( de );
+
+file = dm.getLocalPath( document, dm.getStorageTypeToOpen( document ) );
+md5 = FileUtilities.generateMD5( file );
+
+if( proposta != null )
+{
+	document.setWork( proposta.getWork() );
+}
+
+a.value( "proposta", "sas:dms:id_work:" + document.getWork() );
+document.setSignature( md5 );
+dm.updateDocument( document );
+
+try
+{
+	DocumentManagerUtilities.publishDocument( null, document, file, 0, autor );
+}
+catch( Exception e )
+{
+	//ignore
+}
+

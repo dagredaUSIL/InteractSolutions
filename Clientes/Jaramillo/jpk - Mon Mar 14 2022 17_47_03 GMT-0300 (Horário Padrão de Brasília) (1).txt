@@ -1,0 +1,386 @@
+/**
+ * Nome do Script: TID-03144 - Integración SAP Proveedores y Service Manager
+ *
+ * Descrição: Script para integração de fornecedores do SAP
+ *
+ * Criado em: 28/02/2022
+ *
+ * Versão:  1.0
+ *
+ * Autor: Arthur Meurer Saraiva (colocar suas iniciais quando alterar o script)
+ *
+ */
+
+import com.interact.sas.svc.db.ProviderManager;
+import com.interact.sas.cmn.db.CategoryManager;
+import com.interact.sas.svc.data.Provider;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.StringReader;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import com.interact.sas.cmn.data.Category;
+import org.xml.sax.InputSource;
+import com.interact.sas.svc.data.ProviderContact;
+import javax.xml.soap.*;
+import com.interact.sas.web.zk.ext.sa.LogMarvel;
+
+// managers
+ProviderManager providerManager = com.interact.sas.svc.ModuleContext.getInstance().getProviderManager();
+CategoryManager categoryManager = com.interact.sas.cmn.ModuleContext.getInstance().getCategoryManager();
+
+// variables
+String CATEGORY_MNEMONIC = "importacion_sap";
+String CATEGORY_NAME = "Importación SAP";
+String SOAP_ENDPOINT_URL = "https://fiori.jaramillomora.com:44314/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_LEGADO&receiverParty=&receiverService=&interface=SI_Proveedores_Out_Sync&interfaceNamespace=urn:jaramillomora.com:Proveedor:leg:Sap";
+String SOAP_ACTION = "SI_Proveedores_Out_SyncBinding";
+String SOAP_NAMESPACE = "urn";
+String SOAP_URI = "urn:jaramillomora.com:Proveedor:leg:Sap";
+String USER_NAME = "JMCOMUNICA";
+String PASSWORD = "wnB47w0R8";
+
+// logs
+boolean downloadLogs = false;
+boolean printLogs = false;
+boolean sendLogs = false;
+LogMarvel logs = SA.log();
+logs.log( "[INFO] REGISTROS DE LOG" );
+logs.log( "[INFO] SCRIPT - Script de integración de proveedores de SAP" );
+logs.log( "" );
+
+String callSoapWebService() 
+{
+	// Create SOAP Connection
+	SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
+	SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+	// Send SOAP Message to SOAP Server
+	SOAPMessage soapResponse = soapConnection.call( createSOAPRequest( SOAP_ACTION ), SOAP_ENDPOINT_URL );
+
+	// Print the SOAP Response
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+	soapResponse.writeTo( outputStream );
+	String output = new String( outputStream.toByteArray() );
+
+	soapConnection.close();
+
+	return output;
+}
+
+private static void createSoapEnvelope( SOAPMessage soapMessage )
+{
+	SOAPPart soapPart = soapMessage.getSOAPPart();
+
+	// SOAP Envelope
+	SOAPEnvelope envelope = soapPart.getEnvelope();
+	envelope.addNamespaceDeclaration( SOAP_NAMESPACE, SOAP_URI );
+
+	// SOAP Body
+	SOAPBody soapBody = envelope.getBody();
+
+	SOAPElement soapBodyElem = soapBody.addChildElement( "MT_Request", SOAP_NAMESPACE );
+	SOAPElement soapBodyElem1 = soapBodyElem.addChildElement( "Fecha", SOAP_NAMESPACE );
+	soapBodyElem1.addTextNode( "?" );
+}
+
+SOAPMessage createSOAPRequest( String soapAction ) throws Exception
+{
+	MessageFactory messageFactory = MessageFactory.newInstance();
+	SOAPMessage soapMessage = messageFactory.createMessage();
+
+	createSoapEnvelope( soapMessage );
+
+	MimeHeaders headers = soapMessage.getMimeHeaders();
+
+	String userAndPassword = String.format( "%s:%s", new Object[]{ USER_NAME, PASSWORD } );
+	String basicAuth = com.interact.sas.cmn.util.Base64.encode( userAndPassword.getBytes() );
+	headers.addHeader( "Authorization", "Basic " + basicAuth );
+	headers.addHeader( "SOAPAction", soapAction );
+
+	soapMessage.saveChanges();
+
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+	soapMessage.writeTo( outputStream );
+	String output = new String(outputStream.toByteArray());
+
+	return soapMessage;
+}
+
+Category getCategory()
+{
+	Category category = SA.fetch1( "cmn:category", "select id from cmn_categories where family = " + Category.FAMILY_SVC_PROVIDERS + " and mnemonic = '" + CATEGORY_MNEMONIC + "'" );
+
+	if( category == null )
+	{
+		category = new Category();
+
+		category.setName( CATEGORY_NAME );
+		category.setMnemonic( CATEGORY_MNEMONIC );
+		category.setFamily( Category.FAMILY_SVC_PROVIDERS );
+
+		categoryManager.addCategory( category );
+	}
+
+	return category;
+}
+
+Provider getProviderByIdentity( String identity )
+{
+	Provider provider = null;
+	Object[] result = SA.query( "select id from svc_providers where \"identity\" = '" + identity + "'" ).fetch1();
+
+	if( result != null )
+	{
+		provider = providerManager.getProvider( SA.cint( result[ 0 ] ) );
+	}
+	else
+	{
+		provider = new Provider();
+	}
+
+	return provider;
+}
+
+Document loadXMLFromString( String xml ) throws Exception
+{
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	Document document = builder.parse( new InputSource( new StringReader( xml ) ) );
+
+	return document;
+}
+
+boolean validateRequiredFields( String nameOrgl, String taxnum, String stras, String ciudad, String pstlz, String region, String pais )
+{
+    boolean errors = false;
+
+    if( taxnum.isEmpty() ) 
+    {
+        errors = true;
+        logs.log( "[ERROR] " + nameOrgl + " - CNPJ/CPF está vacio!" );
+    }
+
+    if( stras.isEmpty() )
+    {
+        errors = true;
+        logs.log( "[ERROR] " + nameOrgl + " - Dirección está vacio!" );
+    }
+
+    if( ciudad.isEmpty() )
+    {
+        errors = true;
+        logs.log( "[ERROR] " + nameOrgl + " - Ciudad está vacio!" );
+    }
+
+    if( pstlz.isEmpty() )
+    {
+        errors = true;
+        logs.log( "[ERROR] " + nameOrgl + " - CEP está vacio!" );
+    }
+
+    if( region.isEmpty() )
+    {
+        errors = true;
+        logs.log( "[ERROR] " + nameOrgl + " - Región está vacio!" );
+    }
+
+    if( pais.isEmpty() )
+    {
+        errors = true;
+        logs.log( "[ERROR] " + nameOrgl + " - País está vacio!" );
+    }
+
+    return errors;
+}
+
+void downloadText( String text )
+{
+    try
+    {
+        java.io.File temp = java.io.File.createTempFile( "text", ".txt" );
+        java.io.BufferedWriter bw = new BufferedWriter( new java.io.FileWriter( temp.getAbsolutePath() ) );
+        bw.write( text );
+        bw.flush();
+        bw.close();
+        com.interact.sas.web.zk.cmn.util.FileUtilities.downloadFile( temp );
+    }
+    catch( Exception e )
+    {
+        logs.log( "[ERRO] Problema al descargar el texto: " + e.getMessage() );
+    }
+}
+
+void addContact( Provider provider, String email, String phone, String nameOrgl )
+{
+    if( !email.isEmpty() && !phone.isEmpty() )
+    {
+        boolean hasContact = false;
+        List contacts = providerManager.getProviderContactsByProvider( provider );
+
+        for( ProviderContact contact : contacts )
+        {
+            if( contact.getEmail().equalsIgnoreCase( email ) && contact.getPhone().equalsIgnoreCase( phone ) )
+            {
+                hasContact = true;
+            }
+        }
+
+        if( !hasContact )
+        {
+            ProviderContact contact = new ProviderContact();
+
+            contact.setEmail( email );
+            contact.setName( nameOrgl );
+            contact.setPhone( phone );
+            contact.setProviderId( provider.getId() );
+            contact.setType( "Integración SAP" );
+            contact.setPosition( 1 );
+            contact.setInfo( "Integración SAP" );
+
+            providerManager.addProviderContact( contact );
+        }
+    }
+}
+
+void doWork()
+{
+    logs.log( "[OK] Ejecutado script..." );
+    logs.log( "" );
+
+    int updatedCount = 0;
+    int registeredCount = 0;
+    int errorsCount = 0;
+    String updated = "";
+    String registered = "";
+    Document doc = null;
+    boolean serviceConnection = true;
+
+    try
+    {
+	    doc = loadXMLFromString( callSoapWebService() );
+    }
+    catch( Exception e )
+    {
+        serviceConnection = false;
+        logs.log( "[ERRO] Problemas de comunicación con el servicio web " + e.toString() );
+    }
+
+    if( doc != null && serviceConnection )
+    {
+        NodeList list = doc.getElementsByTagName("T_Proveedores");
+
+        for ( int i = 0; i < list.getLength(); i++ ) 
+        {
+            Element element = (Element) list.item( i );
+
+            String nameOrgl = element.getElementsByTagName( "Name_Org1" ).item( 0 ) != null ? element.getElementsByTagName( "Name_Org1" ).item( 0 ).getTextContent() : "";
+            String taxnum = element.getElementsByTagName( "Taxnum" ).item( 0 ) != null ? element.getElementsByTagName( "Taxnum" ).item( 0 ).getTextContent() : "";
+            String stras = element.getElementsByTagName( "Stras" ).item( 0 ) != null ? element.getElementsByTagName( "Stras" ).item( 0 ).getTextContent() : "";
+            String ciudad = element.getElementsByTagName( "Ciudad" ).item( 0 ) != null ? element.getElementsByTagName( "Ciudad" ).item( 0 ).getTextContent() : "";
+            String pstlz = element.getElementsByTagName( "Pstlz" ).item( 0 ) != null ? element.getElementsByTagName( "Pstlz" ).item( 0 ).getTextContent() : "";
+            String region = element.getElementsByTagName( "Region" ).item( 0 ) != null ? element.getElementsByTagName( "Region" ).item( 0 ).getTextContent() : "";
+            String pais = element.getElementsByTagName( "Pais" ).item( 0 ) != null ? element.getElementsByTagName( "Pais" ).item( 0 ).getTextContent() : "";
+            String email = element.getElementsByTagName( "Smtp_addr" ).item( 0 ) != null ? element.getElementsByTagName( "Smtp_addr" ).item( 0 ).getTextContent() : "";
+            String phone = element.getElementsByTagName( "Tel_number" ).item( 0 ) != null ? element.getElementsByTagName( "Tel_number" ).item( 0 ).getTextContent() : "";
+
+            if( pstlz.isEmpty() )
+            {
+                String[] regionSplit = region.split( "-" );
+
+                if( regionSplit.length > 1 )
+                {
+                    pstlz = regionSplit[0];
+                }
+                else
+                {
+                    pstlz = "0000";
+                }
+            }
+
+            boolean errors = validateRequiredFields( nameOrgl, taxnum, stras, ciudad, pstlz, region, pais );
+
+            if( errors )
+            {
+                errorsCount++;    
+            }
+            else
+            {
+                Provider provider = getProviderByIdentity( taxnum );
+
+                provider.setCategoryId( getCategory().getId() );
+                provider.setLegalName( nameOrgl );
+                provider.setPublicName( nameOrgl );
+                provider.setIdentity( taxnum );
+                provider.setAddress( stras );
+                provider.setLocation( ciudad );
+                provider.setCep( pstlz );
+                provider.setRegion( region );
+                provider.setCountry( pais.split( "-" )[ 0 ].length() <= 2 ? pais.split( "-" )[ 0 ] : "CO" );
+                provider.setUf( pais.split( "-" )[ 0 ].length() <= 2 ? pais.split( "-" )[ 0 ] : "CO" );
+                provider.setOwnerId( SA.user().getId() );
+                provider.setInfo( "" );
+                provider.setOptions( "" );
+                provider.setRequirementsState( Provider.REQUIREMENTS_APPROVED );
+                provider.setType( Provider.TYPE_PHYSICAL );
+                provider.setTagsId( 0 );
+                provider.setState( Provider.STATE_PROVIDER );
+
+                if( provider.getId() == 0 )
+                {
+                    providerManager.addProvider( provider );
+                    registeredCount++;
+                    registered += 
+                    "[OK] " + "nameOrgl: " + nameOrgl 
+                    + " | taxnum: " + taxnum 
+                    + " | stras: " + stras 
+                    + " | ciudad: " + ciudad 
+                    + " | pstlz: " + pstlz 
+                    + " | region: " + region 
+                    + " | pais: " + pais
+                    + " | email: " + email
+                    + " | phone: " + phone + "\n";
+                }
+                else
+                {
+                    providerManager.updateProvider( provider );
+                    updatedCount++;
+                    updated += 
+                     "[OK] " + "nameOrgl: " + nameOrgl 
+                    + " | taxnum: " + taxnum 
+                    + " | stras: " + stras 
+                    + " | ciudad: " + ciudad 
+                    + " | pstlz: " + pstlz 
+                    + " | region: " + region 
+                    + " | pais: " + pais
+                    + " | email: " + email
+                    + " | phone: " + phone + "\n";
+                }
+
+                addContact( provider, email, phone, nameOrgl );
+            }
+        }
+    }
+
+    logs.log( "" );
+    logs.log( "[OK] Cantidad actualizada: "  + updatedCount );
+    logs.log( "[OK] Cantidad registrada: "  + registeredCount );
+    logs.log( "[OK] Quantidade errores: "  + errorsCount );
+    logs.log( "" );
+    logs.log( "[OK] Proveedores actualizados: " );
+    logs.log( updated );
+    logs.log( "" );
+    logs.log( "[OK] Proveedores registrados: " );
+    logs.log( registered );
+    logs.log( "" );
+
+    if( printLogs ) print( logs.dump() );
+    if( downloadLogs ) downloadText( logs.dump() );
+}
+
+doWork();

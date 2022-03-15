@@ -1,0 +1,425 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP:Header/>
+   <SOAP:Body xmlns:urn="urn:jaramillomora.com:Proveedor:leg:Sap">
+      <ns0:MT_Response xmlns:ns0="urn:jaramillomora.com:Proveedor:leg:Sap">
+         
+		 <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8001408878</Taxnum>
+            <Name_Org1>FIDUCIARIA CORFICOLOMBIANA S.A</Name_Org1>
+            <Stras>CL 10 4 47 P 20</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76</Pstlz>
+            <Smtp_addr>carlos.ospina@fiduciariacorfilombiana.com</Smtp_addr>
+            <Tel_number>8982200</Tel_number>
+         </T_Proveedores>
+		 
+		 
+       Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8605313153</Taxnum>
+         //    <Name_Org1>ALIANZA FIDUCIARIA SA</Name_Org1>
+         //    <Stras>CRA 2  7 OESTE 130</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         //    <Smtp_addr>jnieto@alianza.com.co</Smtp_addr>
+         //    <Tel_number>5240659</Tel_number>
+         // </T_Proveedores> 
+		 
+		 Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8000378008</Taxnum>
+         //    <Name_Org1>BANCO AGRARIO DE COLOMBIA SA</Name_Org1>
+         //    <Stras>CR 8 15 43 P12</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>11-BOGOTÁ</Region>
+         //    <Smtp_addr>secretariageneral@bancoagrano.gov.co</Smtp_addr>
+         //    <Tel_number>5945666</Tel_number>
+         // </T_Proveedores>
+		 
+		 Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>9007689338</Taxnum>
+         //    <Name_Org1>BANCO MUNDO MUJER</Name_Org1>
+         //    <Stras>CR 11 5 56</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>19-CAUCA</Region>
+         //    <Ciudad>19001-POPAYÁN</Ciudad>
+         // </T_Proveedores>
+		 
+        Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600259715</Taxnum>
+         //    <Name_Org1>MI BANCO SA</Name_Org1>
+         //    <Stras>CR 8 12B 61 PS 1</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>11-BOGOTÁ</Region>
+         //    <Ciudad>11001-BOGOTÁ</Ciudad>
+         //    <Smtp_addr>notificaciones@mibanco.com.co</Smtp_addr>
+         //    <Tel_number>2868609</Tel_number>
+         // </T_Proveedores>
+		 
+		 Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8050129210</Taxnum>
+         //    <Name_Org1>PATRIMONIOS AUTONOMOS ACCION FIDUCIARIA</Name_Org1>
+         //    <Stras>CL 85 9 65</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>11-BOGOTÁ</Region>
+         //    <Ciudad>11001-BOGOTÁ</Ciudad>
+         //    <Smtp_addr>impuestos@accion.com.co</Smtp_addr>
+         //    <Tel_number>6915090</Tel_number>
+         // </T_Proveedores>
+		 
+		 Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8300538122</Taxnum>
+         //    <Name_Org1>ALIANZA FIDUCIARIA S.A. FIDEICOMISOS</Name_Org1>
+         //    <Stras>AV 15 100 43</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         //    <Smtp_addr>341925@facturacion.alianza.com.co</Smtp_addr>
+         //    <Tel_number>66447700</Tel_number>
+         // </T_Proveedores>
+		 
+		 
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8909262831</Taxnum>
+            <Name_Org1>FACTORING BANCOLOMBIA S.A.</Name_Org1>
+            <Stras>AV 8 NORTE No.12N 43. BRR Granada.</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76</Pstlz>
+         </T_Proveedores>
+		 
+		 Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600672037</Taxnum>
+         //    <Name_Org1>LEASING BOLIVAR</Name_Org1>
+         //    <Stras>AV 4N  6N 67  OF 811</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         //    <Smtp_addr>jrodriguezt@leasingbolivar.com</Smtp_addr>
+         //    <Tel_number>6604500</Tel_number>
+         // </T_Proveedores>
+		 
+		 Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600067979</Taxnum>
+         //    <Name_Org1>GIROS &amp; FINANZAS S.A</Name_Org1>
+         //    <Stras>CR 4  10 12</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+		 
+		 
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8300545390</Taxnum>
+            <Name_Org1>FIDUCIARIA BANCOLOMBIA SA SOCIEDAD FIDUC</Name_Org1>
+            <Stras>CL 11 5 64</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76</Pstlz>
+         </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600518946</Taxnum>
+         //    <Name_Org1>FINANDINA CORP</Name_Org1>
+         //    <Stras>CALLE 44AN 4N 126</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600052167</Taxnum>
+         //    <Name_Org1>BANCO DE LA REPUBLICA</Name_Org1>
+         //    <Stras>CALLE 44AN 4N 126</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+
+         
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8600345941</Taxnum>
+            <Name_Org1>BANCO COLPATRIA</Name_Org1>
+            <Stras>CR 7 24 89 P 12</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76001</Pstlz>
+            <Smtp_addr>realpej@colpatria.com</Smtp_addr>
+            <Tel_number>2868277</Tel_number>
+         </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8909039388</Taxnum>
+            <Name_Org1>BANCOLOMBIA S.A.</Name_Org1>
+            <Stras>CL 38 N 6 N 35 L 119</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76001</Pstlz>
+            <Smtp_addr>certificadosleasing@bancolombia.com.co</Smtp_addr>
+            <Tel_number>5540555</Tel_number>
+         </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8909039370</Taxnum>
+            <Name_Org1>ITAU CORPBANCA COLOMBIA SA</Name_Org1>
+            <Stras>AV 5B  20 10</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76001</Pstlz>
+            <Smtp_addr>carlos.padilla@grupohelm.com</Smtp_addr>
+            <Tel_number>4861818</Tel_number>
+         </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8903002794</Taxnum>
+            <Name_Org1>BANCO DE OCCIDENTE</Name_Org1>
+            <Stras>CR 100 11 60 LOCAL 157A</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>760001</Pstlz>
+            <Smtp_addr>manearrechea@gmail.com</Smtp_addr>
+            <Tel_number>4852999</Tel_number>
+         </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600076603</Taxnum>
+         //    <Name_Org1>HELM BANK SA</Name_Org1>
+         //    <Stras>AV 6 CL 21 2 PISO</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         //    <Smtp_addr>anafranciscar@gmail.com</Smtp_addr>
+         //    <Tel_number>6511250</Tel_number>
+         // </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8600073354</Taxnum>
+            <Name_Org1>BANCO CAJA SOCIAL</Name_Org1>
+            <Stras>CL 64 N 5 B N 146</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76001</Pstlz>
+            <Smtp_addr>julian.alvear33@hotmail.com</Smtp_addr>
+            <Tel_number>6083000</Tel_number>
+         </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8600030201</Taxnum>
+            <Name_Org1>BANCO BBVA</Name_Org1>
+            <Stras>CR 5 13 83</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76001</Pstlz>
+            <Smtp_addr>eugenia.puerta@bbva.com</Smtp_addr>
+            <Tel_number>8890003</Tel_number>
+         </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8600029644</Taxnum>
+            <Name_Org1>BANCO DE BOGOTA</Name_Org1>
+            <Stras>CR 13 A 35 70</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76</Pstlz>
+         </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8600343137</Taxnum>
+            <Name_Org1>BANCO DAVIVIENDA</Name_Org1>
+            <Stras>CL 13 5 21</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>760001</Pstlz>
+         </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8001942974</Taxnum>
+         //    <Name_Org1>CARTERA COLECTIVA ABIERTA ALIANZA</Name_Org1>
+         //    <Stras>AV 15 100 43</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>11-BOGOTÁ</Region>
+         //    <Smtp_addr>jlopez@alianza.com.co</Smtp_addr>
+         //    <Tel_number>6447700</Tel_number>
+         // </T_Proveedores>
+
+
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>9004061505</Taxnum>
+         //    <Name_Org1>BANCO COOMEVA SA</Name_Org1>
+         //    <Stras>CL 13 57 50 P 2</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         //    <Smtp_addr>notificacionesfinancieras@coomeva.com.co</Smtp_addr>
+         //    <Tel_number>3330000</Tel_number>
+         // </T_Proveedores>
+
+
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8001806872</Taxnum>
+         //    <Name_Org1>FIDUCIARIA BANCOLOMBIA</Name_Org1>
+         //    <Stras>CL 31  6 39</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>11-BOGOTÁ</Region>
+         // </T_Proveedores>
+
+
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600511354</Taxnum>
+         //    <Name_Org1>BANCO CITIBANK</Name_Org1>
+         //    <Stras>AV 5 N 23 A N 49</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+
+
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8600358275</Taxnum>
+         //    <Name_Org1>BANCO  AV VILLAS SA</Name_Org1>
+         //    <Stras>CR 4  7 61 P 7</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+
+
+         <T_Proveedores>
+            <Bukrs>1000</Bukrs>
+            <Mgrup>01</Mgrup>
+            <Taxnum>8600077389</Taxnum>
+            <Name_Org1>BANCO POPULAR</Name_Org1>
+            <Stras>CR 4  9 60</Stras>
+            <Pais>CO-Colombia</Pais>
+            <Region>76-VALLE</Region>
+            <Ciudad>76001-CALI</Ciudad>
+            <Pstlz>76001</Pstlz>
+         </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8001822815</Taxnum>
+         //    <Name_Org1>FIDUCIARIA DAVIVIENDA</Name_Org1>
+         //    <Stras>AV EL DORADO  68B 05  TO SURAMERICA</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8001423837</Taxnum>
+         //    <Name_Org1>FIDUCIARIA BOGOTA S.A.</Name_Org1>
+         //    <Stras>CR 8  10 05</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         //    <Smtp_addr>clozano@fidubogota.com</Smtp_addr>
+         //    <Tel_number>3309414</Tel_number>
+         // </T_Proveedores>
+
+         Pstlz
+         // <T_Proveedores>
+         //    <Bukrs>1000</Bukrs>
+         //    <Mgrup>01</Mgrup>
+         //    <Taxnum>8001287358</Taxnum>
+         //    <Name_Org1>VALORES BANCOLOMBIA S.A.</Name_Org1>
+         //    <Stras>AV 8N  12N 43</Stras>
+         //    <Pais>CO-Colombia</Pais>
+         //    <Region>76-VALLE</Region>
+         //    <Ciudad>76001-CALI</Ciudad>
+         // </T_Proveedores>
+
+
+
+      </ns0:MT_Response>
+   </SOAP:Body>
+</SOAP:Envelope>
