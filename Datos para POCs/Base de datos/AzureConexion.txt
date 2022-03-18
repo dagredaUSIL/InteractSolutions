@@ -2,3 +2,4 @@ Conexion con Microsoft Azure
 com.mysql.jdbc.Driver
 jdbc:mysql://bdinteractmysql.mysql.database.azure.com:3306/guest2?characterEncoding=ISO-8859-1
 bdinteractmysql@bdinteractmysql
+Scorpion$2090

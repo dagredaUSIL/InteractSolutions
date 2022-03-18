@@ -1,0 +1,614 @@
+﻿/* Showing results for Base de datos de tetalle(Recuperado Automaticamente).xlsx */
+
+/* CREATE TABLE */
+CREATE TABLE bdpagueya(
+codigoPeriodo DOUBLE,
+fechaAnalisis VARCHAR(100),
+areaGestion VARCHAR(100),
+identificacion DOUBLE,
+nombrem VARCHAR(100),
+nombre VARCHAR(100),
+cargo VARCHAR(100),
+regionProvincia VARCHAR(100),
+jefatura VARCHAR(100),
+tipo VARCHAR(100),
+supervisor VARCHAR(100),
+usuario VARCHAR(100),
+riesgoAsignado DOUBLE,
+_saldoRiesgoRecuperacion_ VARCHAR(100),
+_saldoMetaBandasMora_ DOUBLE,
+FORMULA_cumplimientoPresupuestoBandas VARCHAR(100),
+_saldoVencidoAsignado_ VARCHAR(100),
+_saldoVencidoCierre_ DOUBLE,
+saldoCastigado VARCHAR(100),
+saldoExigenciaCastigado DOUBLE,
+saldoMetaVencidoBanco VARCHAR(100),
+_saldoMetaVencidoInterna_ DOUBLE,
+FORMULA_cumplimientoPresupuestoVencida VARCHAR(100),
+_riesgoAsignadoDyE_ VARCHAR(100),
+_saldoLiberacion_ DOUBLE,
+FORMULA_liberacionDyE VARCHAR(100),
+metaLiberacionDyE DOUBLE,
+FORMULA_cumplimientoLiberacionDyE DOUBLE
+);
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00000909921470, 'LOOR CHAVEZ JOSEPH KERWIN', 'Loor Chavez Joseph Kerwin', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'JKLOOR', '', 11024043.28, '" 7', 500, '300.20 "', '" 8', 110, '347.90 "', 0.924781562, '" 5', 705, '241.68 "', '" 3', 596, '654.64 "', 0, 0
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001713989521, 'LOPEZ SANTOS JUAN CARLOS', 'Lopez Santos Juan Carlos', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'JCLOPEZ', 3972934.45, '" 2', 782, '746.59 "', '" 2', 921, '111.33 "', 0.952632843, '" 1', 917, '613.97 "', '" 1', 280, '353.03 "', 0, 0
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001715415558, 'CAISAPANTA FLORES JOSE DAVID', 'Caisapanta Flores Jose David', 'JEFE GESTION COBRANZAS', 'SIERRA Y ORIENTE', 'JCAISAPA', 'JEFATURA', '', '', 11024043.28, '" 8', 117, '126.22 "', '" 8', 110, '347.90 "', 1.000835762, '" 5', 705, '241.68 "', '" 3', 596, '654.64 "', 0, 0
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001725271249, 'BARROS CARRION JAILENE SALOME', 'Barros Carrion Jailene Salome', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'JASBARRO', 4049427.74, '" 3', 026, '037.30 "', '" 3', 003, '041.97 "', 1.007657346, '" 2', 185, '994.95 "', '" 1', 385, '710.15 "', 0, 0
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001726625302, 'AGUILAR VELASCO JOHAN ESTEBAN', 'Aguilar Velasco Johan Esteban', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'JOEAGUIL', 1775933.53, '" 1', 320, '036.20 "', '" 1', 249, '176.54 "', 1.056725097, '" 1', 028, '122.03 "', '" 596', 0, '0', 0, 952565.9512
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001751236629, 'INTRIAGO BRAVO PAMELA MISHELL', 'Intriago Bravo Pamela Mishell', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'PMINTRIA', 1225747.56, '" 988', 0, '" 937', '018.06 "', 1.054735412, '" 573', 0, '" 333', 0, '0', '0', 551510.7021, '510172.3378', 1.527717639, 29537.61
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA MAYOR 60', 00001715415558, 'CAISAPANTA FLORES JOSE DAVID', 'Caisapanta Flores Jose David', 'JEFE GESTION COBRANZAS', 'SIERRA Y ORIENTE', 'JCAISAPA', 'JEFATURA', '', '', 543431.19, '" 463', 0, '" 462', '766.16 "', 1.001618895, '" 60', 0, '" 59', 0, '0', '0', 52532.15692, '" 45', 0, 0.771142311
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA MAYOR 60', 00001715976583, 'COBOS ROJAS OSWALDO PATRICIO', 'Cobos Rojas Oswaldo Patricio', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'OCOBOS', '', 543431.19, '" 463', 0, '" 462', '766.16 "', 1.001618895, '" 60', 0, '" 59', 0, '0', '0', 52532.15692, '45806.74008', 0.771142311, 22382.07
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA MAYOR 60', 00001720770534, 'SOLORZANO MILES GICELA ALEJANDRA', 'Solorzano Miles Gicela Alejandra', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'GASOLORZ', 543431.19, '" 463', 0, '" 462', '766.16 "', 1.001618895, '" 60', 0, '" 59', 0, '0', '0', 52532.15692, '45806.74008', 0.771142311, 22382.07
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001710736651, 'MORENO RODRIGUEZ EFREN LEONARDO', 'Moreno Rodriguez Efren Leonardo', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'ELMORENO', 3159565.97, '" 2', 778, '994.92 "', '" 2', 498, '299.04 "', 1.112354796, '" 989', 0, '" 395', '178.55 "', 0, '0', 769329.9901, 739030.6921
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001713579561, 'SALCEDO RAMOS PAOLA ALEXANDRA', 'Salcedo Ramos Paola Alexandra', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'PSALCEDO', 3155690.74, '" 2', 679, '118.91 "', '" 2', 493, '467.89 "', 1.074454947, '" 874', 0, '" 494', '436.08 "', 0, '0', 724028.8647, 699819.0497
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001714689336, 'PEREZ ZAPATA DEISY CAROLINA', 'Perez Zapata Deisy Carolina', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'DPEREZZ', 3178734.11, '" 2', 735, '612.32 "', '" 2', 504, '409.63 "', 1.09231824, '" 1', 134, '538.96 "', '" 614', 0, '0', 0, 922087.7168
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001715415558, 'CAISAPANTA FLORES JOSE DAVID', 'Caisapanta Flores Jose David', 'JEFE GESTION COBRANZAS', 'SIERRA Y ORIENTE', 'JCAISAPA', 'JEFATURA', '', '', 19595542.2, '" 16', 240, '051.16 "', '" 15', 420, '663.14 "', 1.053135719, '" 6', 507, '123.06 "', '" 3', 545, '270.70 "', 0, 0
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001715671572, 'MORALES FLORES AIDE ELIZABETH', 'Morales Flores Aide Elizabeth', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'AMORALEF', 3229324.56, '" 2', 291, '777.16 "', '" 2', 504, '324.11 "', 0.915128018, '" 1', 501, '824.92 "', '" 914', 0, '0', 0, 1366527.898
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001715976583, 'COBOS ROJAS OSWALDO PATRICIO', 'Cobos Rojas Oswaldo Patricio', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'OCOBOS', '', 19595542.2, '" 16', 240, '051.16 "', '" 15', 420, '663.14 "', 1.053135719, '" 6', 507, '123.06 "', '" 3', 545, '270.70 "', 0, 0
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001717849408, 'AIMACANA SANGUCHO JANETH ALICIA', 'Aimacana Sangucho Janeth Alicia', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'JAIMACAN', 3585421.22, '" 3', 050, '516.21 "', '" 2', 821, '873.84 "', 1.081025015, '" 1', 019, '809.92 "', '" 501', 0, '0', 0, 826990.6975
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'NEGOCIADOR', 00001720179314, 'MARTINEZ CALAHORRANO MAURICIO VICENTE', 'Martinez Calahorrano Mauricio Vicente', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'OCOBOS', 'MMARTINC', 3286805.6, '" 2', 704, '031.64 "', '" 2', 598, '288.63 "', 1.040697176, '" 986', 0, '" 624', '965.88 "', 0, '0', 829645.3944, 809753.6466
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00000909921470, 'LOOR CHAVEZ JOSEPH KERWIN', 'Loor Chavez Joseph Kerwin', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'JKLOOR', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00000923408728, 'CAMINO CARLOZAMA CLAUDIA MICHELLE', 'Camino Carlozama Claudia Michelle', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'CMCAMINO', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001003482658, 'GUACANES GUASPA ALBA MARIA', 'Guacanes Guaspa Alba Maria', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'AGUACANE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001313637199, 'INTRIAGO VELIZ MARIA FERNANDA', 'Intriago Veliz Maria Fernanda', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'MFINTRIA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001600507253, 'MEZA CHAVEZ HANS PETER', 'Meza Chavez Hans Peter', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'HPMEZA', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001710014729, 'ESPINOSA VILLAGOMEZ ALEXANDRA', 'Espinosa Villagomez Alexandra', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'AESPINOV', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001712999653, 'TOAPANTA TOAPANTA SARA DEL ROCIO', 'Toapanta Toapanta Sara Del Rocio', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'STOAPANT', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001714536537, 'BENALCAZAR LEON DORIS KARINA', 'Benalcazar Leon Doris Karina', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'DKBENALC', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001714568647, 'VARGAS SANTAMARIA GABRIELA ALEJANDRA', 'Vargas Santamaria Gabriela Alejandra', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'GAVARGAS', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001715415558, 'CAISAPANTA FLORES JOSE DAVID', 'Caisapanta Flores Jose David', 'JEFE GESTION COBRANZAS', 'SIERRA Y ORIENTE', 'JCAISAPA', 'JEFATURA', '', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001715612980, 'JIMENEZ POZO HUGO RODRIGO', 'Jimenez Pozo Hugo Rodrigo', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'HRJIMENE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 29 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001716921729, 'LOPEZ VINUEZA ANA ISABEL', 'Lopez Vinueza Ana Isabel', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'AILOPEZ', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 30 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001717586604, 'CASTRO VIRACOCHA KAREN NATALY', 'Castro Viracocha Karen Nataly', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'KACASTRO', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 31 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001718077025, 'BADARACO ONA VANESSA MERCEDES', 'Badaraco Ona Vanessa Mercedes', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'JKLOOR', 'VBADARAC', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 32 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001718182262, 'NARVAEZ NARANJO MARIA FERNANDA', 'Narvaez Naranjo Maria Fernanda', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'MFNARVAE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 33 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001718421686, 'ZAMBRANO ALBARRACIN ELIANA NATALIA', 'Zambrano Albarracin Eliana Natalia', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'ENZAMBRA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 34 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001718925157, 'LARA DUARTE GABRIELA ALEXANDRA', 'Lara Duarte Gabriela Alexandra', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'GALARA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 35 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001719207415, 'VELOZ SALAZAR MARIA JOSE', 'Veloz Salazar Maria Jose', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'MVELOZSA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 36 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001721007670, 'ALBUJA LLUMIPANTA CRISTIAN NICOLAS', 'Albuja Llumipanta Cristian Nicolas', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'CALBUJA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 37 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001721148789, 'TOAPANTA JIMENEZ SUSANA JEANETH', 'Toapanta Jimenez Susana Jeaneth', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'SJTOAPAN', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 38 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001721180634, 'CALDERON FARINANGO SABRINA FERNANDA', 'Calderon Farinango Sabrina Fernanda', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'SFCALDER', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 39 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001721764957, 'ASTUDILLO CALDERON LISETH GABRIELA', 'Astudillo Calderon Liseth Gabriela', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'LIASTUDI', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 40 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001722212659, 'MIRANDA MALDONADO JORGE ANDRES', 'Miranda Maldonado Jorge Andres', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'JOAMIRAN', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 41 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001722303508, 'GARCIA BUITRON STEVEN JOSUE', 'Garcia Buitron Steven Josue', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'SJGARCIA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 42 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001722495379, 'CRUZ FLORES NIHOMY DAYANARA', 'Cruz Flores Nihomy Dayanara', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'NCRUZFLO', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 43 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001722666748, 'QUIMBIULCO SIMBANA EVELYN ESTEFANIA', 'Quimbiulco Simbana Evelyn Estefania', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'EQUIMBIU', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 44 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001722802715, 'VEGA VARGAS PAULA ANDREA', 'Vega Vargas Paula Andrea', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'PVEGAVAR', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 45 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001723112585, 'JAMI PANCHI RITA MARIBEL', 'Jami Panchi Rita Maribel', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'RJAMI', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 46 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001723115141, 'ZUNIGA VIRACOCHA CAMILA MISHELL', 'Zuniga Viracocha Camila Mishell', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'CMZUNIGA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 47 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001723529739, 'MORALES SILVA STEFANY VIVIANA', 'Morales Silva Stefany Viviana', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'STMORALE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 48 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001723795082, 'COBO SILVA CHRISTOPHER MATEO', 'Cobo Silva Christopher Mateo', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'CMCOBOS', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 49 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001723841746, 'PAREDES VERDEZOTO MARCELO FERNANDO', 'Paredes Verdezoto Marcelo Fernando', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'MARPARED', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 50 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001723841753, 'BENALCAZAR MORAN KARLA NATHALY', 'Benalcazar Moran Karla Nathaly', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'KBENALCA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 51 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001724222599, 'VARGAS FREIRE KATHERIN MISHEL', 'Vargas Freire Katherin Mishel', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'KVARGASF', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 52 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001724375702, 'CARRERA PUENGUENAN ESTEFANIA ANDREA', 'Carrera Puenguenan Estefania Andrea', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'ESACARRE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 53 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001724680861, 'AMORES ARROYO NAHID ESTEFANIA', 'Amores Arroyo Nahid Estefania', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'NAMORES', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 54 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001724740129, 'ESPINOSA ANDRADE LUIS FELIPE', 'Espinosa Andrade Luis Felipe', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'LUIESPIN', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 55 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725046799, 'MOSQUERA IRUA VIVIANA KAROLINA', 'Mosquera Irua Viviana Karolina', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'VIMOSQUE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 56 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725290926, 'MANOSALVAS MAFLA LUIS FERNANDO', 'Manosalvas Mafla Luis Fernando', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'LMANOSAL', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 57 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725354466, 'ALVARADO CEVALLOS ADRIAN FERNANDO', 'Alvarado Cevallos Adrian Fernando', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'ADALVARA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 58 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725455602, 'CASARES ALVAREZ ESTEFANO MATEO', 'Casares Alvarez Estefano Mateo', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'EMCASARE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 59 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725502460, 'PENARRIETA AVEIGA JOSSELYN MARIA', 'Penarrieta Aveiga Josselyn Maria', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'JPENARRI', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 60 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725603557, 'RODRIGUEZ PESANTEZ MELANIE ELIZABETH', 'Rodriguez Pesantez Melanie Elizabeth', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'MELRODRI', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 61 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001725664823, 'CUMBA ALDANA MARIA JOSE', 'Cumba Aldana Maria Jose', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'MCUMBA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 62 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001726216292, 'JARA SALTOS VERONICA PATRICIA', 'Jara Saltos Veronica Patricia', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'VJARASAL', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 63 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001726327875, 'GUALOTO CHIPANTASHI PRISCILA TAMARA', 'Gualoto Chipantashi Priscila Tamara', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'PIPIALES', 'PGUALOTO', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 64 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001751004902, 'QUISATAXI LOACHAMIN DENISSE ALEXANDRA', 'Quisataxi Loachamin Denisse Alexandra', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'DQUISATA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 65 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001752636900, 'PUPIALES PEREZ ANDREA NICOLE', 'Pupiales Perez Andrea Nicole', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'APUPIALE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 66 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001752734085, 'ENDARA MARTINEZ MARIA PAULA', 'Endara Martinez Maria Paula', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'MENDARAM', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 67 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001754667473, 'DIAZ VACA ZENAIDA SHAKIRA', 'Diaz Vaca Zenaida Shakira', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'ZDIAZ', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 68 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001754940706, 'LLAMUCA GOMEZ SORAIDA SILVANA', 'Llamuca Gomez Soraida Silvana', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'HPMEZA', 'SLLAMUCA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 69 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001755832241, 'FARIAS ROSALES GEMA JAMILETH', 'Farias Rosales Gema Jamileth', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'GFARIAS', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 70 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001803064318, 'IPIALES MONTESDEOCA PAULA ALEXANDRA', 'Ipiales Montesdeoca Paula Alexandra', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'JCAISAPA', 'SUPERVISOR', 'PIPIALES', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 71 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00002200071575, 'GUALAN ERAS JENNY ALEXANDRA', 'Gualan Eras Jenny Alexandra', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'JCAISAPA', 'USUARIO', 'STOAPANT', 'JGUALANE', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 72 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001716292345, 'RAMOS CUENCA DAYSI ANGELA', '', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', '', 15983247.45, '" 12', 890, '034.96 "', '" 14', 739, '283.52 "', 0.874536062, '" 788', 0, '" 3', '301', 0, '0', 0, 1427971.967
+);
+
+/* INSERT QUERY NO: 73 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001716801442, 'RODRIGUEZ POZO SANDRA CAROLINA', '', 'JEFE GESTION COBRANZAS', 'SIERRA Y ORIENTE', 'SARODRIG', '', '', '', 15983247.45, '" 12', 890, '034.96 "', '" 14', 739, '283.52 "', 0.874536062, '" 788', 0, '" 3', '301', 0, '0', 0, 1427971.967
+);
+
+/* INSERT QUERY NO: 74 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001723595425, 'MOROCHO CAIZA NATALY ALEXANDRA', '', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'NMOROCHO', 5383239.12, '" 4', 192, '889.78 "', '" 4', 953, '651.16 "', 0.846424111, '" 303', 0, '" 1', '280', 0, '0', 0, 501645.1832
+);
+
+/* INSERT QUERY NO: 75 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001753156197, 'OBANDO ARMAS CYNTHIA LIZETH', '', 'GESTOR CALL CENTER A', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'CLOBANDO', 5157173.97, '" 4', 216, '923.35 "', '" 4', 763, '143.27 "', 0.885323643, '" 234', 0, '" 990', '606.55 "', 0, '0', 452332.4463, 451817.4882
+);
+
+/* INSERT QUERY NO: 76 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'FIJA ACUERDO IMPAGO', 00001758835209, 'ANGULO GONZALEZ HILDA VIRGINIA ', '', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'HVANGULO', 5442834.36, '" 4', 480, '221.83 "', '" 5', 022, '489.09 "', 0.892032168, '" 250', 0, '" 1', '030', 0, '0', 0, 473994.3379
+);
+
+/* INSERT QUERY NO: 77 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001711853737, 'RUEDA ANDRADE DIANA DAISY', '', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'DRUEDA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 78 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001716292345, 'RAMOS CUENCA DAYSI ANGELA', '', 'SUPERVISOR GESTION COBRANZA', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 79 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001716801442, 'RODRIGUEZ POZO SANDRA CAROLINA', '', 'JEFE GESTION COBRANZAS', 'SIERRA Y ORIENTE', 'SARODRIG', '', '', '', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 80 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001719063925, 'ZURITA RODRIGUEZ MARCO ALEXANDER', '', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'MAZURITA', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 81 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001719773028, 'ALMACHI PAUCARIMA JOHANA MARIBEL', '', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'JALMACHI', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 82 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001720244076, 'ATI LLAGUA MAYRA ELIZABETH', '', 'EJECUTIVO COBRANZA GESTION TELEFONICA', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'MATI', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);
+
+/* INSERT QUERY NO: 83 */
+INSERT INTO bdpagueya(codigoPeriodo, fechaAnalisis, areaGestion, identificacion, nombrem, nombre, cargo, regionProvincia, jefatura, tipo, supervisor, usuario, riesgoAsignado, _saldoRiesgoRecuperacion_, _saldoMetaBandasMora_, FORMULA_cumplimientoPresupuestoBandas, _saldoVencidoAsignado_, _saldoVencidoCierre_, saldoCastigado, saldoExigenciaCastigado, saldoMetaVencidoBanco, _saldoMetaVencidoInterna_, FORMULA_cumplimientoPresupuestoVencida, _riesgoAsignadoDyE_, _saldoLiberacion_, FORMULA_liberacionDyE, metaLiberacionDyE, FORMULA_cumplimientoLiberacionDyE)
+VALUES
+(
+202112, '12/31/21', 'POOL MENOR 60', 00001724724081, 'CACERES GONZALEZ DAVID ARIEL', '', 'GESTOR CALL CENTER B', 'SIERRA Y ORIENTE', 'SARODRIG', '', 'DRAMOS', 'DCACERES', 4272979641, '" 4', 154, '487', '840.90 "', 0, '065', 599, '157.46 "', 1.021863612, '" 15', '476', 0, '" 31', 629, 0
+);

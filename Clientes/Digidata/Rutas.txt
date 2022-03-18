@@ -1,0 +1,9 @@
+Acerca del acceso:
+
+         Usuario: admdigidata
+
+         Contraseña: mudar12345
+
+         Link de acceso a producción - https://sa.dgd.app-digidata.co:8443/sa
+     
+         Link de acceso de homologación - https://sa.dgd.app-digidata.co:8444/sa
