@@ -1,0 +1,14 @@
+desarrollo de una funcionalidad de digitalización 
+para poder obtener metadatos de una word, pdf , excel
+cuanto costaria este desarrollo
+voy a consultar, licitaciones, 
+
+1. Modulo de digitalización subir masivamente estas imagenes con los metadatos intactos
+2. Esos documentos se puedan realizar busquedas de datos
+3. Importación masiva de documentos, distribuyendolos con diferentes carpetas
+tablas de retención, retención de documentos en periodos x, 
+revisar 51, al 55
+
+documento electronico para obtener metadatos.
+
+2 a 3 licitaciones, 
