@@ -1,0 +1,5 @@
+Validación a una base de datos local
+Validación de un .rest
+Script contar dias utiles hasta el dia de hoy
+Ejemplo HTML
+como realizarlo
