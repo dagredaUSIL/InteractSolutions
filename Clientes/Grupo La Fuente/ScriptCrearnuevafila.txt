@@ -1,0 +1,16 @@
+a = SA.access("attribute");
+a.attach(CONTEXT.getAttribute("@serial"));
+
+itemCount = a.getItemCount("Documentos_requeridos");
+
+if (itemCount == 0 || itemCount == null)
+{
+	adjunto = CONTEXT.getAttribute("Adjunto_Requisito");
+	CONTEXT.setAttribute("Documentos_requeridos[" + 0 + "].Documento_Adjunto", adjunto);
+	CONTEXT.setAttribute("Documentos_requeridos[" + 0 + "].Nombre_documento", "documento");
+	fechainicio = CONTEXT.getAttribute("Fecha_Inicio_Contrato");
+	CONTEXT.setAttribute("Documentos_requeridos[" + 0 + "].Fecha_Inicio_validez", fechainicio);
+	fechafin = CONTEXT.getAttribute("Fecha_fin_Contrato");
+	CONTEXT.setAttribute("Documentos_requeridos[" + 0 + "].Fecha_Fin_Validez", fechafin );
+
+}

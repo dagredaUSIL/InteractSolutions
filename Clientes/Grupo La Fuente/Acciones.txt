@@ -1,0 +1,7 @@
+// Desabilitar acciones
+/* Adicionar = "add";
+   Deletar  = "delete";
+   Editar = "edit";
+*/
+FORM.getList("bitacora").disableAction("edit");
+//FORM.getList("bitacora").disableAction("delete");

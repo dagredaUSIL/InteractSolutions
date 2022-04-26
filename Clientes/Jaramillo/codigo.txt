@@ -1,0 +1,1471 @@
+/**
+ * Nome do Script: TID-03034 - Informe con los mapas de calor
+ *
+ * Descrição: Script gera um relatório de riscos com base nos parâmetros informados
+ *
+ * Criado em: 11/01/2022
+ *
+ * Versão:  1.0 - Arthur Meurer Saraiva (colocar suas iniciais quando alterar o script)
+ *  		2.0 - Gabriel Schmogel (ga@interact.com.br) 15/02/2022 - TID-03542
+ *
+ * Autor: Arthur Meurer Saraiva (colocar suas iniciais quando alterar o script)
+ * 
+ *
+ */
+
+// imports
+import com.interact.sas.web.zk.cmn.util.ReportToolkit.Embed.EmbedComponent;
+import com.interact.sas.web.zk.orm.selectors.OperationalProcessSelector;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit.DetailsCaption;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit.DetailsTable;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit.ContentPart;
+import com.interact.sas.web.zk.orm.selectors.BusinessUnitSelector;
+import com.interact.sas.web.zk.cmn.util.ReportToolkit.Table.Cell;
+import com.interact.sas.web.zk.orm.util.RiskCalculator.RiskInfo;
+import com.interact.sas.web.zk.orm.selectors.SubProcessSelector;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit.Table;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit.Embed;
+import com.interact.sas.web.zk.orm.data.OperationalRiskWrapper;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit.Body;
+import com.interact.sas.web.zk.cmn.util.ReportToolkit.Unit;
+import com.interact.sas.web.zk.cmn.util.ReportToolkit.Size;
+import com.interact.sas.web.zk.cmn.util.PdfReportToolkit;
+import com.interact.sas.cmn.report.pdf.AbstractReport;
+import com.interact.sas.cmn.util.ResourceLocator;
+import com.interact.sas.web.zk.ext.sa.LogMarvel;
+import com.interact.sas.orm.db.OperationalRiskManager;
+import com.interact.sas.orm.db.StructureCategoryManager;
+import com.interact.sas.orm.db.ProbabilityManager;
+import com.interact.sas.orm.db.RiskManager;
+import com.interact.sas.orm.db.RiskMapManager;
+import com.interact.sas.orm.db.BusinessUnitManager;
+import com.interact.sas.orm.db.RiskFactorManager;
+import com.interact.sas.cmn.db.TagManager;
+import com.interact.sas.web.zk.ext.sa.ReportMarvel;
+import com.interact.sas.orm.data.OperationalRisk;
+import com.interact.sas.web.zk.orm.util.RiskCalculator;
+import com.interact.sas.web.zk.ext.sa.FormMarvel;
+import com.interact.sas.web.zk.orm.selectors.ProcessSelector;
+import com.interact.sas.orm.data.StructureCategory;
+import com.interact.sas.orm.data.RiskFactor;
+import com.interact.sas.web.zk.orm.parts.RiskMap;
+import com.interact.sas.orm.data.ProbabilityRange;
+import com.interact.sas.orm.data.ImpactLevel;
+import com.interact.sas.orm.data.BusinessUnit;
+import com.interact.sas.web.zk.cmn.parts.ItemSelector;
+import com.interact.sas.cmn.data.Category;
+import com.interact.sas.orm.wrapper.RiskMapItemWrapper;
+import com.interact.sas.orm.wrapper.RiskMapItem;
+import com.interact.sas.orm.data.RiskColor;
+import com.interact.sas.cmn.data.TagSubject;
+import com.interact.sas.cmn.data.TagMapping;
+import java.text.SimpleDateFormat;
+import java.util.LinkedHashMap;
+import com.itextpdf.text.Image;
+import java.math.RoundingMode;
+import javax.swing.ImageIcon;
+import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.sql.Timestamp;
+import java.awt.Color;
+
+// logs
+boolean downloadLogs = false; // só é possivel baixar um arquivo por script, com o downloadLogs ativado o relatório nãos erá baixado
+boolean sendLogs = false;
+
+ArrayList logTableList 	= new ArrayList();
+StringBuilder logs 		= new StringBuilder(); //LogMarvel n funciona com FormMarvel
+String mailLog 			= "logs.projects@interact.com.br";
+
+//Cliente
+//String SISTEMA_DE_RIESGO_MNEMONIC = "#3:#22";
+//int TAG_OPTION_ID = ?;
+
+//Local
+String SISTEMA_DE_RIESGO_MNEMONIC = "SISTEMAS_DE_RIESGOS:SISTEMA_DE_RIESGO";
+int TAG_OPTION_ID = 1; //select * from cmn_tag_options
+
+String reflectionErrors = "";
+
+void addLog( String info )
+{
+	df = new SimpleDateFormat( "HH:mm:ss" ); 
+
+	logs.append( "\n" ).append( df.format( System.currentTimeMillis() ) + " INFO :" + info );
+}
+
+logMail = SA.report();
+
+logMail.title( "Log de [SCRIPT - [BPM] Gerar PDF Toolkit]" );
+addLog( "[INFO] REGISTROS DE LOG" );
+addLog( "[INFO] SCRIPT - [BPM] Gerar PDF Toolkit" );
+addLog( "[INFO] CLIENTE - " + SA.context().getOrganizationName() );
+addLog( " " );
+
+// managers
+OperationalRiskManager operationalRiskManager 		= com.interact.sas.orm.ModuleContext.getInstance().getOperationalRiskManager();
+StructureCategoryManager structureCategoryManager 	= com.interact.sas.orm.ModuleContext.getInstance().getStructureCategoryManager();
+RiskFactorManager riskFactorManager	 				= com.interact.sas.orm.ModuleContext.getInstance().getRiskFactorManager();
+RiskManager riskManager 							= com.interact.sas.orm.ModuleContext.getInstance().getRiskManager();
+BusinessUnitManager businessUnitManager 			= com.interact.sas.orm.ModuleContext.getInstance().getBusinessUnitManager();
+RiskMapManager riskMapManager 						= com.interact.sas.orm.ModuleContext.getInstance().getRiskMapManager();
+ProbabilityManager probabilityManager 				= com.interact.sas.orm.ModuleContext.getInstance().getProbabilityManager();
+TagManager tagManager 								= com.interact.sas.cmn.ModuleContext.getInstance().getTagManager();
+
+// selectors
+ItemSelector unitSelector 				= new ItemSelector();
+ItemSelector macroProcessSelector 		= new ItemSelector();
+ItemSelector processSelector 			= new ItemSelector();
+ItemSelector subProcessSelector 		= new ItemSelector();
+ItemSelector baselineSelector 			= new ItemSelector();
+ItemSelector factorSelector 			= new ItemSelector();
+ItemSelector sistemaDeRiesgosSelector 	= new ItemSelector();
+
+// variables
+List risks = SA.list();
+List inherentTableRows 			= SA.list();
+List residualTableRows 			= SA.list();
+List residualSegmentTableRows 	= SA.list();
+RiskCalculator riskCalculator 	= new RiskCalculator();
+SimpleDateFormat formatter 		= new SimpleDateFormat( "dd/MM/yyyy HH:mm:ss" );
+SimpleDateFormat formatter2 	= new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
+
+class UnitBaseline
+{
+	String name;
+	Timestamp timestamp;
+	String justification;
+	int rev;
+	int unit;
+
+	String toString()
+	{
+		return name + " | " + formatter.format( timestamp );
+	}
+}
+
+class Report extends AbstractReport
+{
+	PdfReportToolkit toolkit = new PdfReportToolkit();
+	Body body = this.toolkit.newBody();
+	Image logo = null;
+	String EMPTY = "n/d";
+
+	public Report() throws Exception 
+	{
+		setOrientation( ORIENTATION_LANDSCAPE );
+		setPrintBanner( true );
+		setPrintFooter( true ); 
+		setPrintHeading( true );
+	}
+
+	public void generateBody() throws Exception
+	{
+		this.body.generateContent( getDocument() );
+	}
+
+	/**
+     * Adiciona uma tabela simples de chave valor
+     * 
+     * @param title String
+     * @param registers Map<String,String>
+     * @throws Exception
+     */
+	public void addTableKeyValue( String title, LinkedHashMap registers ) throws Exception
+	{        
+		title = title == null ? "" : title;
+
+		if( registers == null || registers.isEmpty() )
+			throw new Exception("¡No hay registros al crear la tabla!" );
+
+		// table
+		DetailsTable detailsTable = this.toolkit.newDetailsTable();
+		detailsTable.setTitle( title );
+		detailsTable.setLabelWidth( new Size( 20, Unit.PERCENTAGE ) );
+
+		for( String key : registers.keySet() )
+		{
+			String value = registers.get( key );
+			value = ( value == null || value.isEmpty() ) ? "n/d" : value;
+
+			detailsTable.addItem( key, value );
+		}
+
+		detailsTable.addBreak();
+
+		this.body.add( detailsTable );
+	}
+
+	/**
+     * Adiciona uma tópico com informação em smartformat
+     * 
+     * @param title String
+     * @param info String
+     * @throws Exception
+     */
+	public void addTopic( String title, String info ) throws Exception
+	{
+		title = title == null ? "" : title;
+		info = info == null ? "" : info;
+
+		// title
+		DetailsTable detailsTable = this.toolkit.newDetailsTable();
+		detailsTable.setTitle( title );
+		detailsTable.setLabelWidth( new Size( 20, Unit.PERCENTAGE ) );
+
+		detailsTable.addItemSmartFormat( info );
+
+		detailsTable.addBreak();
+
+		this.body.add( detailsTable );
+	}
+
+	/**
+     * Adiciona uma tabela simples
+     * 
+     * @param title String
+     * @param registers List<List<String>>
+     * @throws Exception
+     */
+	public void addTable( String title, List headerRow, List registers )
+	{
+		try
+		{
+			Body newBody = this.toolkit.newBody();
+
+			if( title == null || title.isEmpty() )
+				throw new Exception("¡La tabla debe tener un título!" );
+
+			if( registers == null || registers.isEmpty() )
+				throw new Exception("¡No se encontraron registros al crear la tabla " + title + "!" );
+
+			int TITLE_FONT_SIZE 		= 10;
+			int HEADER_FONT_SIZE 		= 9;
+			int BODY_FONT_SIZE 			= 9;
+			boolean INTERCALATED_ROW 	= true;
+
+			// table
+			Table table = this.toolkit.newTable();
+			table.setIntercaledRow( INTERCALATED_ROW );
+
+			// implementado titulo e space como linha, pois o toolkit não possui como controlar quebra de pagina
+
+			// title
+			List titleArray = new ArrayList();
+
+			Cell cellTitle = new Cell();
+			cellTitle.setBackgroundColor( Color.decode("#e4ebf2") );
+			cellTitle.setPadding( 5F );
+			cellTitle.setPaddingLeft( 14F );
+			cellTitle.setPaddingBottom( 9F );
+			cellTitle.setFontSize( TITLE_FONT_SIZE  );
+			cellTitle.setValue( title );
+
+			titleArray.add( cellTitle );
+
+			table.addRow( titleArray.toArray() );
+
+			// space
+			List spaceArray = new ArrayList();
+
+			Cell spaceTitle = new Cell();
+			spaceTitle.setBackgroundColor( Color.decode("#ffffff") );
+			spaceTitle.setFontSize( 3 );
+			spaceTitle.setValue( "" );
+
+			spaceArray.add( spaceTitle );
+
+			table.addRow( spaceArray.toArray() );
+
+			// header
+			List header = new ArrayList();
+			int index = 0;
+
+			for( String headerValue : headerRow )
+			{
+				headerValue = headerValue == null ? "" : headerValue;
+
+				Cell cellHeader = new Cell();
+				cellHeader.setBackgroundColor( Color.decode( "#e4ebf2" ) );
+				cellHeader.setColor( Color.decode("#2c68a0") );
+				cellHeader.setPadding( 3F );
+				cellHeader.setFontSize( HEADER_FONT_SIZE  );
+				cellHeader.setValue( headerValue + ( index != 5 ? "\n\n" : "" ) );
+
+				header.add( cellHeader );
+				index++;
+			}
+
+			table.addRow( header.toArray() );
+
+			// values
+			for( List values : registers )
+			{
+				List newRow = new ArrayList();
+				int index = 0;
+
+				for( String value : values )
+				{
+					value = value == null ? "" : value;
+
+					Cell cellValue = new Cell();
+					if( index == 0 ) cellValue.setBackgroundColor( Color.decode( value ) );
+					cellValue.setFontSize( BODY_FONT_SIZE );
+					cellValue.setPadding( 3F );
+					cellValue.setValue( index == 0 ? "\n\n" : value );
+
+					newRow.add( cellValue );
+					index++;
+				}
+
+				table.addRow( newRow.toArray() );
+			}
+
+			newBody.add( table );
+
+			this.body.add( newBody );
+		}
+		catch( Exception e )
+		{
+			reflectionErrors += e.getMessage() + "\n";
+		}
+	}
+
+	public void addEmbed( EmbedComponent eComp, int height, int width )
+	{
+		Embed embed = toolkit.newEmbed( eComp );
+
+		embed.setHeight( height );
+		embed.setWidth( width );
+
+		this.body.add( embed );
+	}
+
+	/**
+     * Realizado o download do PDF
+     *
+     * @throws Exception
+     */
+	public void downloadPDF( String nameFile ) throws Exception
+	{
+		File file = com.interact.sas.web.zk.cmn.util.FileUtilities.createTempFile( nameFile, ".pdf" );
+		generateInto( file );
+
+	}
+
+	/**
+     * Realizado o download do PDF
+     *
+     * @throws Exception
+     */
+	public File getPDF( String nameFile ) throws Exception
+	{
+		File file = com.interact.sas.web.zk.cmn.util.FileUtilities.createTempFile( nameFile, ".pdf" );
+		generateInto( file );
+		return file;
+	}
+}
+
+/**
+ * Realiza o download de um arquivo txt
+ *
+ * @param text String
+ */
+void downloadText( String text )
+{
+	try
+	{
+		java.io.File temp = java.io.File.createTempFile( "text", ".txt" );
+		java.io.BufferedWriter bw = new BufferedWriter( new java.io.FileWriter( temp.getAbsolutePath() ) );
+		bw.write( text );
+		bw.flush();
+		bw.close();
+		com.interact.sas.web.zk.cmn.util.FileUtilities.downloadFile( temp );
+	}
+	catch( Exception e )
+	{
+		String message = "[ERROR] Problema al descargar texto: " + e.getMessage();
+		log( message );
+		SA.context().logError( "[SCRIPT - Script]: " + message );
+	}
+}
+
+/**
+ * Retorna um map chave valor com as informações do relatório
+ *
+ * @return Map<String,String>
+ * @throws Exception
+ */
+LinkedHashMap getParameters() throws Exception
+{
+	LinkedHashMap registers = new LinkedHashMap();
+
+	registers.put("Unidad", "" 				+ unitSelector.getSelectedValue() 																				);
+	registers.put("Baseline", "" 			+ baselineSelector.getSelectedValue() 																			);
+	registers.put("Macroproceso", "" 		+ ( macroProcessSelector.getSelectedValue() 	== null ? "Todos" : macroProcessSelector.getSelectedValue() 	) );
+	registers.put("Proceso", "" 			+ ( processSelector.getSelectedValue() 			== null ? "Todos" : processSelector.getSelectedValue() 			) );
+	registers.put("Subproceso", "" 			+ ( subProcessSelector.getSelectedValue() 		== null ? "Todos" : subProcessSelector.getSelectedValue() 		) );
+	registers.put("Factor de Riesgo", "" 	+ ( factorSelector.getSelectedValue() 			== null ? "Todos" : factorSelector.getSelectedValue()	 		) );
+	registers.put("Sistema de Riesgos", ""	+ ( sistemaDeRiesgosSelector.getSelectedValue() == null ? "Todos" : sistemaDeRiesgosSelector.getSelectedValue() ) );
+
+	return registers;
+}
+
+/**
+ * Retorna um array com as informações dos riscos inerentes
+ *
+ * @return Object[]
+ * @throws Exception
+ */
+Object[] getInherentValues( StructureCategory structureCategory, OperationalRisk risk, int rev ) throws Exception
+{
+	double impactValue 		= 0.0;
+	String impactLabel 		= "";
+	double probabilityValue = 0.0;
+	String probabilityLabel = "";
+
+	int riskMapId = getRiskMapId();
+
+	Object result = SA.query( 
+		"select \n" + 
+		"	impact\n" + 
+		"from \n" + 
+		"	orm_risk_impact_revision \n" + 
+		"where \n" + 
+		"	ref_process = " + structureCategory.getId() + "\n" + 
+		"	and \n" + 
+		"	ref_risk = " + risk.getId() + "\n" + 
+		"	and \n" + 
+		"	rev = " + rev + "\n" + 
+		"	and \n" + 
+		"	ref_audit = -1\n" + 
+		"	and \n" + 
+		"	ref_owner <> 0\n" + 
+		"order by dt_registered asc" ).fetch1();
+
+	if( result != null )
+	{
+		impactValue = SA.cdouble( result[0] );
+		ImpactLevel level = riskManager.getImpactLevel( impactValue, riskMapId );
+		impactLabel = level.getName();
+	}
+
+	Object result2 = SA.query( 
+		"select \n" + 
+		"	probability\n" + 
+		"from \n" + 
+		"	orm_risk_probability_revision \n" + 
+		"where \n" + 
+		"	ref_process = " + structureCategory.getId() + "\n" + 
+		"	and \n" + 
+		"	ref_risk = " + risk.getId() + "\n" + 
+		"	and \n" + 
+		"	rev = " + rev + "\n" + 
+		"	and \n" + 
+		"	ref_audit = -1\n" + 
+		"	and \n" + 
+		"	ref_owner <> 0\n" + 
+		"order by dt_registered asc" ).fetch1();
+
+	if( result2 != null )
+	{
+		probabilityValue = SA.cdouble( result2[0] );
+
+		for ( ProbabilityRange r : probabilityManager.getProbabilityRanges( riskMapId ) )
+		{
+			if ( r.inRange( probabilityValue ) )
+			{
+				probabilityLabel = r.getName();
+			}
+		}
+	}
+
+	return new Object[] { impactValue, impactLabel, probabilityValue, probabilityLabel };
+}
+
+/**
+ * Retorna um array com as informações dos riscos residuais
+ *
+ * @return Object[]
+ * @throws Exception
+ */
+Object[] getResidualValues( StructureCategory structureCategory, OperationalRisk risk, int rev ) throws Exception
+{
+	double impactValue 		= 0.0;
+	String impactLabel 		= "";
+	double probabilityValue = 0.0;
+	String probabilityLabel = "";
+
+	int riskMapId = getRiskMapId();
+
+	Object result = SA.query(
+		"select \n" + 
+		"	impact, \n" + 
+		"	probability \n" + 
+		"from \n" + 
+		"	orm_risk_results\n" + 
+		"where \n" + 
+		"	ref_process = " + structureCategory.getId() + "\n" + 
+		"	and \n" + 
+		"	ref_risk = " + risk.getId() + "\n" + 
+		"	and \n" + 
+		"	rev = " + rev + "\n" + 
+		"	and \n" + 
+		"	ref_audit >= 0\n").fetch1();
+
+	if( result != null )
+	{
+		impactValue = SA.cdouble( result[0] );
+		probabilityValue = SA.cdouble( result[1] );
+
+		ImpactLevel level = riskManager.getImpactLevel( impactValue, riskMapId );
+		impactLabel = level.getName();
+
+		for ( ProbabilityRange r : probabilityManager.getProbabilityRanges( riskMapId ) )
+		{
+			if ( r.inRange( probabilityValue ) )
+			{
+				probabilityLabel = r.getName();
+			}
+		}
+	}   
+
+	return new Object[] { impactValue, impactLabel, probabilityValue, probabilityLabel };
+}
+
+/**
+ * Retorna um array com as informações dos riscos residuais de segmento
+ *
+ * @return Object[]
+ * @throws Exception
+ */
+Object[] getResidualSegmentValues( StructureCategory structureCategory, OperationalRisk risk, int rev ) throws Exception
+{
+	double impactValue = 0.0;
+	String impactLabel = "";
+	double probabilityValue = 0.0;
+	String probabilityLabel = "";
+
+	int riskMapId = getRiskMapId();
+
+	Object result = SA.query( 
+		"select \n" + 
+		"	impact\n" + 
+		"from \n" + 
+		"	orm_risk_results \n" + 
+		"where \n" + 
+		"	ref_process = " + structureCategory.getId() + "\n" + 
+		"	and \n" + 
+		"	ref_risk = " + risk.getId() + "\n" +
+		"	and \n" + 
+		"	rev = " + rev + "\n" + 
+		"	and \n" + 
+		"	ref_audit >= 0\n" +
+		"	and \n" + 
+		"	ref_owner <> 0" ).fetch1();
+
+	if( result != null )
+	{
+		impactValue = SA.cdouble( result[0] );
+
+		ImpactLevel level = riskManager.getImpactLevel( impactValue, riskMapId );
+		impactLabel = level.getName();
+	}
+
+	Object result2 = SA.query( 
+		"select \n" + 
+		"	probability\n" + 
+		"from \n" + 
+		"	orm_risk_results \n" + 
+		"where \n" + 
+		"	ref_process = " + structureCategory.getId() + "\n" + 
+		"	and \n" + 
+		"	ref_risk = " + risk.getId() + "\n" + 
+		"	and \n" + 
+		"	rev = " + rev + "\n" + 
+		"	and \n" + 
+		"	ref_audit >= 0\n" +
+		"	and \n" + 
+		"	ref_owner <> 0" ).fetch1();
+		
+	if( result2 != null )
+	{
+		probabilityValue = SA.cdouble( result2[0] );
+
+		for ( ProbabilityRange r : probabilityManager.getProbabilityRanges( riskMapId ) )
+		{
+			if ( r.inRange( probabilityValue ) )
+			{
+				probabilityLabel = r.getName();
+			}
+		}
+	}
+
+	return new Object[] { impactValue, impactLabel, probabilityValue, probabilityLabel };
+}
+
+/**
+ * Busca os ids das Unidades de Negócio abaixo de uma categoria selecionada, caso não exista uma Unidade de Negócio selecionada
+ *
+ * @return String
+ * @throws Exception
+ */
+String getMacroProcessesIds() throws Exception
+{
+	String macroProcessesIds = "";
+
+	if( macroProcessSelector.getSelectedValue() == null )
+	{
+		macroProcesses = SA.fetch(
+			"orm:unit",
+			"select\n" +
+			"    id\n" +
+			"from\n" +
+			"    orm_business_units\n" +
+			"where\n" +
+			"	 state <> 0 and\n" + 
+			"    ref_category = " +	unitSelector.getSelectedValue().getId()		
+		);
+
+		if( macroProcesses.size() == 0 ) throw new Exception( "¡la categoría seleccionada no tiene unidades!" );
+
+		for( BusinessUnit macroProcces : macroProcesses)
+		{
+			macroProcessesIds += macroProcessesIds.isEmpty() ? macroProcces.getId() : ("," + macroProcces.getId());
+		}
+	}
+	else
+	{
+		macroProcessesIds = macroProcessSelector.getSelectedValue().getId().toString();
+	}
+
+	return macroProcessesIds;
+}
+
+/**
+ * Busca os ids dos Process abaixo de uma ou mais Unidade de Negócio recebidas, caso não exista um Processo selecionado
+ *
+ * @param macroProcessesIds String
+ * @return String
+ * @throws Exception
+ */
+String getProcessesIds( String macroProcessesIds ) throws Exception
+{
+    final int ID = 0;
+	String processesIds = "";
+
+	if( processSelector.getSelectedValue() == null )
+	{
+		processes = SA.query(
+			"select distinct\n" +
+			"    id\n" +
+			"from\n" +
+			"    orm_structure_categories\n" +
+			"where\n" +
+			"   ref_unit in ( " + macroProcessesIds + " )\n" + 
+            "and\n" + 
+            "   ref_parent = 0 " 
+		).fetch();
+
+		if( processes.size() == 0 ) throw new Exception( "¡la unidad seleccionada no tiene procesos!" );
+
+		for( process : processes )
+		{
+			processesIds += processesIds.isEmpty() ? process[ID] : ("," + process[ID]);
+		}
+	}
+	else
+	{
+		processesIds = processSelector.getSelectedValue().getId().toString();
+	}
+
+	return processesIds;	
+}
+
+/**
+ * Busca os ids dos SubProcess abaixo de um ou mais processos recebidos, caso não exista um SubProcess selecionado
+ *
+ * @param processesIds String
+ * @return List
+ * @throws Exception
+ */
+List getSubProcessesIds( String processesIds ) throws Exception
+{
+    final int ID = 0;
+	List subProcessesIds = SA.list();
+
+	if( subProcessSelector.getSelectedValue() == null )
+	{
+		subProcesses = SA.query(
+			"select distinct\n" +
+			"    id\n" +
+			"from\n" +
+			"    orm_structure_categories\n" +
+			"where\n" +
+			"   ref_parent in ( " + processesIds + " )"
+		).fetch();
+
+		if( subProcesses.size() == 0 ) throw new Exception( "¡el proceso seleccionado no tiene subprocesos!" );
+
+		for( subProcess : subProcesses )
+		{
+			subProcessesIds.add( SA.cint( subProcess[ID] ) );
+		}
+	}
+	else
+	{
+		subProcessesIds.add( subProcessSelector.getSelectedValue().getId() );
+	}
+
+	return subProcessesIds;	
+} 
+
+/**
+ * Busca o id do Mapa de Risco de acordo com os filtros selecionados pelo usuário
+ *
+ * @return int
+ * @throws Exception
+ */
+int getRiskMapId() throws Exception
+{
+	int riskMapId;
+
+	if( macroProcessSelector.getSelectedValue() != null )
+	{
+		riskMapId = riskMapManager.getRiskMapId( macroProcessSelector.getSelectedValue().getId() );	}
+	else
+	{	
+		riskMapId = riskMapManager.hasSameRiskMap( unitSelector.getSelectedValue(), true ); //jaramillo
+		//riskMapId = riskMapManager.hasSameRiskMap( unitSelector.getSelectedValue() );
+	}
+
+	return riskMapId;
+}
+
+/**
+ * Filtra os riscos encontrados de acordo com o Valor seleciondado no seletor 'Sistema de Riesgos'
+ *
+ * @param risks List
+ * @return List
+ * @throws Exception
+ */
+List filterRisks( List risks ) throws Exception
+{
+	List filteredRisks =  SA.list();
+
+
+	if( sistemaDeRiesgosSelector.getSelectedValue() == null )
+	{
+		filteredRisks = risks; 
+	}
+	else
+	{
+		for( risk : risks )
+		{
+			TagSubject subject = risk.getTagSubject();
+			TagMapping mapping = tagManager.getMapping( subject, SISTEMA_DE_RIESGO_MNEMONIC );
+			if( mapping != null && mapping.getContent().equals( sistemaDeRiesgosSelector.getSelectedValue().getContent() ) )
+			{
+				filteredRisks.add( risk );
+			}
+		}
+	}
+
+	return filteredRisks;
+}
+
+/**
+ * Busca os riscos conforme os parâmetros
+ *
+ * @throws Exception
+ */
+void getRisks() throws Exception
+{
+
+	int riskMapId = getRiskMapId();
+	if( riskMapId == 0 )
+	{
+		throw new Exception( "¡la categoría seleccionada tiene unidades con diferentes mapas!" );
+	}
+
+	Map baselinesMap = getSelectedBaselines();
+
+	String macroProcessesIds 	= getMacroProcessesIds();
+	String processesIds 		= getProcessesIds( macroProcessesIds );
+	List subProcessesIds 		= getSubProcessesIds( processesIds );
+
+    Map risksToStructureCategoryMap = SA.map();
+    for( subProcessId : subProcessesIds )
+    {
+        //Rev = 0
+		List risks = SA.list();
+
+		if( factorSelector.getSelectedValue() == null )
+		{
+			risks = SA.fetch(
+				"orm:risk",
+				"select\n" + 
+				"	ref_risk\n" + 
+				"from\n" + 
+				"	orm_sc_risks\n" + 
+				"where\n" + 
+				"	ref_sc = " + subProcessId + "\n" + 
+				"	and\n" + 
+				"   rev = 0" 
+			);
+		}
+		else
+		{
+			risks = SA.fetch( 
+				"orm:risk",
+				"select\n" + 
+				"	ref_risk\n" + 
+				"from\n" + 
+				"	orm_sc_factors\n" + 
+				"where\n" + 
+				"	ref_sc = " + subProcessId + "\n" + 
+				"	and\n" + 
+				"	ref_factor = " + factorSelector.getSelectedValue().getId() + "\n" + 
+				"	and\n" + 
+				"   rev = 0" 
+			);
+		}
+
+        risksToStructureCategoryMap.put( subProcessId, filterRisks( risks ) );
+    }
+
+	for( subProcessId : risksToStructureCategoryMap.keySet() )
+    {
+		StructureCategory subprocess = structureCategoryManager.getStructureCategory( subProcessId );
+
+		for( OperationalRisk risk : risksToStructureCategoryMap.get( subProcessId ) )
+		{
+			//Inerente (valor mais antigo)
+			Object inherentValues = getInherentValues( subprocess, risk, 0  );
+
+			double inherentImpactNumber = inherentValues[0];
+			String inherentImpactLabel 	= inherentValues[1];
+			double inherentProbNumber 	= inherentValues[2];
+			String inherentProbLabel 	= inherentValues[3];
+
+			List register = new ArrayList();
+
+			register.add( getColorHex( round( inherentProbNumber, 2 ), round( inherentImpactNumber, 2 ), riskMapId ) );
+			register.add( risk.getCode() );
+			register.add( risk.getName() );
+			register.add( "" + round( inherentProbNumber * inherentImpactNumber, 2 ) );
+			register.add( "" + round( inherentProbNumber, 2 ) );
+			register.add( inherentProbLabel );
+			register.add( "" + round( inherentImpactNumber, 2 ) );
+			register.add( inherentImpactLabel );
+
+			inherentTableRows.add( register );
+
+			//Residual de Segmento (valor mais recente)
+			Object[] residualSegmentValues = getResidualSegmentValues( subprocess, risk, 0 );
+
+			double residualSegmentImpactNumber 	= residualSegmentValues[0];
+			String residualSegmentImpactLabel 	= residualSegmentValues[1];
+			double residualSegmentProbNumber 	= residualSegmentValues[2];
+			String residualSegmentProbLabel 	= residualSegmentValues[3];
+
+			List register = new ArrayList();
+
+			register.add( getColorHex( round( residualSegmentProbNumber, 2 ), round( residualSegmentImpactNumber, 2 ), riskMapId ) );
+			register.add( risk.getCode() );
+			register.add( risk.getName() );
+			register.add( "" + round( residualSegmentProbNumber * residualSegmentImpactNumber, 2 ) );
+			register.add( "" + round( residualSegmentProbNumber, 2 ) );
+			register.add( residualSegmentProbLabel );
+			register.add( "" + round( residualSegmentImpactNumber, 2 ) );
+			register.add( residualSegmentImpactLabel );
+
+			residualSegmentTableRows.add( register );
+		}
+	}
+
+    Map risksToStructureCategoryMap = SA.map();
+    for( subProcessId : subProcessesIds )
+    {
+		StructureCategory subprocess = structureCategoryManager.getStructureCategory(subProcessId );
+		UnitBaseline unitBaseline = baselinesMap.get( subprocess.getUnitId() );
+		if( unitBaseline == null )
+		{
+			throw new Exception( "¡baseline para la unidad de subproceso " + subprocess + " no encontrada!" );
+		}
+
+		//Rev da baseline
+		List risks = SA.list();
+
+		if( factorSelector.getSelectedValue() ==  null )
+		{
+			risks = SA.fetch(
+				"orm:risk",
+				"select\n" + 
+				"	ref_risk\n" + 
+				"from\n" + 
+				"	orm_sc_risks\n" + 
+				"where\n" + 
+				"	ref_sc = " + subProcessId + "\n" + 
+				"	and\n" + 
+				"   rev = " + unitBaseline.rev  
+			);			
+		}
+		else
+		{
+			risks = SA.fetch( 
+				"orm:risk", 
+				"select\n" + 
+				"	ref_risk\n" + 
+				"from\n" + 
+				"	orm_sc_factors\n" + 
+				"where\n" + 
+				"	ref_sc = " + subProcessId + "\n" + 
+				"	and\n" + 
+				"	ref_factor = " + factorSelector.getSelectedValue().getId() + "\n" + 
+				"	and\n" + 
+				"	rev = " + unitBaseline.rev 
+			);
+		}
+
+		risksToStructureCategoryMap.put( subProcessId, filterRisks( risks ) );
+	}
+
+	for( subProcessId : risksToStructureCategoryMap.keySet() )
+    {
+
+		StructureCategory subprocess = structureCategoryManager.getStructureCategory( subProcessId );
+		UnitBaseline unitBaseline = baselinesMap.get( subprocess.getUnitId() );
+		
+		for( OperationalRisk risk : risksToStructureCategoryMap.get( subProcessId ) )
+		{
+			//Residual (valores da baseline)
+			Object[] residualValues = getResidualValues( subprocess, risk, unitBaseline.rev );
+
+			double residualImpactNumber = residualValues[0];
+			String residualImpactLabel 	= residualValues[1];
+			double residualProbNumber 	= residualValues[2];
+			String residualProbLabel 	= residualValues[3];
+
+			List register = new ArrayList();
+
+			register.add( getColorHex( round( residualProbNumber, 2 ), round( residualImpactNumber, 2 ), riskMapId ) );
+			register.add( risk.getCode() );
+			register.add( risk.getName() );
+			register.add( "" + round( residualProbNumber * residualImpactNumber, 2 ) );
+			register.add( "" + round( residualProbNumber, 2 ) );
+			register.add( residualProbLabel );
+			register.add( "" + round( residualImpactNumber, 2 ) );
+			register.add( residualImpactLabel );
+
+			residualTableRows.add( register );
+		}
+	}
+}
+
+/**
+ * Retorna a lista do cabeçalho da tabela de riscos
+ *
+ * @return ArrayList<String,String>
+ * @throws Exception
+ */
+List getTableHeader()
+{
+	List header = new ArrayList();
+
+	header.add( "Nivel de Riesgo" );
+	header.add( "Código" );
+	header.add( "Descripción" );
+	header.add( "Nivel de Riesgo" );
+	header.add( "Probabilidad" );
+	header.add( "Probabilidad Calificación" );
+	header.add( "Impacto" );
+	header.add( "Impacto Calificación" );
+
+	return header;
+}
+
+/**
+ * Arredonda números double
+ *
+ * @return double
+ * @throws Exception
+ */
+double round( double value, int places ) 
+{
+	if ( places < 0 ) throw new IllegalArgumentException();
+
+	BigDecimal bd = BigDecimal.valueOf( value );
+	bd = bd.setScale( places, RoundingMode.HALF_UP );
+	return bd.doubleValue();
+}
+
+/**
+ * Busca as categorias
+ *
+ * @return ArrayList<Category>
+ * @throws Exception
+ */
+List getUnits()
+{
+	return SA.fetch( "cmn:category", "select id from cmn_categories where family = " + Category.FAMILY_ORM_BUSINESS_UNIT, "a:name");
+}
+
+/**
+ * Busca as unidades de negócio
+ *
+ * @return ArrayList<BusinessUnit>
+ * @throws Exception
+ */
+List getMacroProcesses( Category category )
+{
+	return SA.fetch( "orm:unit", "select id from orm_business_units where state <> 0 and category = " + category.getId(), "a:name" );
+}
+/**
+ * Busca os processos
+ *
+ * @return ArrayList<StructureCategory>
+ * @throws Exception
+ */
+List getProcesses( BusinessUnit unit )
+{
+	List registers = SA.list();
+	List result = SA.query( "select id from orm_structure_categories where ref_unit = " + unit.getId() + " and ref_parent = 0 and rev = 0 order by name" ).fetch();
+
+	for( Object r : result )
+	{
+		registers.add( structureCategoryManager.getStructureCategory( SA.cint( r[0] ) ) );
+	}
+
+	return registers;
+}
+
+/**
+ * Busca os SubProcessos
+ *
+ * @param structureCategory StructureCategory
+ * @return ArrayList<StructureCategory>
+ * @throws Exception
+ */
+List getSubProcesses( StructureCategory structureCategory ) throws Exception
+{
+	List registers = SA.list();
+	List result = SA.query( "select id from orm_structure_categories where ref_parent = " + structureCategory.getId()+ " and rev = 0 order by name" ).fetch();
+
+	for( Object r : result )
+	{
+		registers.add( structureCategoryManager.getStructureCategory( SA.cint( r[0] ) ) );
+	}
+
+	return registers;
+}
+
+/**
+ * Busca as baselines
+ *
+ * @return ArrayList<UnitBaseline>
+ * @throws Exception
+ */
+List getBaselines()
+{
+	LinkedList baselines = new LinkedList();
+	List result = SA.list();
+
+	if( macroProcessSelector.getSelectedValue() != null )
+	{
+		result = SA.query( "select name, dt_registered, justification, rev, ref_unit from orm_baselines where ref_unit = " + macroProcessSelector.getSelectedValue().getId() + " order by dt_registered desc" ).fetch();
+	}
+	else
+	{
+		result = SA.query( "select name from orm_baselines where name like '%SCRIPT] Baseline Automática | %' group by name " ).fetch();
+		for( item : result )
+		{
+			baselines.add( item[0] );
+		}
+
+		return baselines;
+	}
+
+	for( Object items : result )
+	{
+		baselines.add( getUnitBaseline( items ) );
+	}
+
+	return baselines;
+}
+
+/**
+ * Busca os fatores
+ *
+ * @return ArrayList<RiskFactor>
+ * @throws Exception
+ */
+List getFactors( StructureCategory structureCategory, int rev )
+{
+	return SA.fetch( "orm:risk.factor", "select distinct ref_factor from orm_sc_factors where ref_sc = " + structureCategory.getId() + " and rev = " + rev, "a:name");
+}
+
+EmbedComponent buildRiskMap( String title, List registers )
+{
+	List riskMapItems = SA.list();
+
+	for( List register : registers )
+	{
+		//RiskMapItemWrapper item = new RiskMapItemWrapper(); // local
+		RiskMapItem item = new RiskMapItem(); // Jaramillo
+
+		item.setValue( new OperationalRiskWrapper( subProcessSelector.getSelectedValue(), operationalRiskManager.getRisk( register.get( 1 ) ) ) );
+		item.setCode( register.get( 1 ) );
+		item.setLabel( register.get( 2 ) );
+		item.setPreviousProbability( 0 );
+		item.setPreviousImpact( 0 );
+		item.setProbability( SA.cdouble( register.get( 4 ) ) );
+		item.setImpact( SA.cdouble( register.get( 6 ) ) );
+
+		riskMapItems.add( item );
+	}   
+
+	EmbedComponent eComp = new com.interact.sas.web.zk.cmn.util.ReportToolkit.Embed.EmbedComponent()
+	{
+		org.zkoss.zk.ui.Component createComponent()
+		{
+			RiskMap riskMap = new RiskMap();
+
+			riskMap.setTitle( title );
+			riskMap.setRiskMapId( getRiskMapId() );
+			riskMap.setItems( riskMapItems );
+
+			return riskMap;
+		}
+	};
+
+	return eComp;
+}
+
+/**
+ * Retorna o hexadecimal da cor do risco com base no número do impacto e da probabilidade
+ *
+ * @return String
+ * @throws Exception
+ */
+String getColorHex( double probabilityNumber, double impactNumber, int riskMapId )
+{
+	ProbabilityRange range = probabilityManager.getProbabilityRange( probabilityNumber, riskMapId );
+	ImpactLevel      level = riskManager.getImpactLevel( impactNumber, riskMapId );
+
+	RiskColor rc = com.interact.sas.orm.ModuleContext.getInstance().getRiskManager().getRiskColor( range.getLevel(), level.getLevel(), riskMapId );
+
+	color = rc.getColor();
+
+	int R = color.getRed();
+	int G = color.getGreen();
+	int B = color.getBlue();
+
+	String rgb = "#" + Integer.toHexString( color.getRGB() ).substring( 2 );
+
+	return rgb;
+}
+
+/**
+ * Valida o preenchimento dos parâmetros
+ *
+ * @return String
+ * @throws Exception
+ */ 
+String validateParameters()
+{
+	String errors = "";
+
+	if( unitSelector.getSelectedValue() == null )
+	{
+		errors = "\n¡Selector del unidad está vacio!";
+	}
+
+	//if( macroProcessSelector.getSelectedValue() == null )
+	//{
+	//	errors += "\n¡Selector del macroproceso está vacio!";
+	//}
+
+	//if( processSelector.getSelectedValue() == null )
+	//{
+	//	errors += "\n¡Selector del proceso está vacio!";
+	//}
+
+	//if( subProcessSelector.getSelectedValue() == null )
+	//{
+	//	errors += "\n¡Selector del subproceso está vacio!";
+	//}
+
+	if( baselineSelector.getSelectedValue() == null )
+	{
+		errors += "\n¡Selector del baseline está vacio!";
+	}
+
+	return errors;
+}
+
+/**
+ * Busca as UnitBaselines correposndentes ao valor selecionado pelo usuaprio no filtro 'Baselines' 
+ *
+ * @return Map< int, UnitBaseline >
+ * @throws Exception
+ */
+Map getSelectedBaselines() throws Exception
+{
+	Map baselines = SA.map();
+
+	if( baselineSelector.getSelectedValue() instanceof UnitBaseline )
+	{
+		baselines.put( baselineSelector.getSelectedValue().unit, baselineSelector.getSelectedValue() );
+	}
+	else
+	{
+		result = SA.query( "select name, dt_registered, justification, rev, ref_unit from orm_baselines where name = '" + baselineSelector.getSelectedValue( ) + "'" ).fetch(); 
+        for( baseline : result  )
+        {
+            UnitBaseline unitBaseline = getUnitBaseline( baseline );
+            
+            baselines.put( unitBaseline.unit, unitBaseline );
+        }
+    }
+
+	return baselines;
+}
+
+/**
+ * Converte o resultado de uma query em um objeto UnitBaseline
+ *
+ * @param items Object[]
+ * @return UnitBaseline
+ * @throws Exception
+ */
+UnitBaseline getUnitBaseline( Object[] items ) throws Exception
+{
+
+    UnitBaseline baseline = new UnitBaseline();
+
+    String name             = items[0];
+    String dtRegisterd      = items[1];
+    String justification    = items[2];
+    String rev              = items[3];
+    String unit             = items[4];
+
+    baseline.name           = name;
+    baseline.timestamp      = new Timestamp( formatter2.parse( dtRegisterd ).getTime() );
+    baseline.justification  = justification;
+    baseline.rev            = SA.cint( rev );
+    baseline.unit           = SA.cint( unit );
+	
+    return baseline;
+}
+
+/**
+ * Method doWork
+ */
+void doWork() throws Exception
+{
+	addLog( "[OK] Ejecutado script..." );
+	addLog( "" );
+
+	try
+	{
+		String errors = validateParameters();
+
+		if( errors.isEmpty() )
+		{			
+			getRisks();
+
+			Report report = new Report();
+
+			report.setReportTitle( "Mapas de Riesgos" );
+			report.addTableKeyValue( "Parámetros", getParameters() );
+			report.addEmbed( buildRiskMap( "Riesgos Inherentes", inherentTableRows ), 350, 650 );
+			report.addEmbed( buildRiskMap( "Riesgos Residuales", residualTableRows ), 350, 650 );
+			report.addEmbed( buildRiskMap( "Riesgos de Seguimiento", residualSegmentTableRows ), 350, 650 );
+			report.addTable( "Riesgos Inherentes", getTableHeader(), inherentTableRows );
+			report.addTable( "Riesgos Residuales", getTableHeader(), residualTableRows );
+			report.addTable( "Riesgos de Seguimiento", getTableHeader(), residualSegmentTableRows );
+
+			if( reflectionErrors.isEmpty() )
+			{
+            	addLog( "[OK] Script ejecutado con éxito" );
+
+				// download
+				com.interact.sas.web.zk.cmn.util.FileUtilities.downloadFile( report.getPDF( "Nome" ) );
+			}
+			else
+			{
+				String message = "[ERROR] Problemas al ejecutar el script:\n" + reflectionErrors;
+				prompt = new com.interact.sas.web.zk.cmn.parts.Prompts();
+				prompt.alert(com.interact.sas.cmn.ApplicationContext.getInstance().getRootComponent(), message.toString() );
+				addLog( message );
+			}
+		}
+		else
+		{
+			String message = "[ERROR] Problemas al ejecutar el script: " + errors;
+			prompt = new com.interact.sas.web.zk.cmn.parts.Prompts();
+			prompt.alert(com.interact.sas.cmn.ApplicationContext.getInstance().getRootComponent(), message.toString() );
+			addLog( message );
+		} 
+	}
+	catch( Exception e )
+	{
+		String message = "[ERROR] Problemas al ejecutar el script: " + e;
+		prompt = new com.interact.sas.web.zk.cmn.parts.Prompts();
+		prompt.alert(com.interact.sas.cmn.ApplicationContext.getInstance().getRootComponent(), message.toString() );		
+		addLog( message );
+		SA.context().logError( "[SCRIPT - Generar PDF Toolkit]: " + message );
+	}
+	addLog( "" );
+	addLog( "[OK] Script ejecutado." );
+
+	if( downloadLogs ) downloadText( logs.toString() );
+	if( sendLogs ) 
+	{
+		if( mailLog != null )
+		{
+            logMail.setDomain( "EXTENDER" );
+		    logMail.addElement( "<pre>" + logs.toString() + "</pre>" );
+			logMail.sendTo( mailLog );
+		}
+	}
+}
+
+/**
+ * Method main
+ */
+void main()
+{
+	unitSelector.setList( getUnits() );
+	baselineSelector.setList( getBaselines() );
+	sistemaDeRiesgosSelector.setList( tagManager.getOptionItems( TAG_OPTION_ID, true ) );
+
+	unitSelector.addEventListener( "onSelectItem", new org.zkoss.zk.ui.event.EventListener()
+	{
+		  onEvent( event )
+		  {
+			  Category category = unitSelector.getSelectedValue();
+
+			  if ( category != null )
+			  {
+				  macroProcessSelector.setList( getMacroProcesses( category ) );
+			  }
+			  else
+			  {
+				  macroProcessSelector.clear();
+			  }
+				  processSelector.clear();
+				  subProcessSelector.clear();
+
+				  processSelector.setSelectedValue( null );
+				  subProcessSelector.setSelectedValue( null );
+   				  macroProcessSelector.setSelectedValue( null );
+
+				  baselineSelector.setSelectedValue( null );
+				  baselineSelector.setList( getBaselines() );
+
+		  }
+	} );
+
+	macroProcessSelector.addEventListener( "onSelectItem", new org.zkoss.zk.ui.event.EventListener()
+	{
+		  onEvent( event )
+		  {
+			  BusinessUnit businessUnit = macroProcessSelector.getSelectedValue();
+
+			  
+			  if ( businessUnit != null )
+			  {
+				  processSelector.setList( getProcesses( businessUnit ) );
+			  }
+			  else
+			  {
+				  processSelector.clear();
+			  }
+				  subProcessSelector.clear();
+
+				  processSelector.setSelectedValue( null );
+				  subProcessSelector.setSelectedValue( null );
+
+			  	  baselineSelector.setSelectedValue( null );
+				  baselineSelector.setList( getBaselines() );
+		  }
+	} );
+
+	processSelector.addEventListener( "onSelectItem", new org.zkoss.zk.ui.event.EventListener()
+	{
+		 onEvent( event )
+		 {
+			 StructureCategory structureCategory = processSelector.getSelectedValue();
+
+			 if ( structureCategory != null )
+			 {
+				 subProcessSelector.setList( getSubProcesses( structureCategory ) );
+			 }
+			 else
+			 {
+				 subProcessSelector.clear();
+			 }
+				 subProcessSelector.setSelectedValue( null );
+
+
+				 baselineSelector.setSelectedValue( null );
+				 baselineSelector.setList( getBaselines() );
+		 }
+	} );
+
+	subProcessSelector.addEventListener( "onSelectItem", new org.zkoss.zk.ui.event.EventListener()
+	{
+		onEvent( event )
+		{
+			StructureCategory structureCategory = subProcessSelector.getSelectedValue();
+
+			if ( structureCategory != null )
+			{
+				baselineSelector.setList( getBaselines() );
+			}
+		}
+	} );
+
+	baselineSelector.addEventListener( "onSelectItem", new org.zkoss.zk.ui.event.EventListener()
+	{
+		  onEvent( event )
+		  {
+			  StructureCategory structureCategory = subProcessSelector.getSelectedValue();
+
+              if( baselineSelector.getSelectedValue() instanceof UnitBaseline )
+              {
+			    UnitBaseline unitBaseline = baselineSelector.getSelectedValue();
+
+                if ( unitBaseline != null && structureCategory != null )
+                {
+                    factorSelector.setList( getFactors( structureCategory, unitBaseline.rev ) );
+                }
+                else
+                {
+                    factorSelector.clear();
+                }
+              }
+              else
+              {
+                factorSelector.clear();
+              }
+
+		  }
+	} );
+
+	form = SA.form( "Informe de riesgos", "", "Rellene los parámetros para generar el informe" );
+
+	form.add( "unitSelector", 				"Unidad", 				unitSelector );
+	form.add( "macroProcessSelector", 		"Macroproceso", 		macroProcessSelector );
+	form.add( "processSelector", 			"Proceso", 				processSelector );
+	form.add( "subProcessSelector", 		"Subproceso", 			subProcessSelector );
+	form.add( "baselineSelector", 			"Baseline", 			baselineSelector );
+	form.add( "factorSelector", 			"Factor de Riesgo", 	factorSelector );
+	form.add( "sistemaDeRiesgosSelector", 	"Sistema de Riesgo", 	sistemaDeRiesgosSelector );
+
+	form.prompt( "doWork()" );
+}
+
+main();

@@ -1,0 +1,6 @@
+SELECT dms_folders.name as Carpeta,cmn_users.name as Usuario,cmn_users.login as usuarioSA
+FROM dms_folders
+INNER JOIN cmn_restrictions
+ON cmn_restrictions.restriction=dms_folders.restriction
+INNER JOIN cmn_users
+ON cmn_restrictions.ref_source=cmn_users.id;

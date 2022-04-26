@@ -1,0 +1,12 @@
+SELECT svc_providers.id as 'id_providers', svc_providers.legal_name as 'legal_name', 
+svc_providers.public_name as 'public_name', svc_services.id as 'svc_services_id',
+svc_services.name as 'svc_services_name',svc_service_requirements.name as 'svc_service_requirements_name',svc_service_requirements.state as 'svc_service_requirements_state'
+CASE
+when svc_service_requirements = 0 then ('Opcional')
+when svc_service_requirements = 1 then ('Obligatorio') 
+END as 'svc_service_requirements_option'
+svc_service_requirements.state as 'svc_service_requirements_state'
+FROM svc_providers
+left join svc_provider_candidates on (svc_providers.id = svc_provider_candidates.ref_provider)
+left join svc_services on (svc_provider_candidates.ref_service = svc_services.id)
+left join svc_service_requirements on (svc_services.id = svc_service_requirements.ref_service)

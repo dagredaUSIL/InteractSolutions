@@ -1,0 +1,18 @@
+import java.text.DateFormat;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+import java.util.Calendar; 
+
+a = SA.access("attribute");
+a.attach(CONTEXT.getAttribute("@serial"));
+lista = FORM.getList("bitacora").getSize();
+if(lista>0){
+userManager = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager();
+user = com.interact.sas.cmn.ModuleContext.getInstance().getUserManager().getUserByName(CONTEXT.getAttribute("@taskClaimer[asignarsolicitud]"));
+anterior=lista-1;
+CONTEXT.setAttribute("bitacora[" + anterior + "].usuariobitacora",user.getName());
+fecha = new Date();
+DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
+String strDate = dateFormat.format(fecha);
+CONTEXT.setAttribute("bitacora[" + anterior + "].fechabitacora_str",strDate);
+}
