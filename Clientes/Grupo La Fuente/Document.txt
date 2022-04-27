@@ -1,0 +1,17 @@
+tagManager              = com.interact.sas.cmn.ModuleContext.getInstance().getTagManager();
+TagKind kind = tagManager.getKind( 46 );  ID do atributo
+
+
+TagSubject subject  = document.getTagSubject();  document = objeto do documento q recebe o atributo
+TagMapping mapping  = tagManager.getMapping( subject, kind );
+
+
+mapping = new TagMapping();
+mapping.setTagSubject( subject );
+mapping.setKindId( kind.getId() );
+mapping.setContent( content );  content = Valor do atributo
+
+
+tagManager.addMapping( mapping );
+print( [OK] Atributo criado no documento  + document );
+print(  );
