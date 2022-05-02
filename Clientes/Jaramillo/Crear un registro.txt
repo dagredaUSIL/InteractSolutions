@@ -1,0 +1,27 @@
+
+// Creacion de un registro
+
+NOME_VIEW = "cmn_tag_mappings";
+sql2 = "SELECT \n" + 
+" svc_providers.id as 'id_providers', \n" + 
+" svc_providers.legal_name as 'legal_name', \n" + 
+" svc_providers.public_name as 'public_name', \n" + 
+" svc_services.id as 'svc_services_id', \n" + 
+" svc_services.name as 'svc_services_name',\n" + 
+"  svc_service_requirements.name as 'svc_service_requirements_name', \n" + 
+" CASE \n" + 
+" 		when svc_service_requirements.\"option\" = 0 then ('Opcional') \n" + 
+"		when svc_service_requirements.\"option\" = 1 then ('Obligatorio') \n" + 
+" END as 'svc_service_requirements_option', \n" + 
+" svc_service_requirements.state as 'svc_service_requirements_state' \n" + 
+"  \n" + 
+" FROM svc_providers \n" + 
+" left join svc_provider_candidates on (svc_providers.id = svc_provider_candidates.ref_provider) \n" + 
+" left join svc_services on (svc_provider_candidates.ref_service = svc_services.id) \n" + 
+" left join svc_service_requirements on (svc_services.id = svc_service_requirements.ref_service)";
+
+sql = "insert into cmn_tag_mappings (type,ref_source,ref_kind,content,position,ref_template) values(200,10920,150,'2',0,0);"
+	
+String query = sql;
+
+SA.query( query ).execute();

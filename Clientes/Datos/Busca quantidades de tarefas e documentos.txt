@@ -1,0 +1,162 @@
+ /**
+ * Nome da Regra: RULE_IntegrationSaia
+ * 
+ * Descrição: TID-03056 - Integração com SAIA 
+ *            Busca quantidades de tarefas e documentos
+ * 
+ * Criado em:  03/12/2021
+ * 
+ * Versão: 1.0
+ *
+ * Autor: Arthur Meurer Saraiva (colocar suas iniciais quando alterar a regra)
+ *
+ */
+
+import com.interact.sas.cmn.ApplicationContext;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.zkoss.util.media.AMedia;
+import org.apache.http.ssl.SSLContextBuilder;
+import org.apache.http.conn.ssl.TrustStrategy;
+import java.security.cert.X509Certificate;
+import java.security.cert.CertificateException;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.config.Registry;
+import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
+import org.apache.http.impl.client.LaxRedirectStrategy;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.apache.http.protocol.HttpContext;
+import java.net.URI;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.config.RegistryBuilder;
+import com.interact.sas.cmn.ApplicationContext;
+
+TOKEN_URL = "https://saia.jaramillomora.com/api/free/generateToken";
+COUNTERS_URL = "https://saia.jaramillomora.com/api/client/free/queryUser";
+
+Integer[] counters = { 0, 0 };
+
+String getResponse( HttpPost post ) throws Exception
+{
+    SSLContextBuilder builder = new SSLContextBuilder();
+    builder.loadTrustMaterial( null, new TrustStrategy()
+    {
+        public boolean isTrusted( X509Certificate[] xcs, String string ) throws CertificateException
+        {
+            return true;
+        }
+    } );
+
+    SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory( builder.build(), NoopHostnameVerifier.INSTANCE );
+    Registry registry = RegistryBuilder.create()
+                                       .register( "http", new PlainConnectionSocketFactory() )
+                                       .register( "https", sslConnectionSocketFactory )
+                                       .build();
+
+    BasicHttpClientConnectionManager cm = new BasicHttpClientConnectionManager( registry );
+
+    LaxRedirectStrategy strategy = new LaxRedirectStrategy()
+    {
+        public HttpUriRequest getRedirect( HttpRequest request, HttpResponse response, HttpContext context ) throws ProtocolException
+        {
+            URI uri = getLocationURI( request, response, context );
+            HttpPost newRequest = new HttpPost( uri );
+            newRequest.setEntity( ( (HttpPost) request ).getEntity() );
+
+            return newRequest;
+        }
+    };
+    
+    HttpClientBuilder clientBuilder = HttpClients.custom()
+                                                 .setSSLSocketFactory( sslConnectionSocketFactory )
+                                                 .setRedirectStrategy( strategy )
+                                                 .setConnectionManager( cm );
+    
+    CloseableHttpClient httpClient = clientBuilder.build();
+    CloseableHttpResponse response = httpClient.execute( post );
+
+    return IOUtils.toString( response.getEntity().getContent(), "UTF-8" );
+}
+
+String getToken()
+{
+    HttpPost post = new HttpPost( TOKEN_URL );
+    List urlParameters = new ArrayList();
+
+    urlParameters.add( new BasicNameValuePair( "name", "INTSAIAJARM" ) );
+    urlParameters.add( new BasicNameValuePair( "password", "lVhk7hFqr3O$" ) );
+    urlParameters.add( new BasicNameValuePair( "free_api_key", "free_api_key" ) );
+
+    post.setEntity( new UrlEncodedFormEntity( urlParameters ) ) ;
+
+    String response = getResponse( post );
+    String token = "";
+
+	JSONObject jsonResponse = new JSONObject( response );
+	
+    if( jsonResponse.has( "data" ) )
+    {
+        JSONObject jsonResponse = new JSONObject(response);
+        JSONObject data = jsonResponse.getJSONObject("data");
+        token = data.getString("token");
+    }
+
+    return token;
+}
+
+getCounters( token )
+{
+    HttpPost post = new HttpPost( COUNTERS_URL );
+    List urlParameters = new ArrayList();
+	activeUser = ApplicationContext.getInstance().getActiveUser();
+	
+    urlParameters.add( new BasicNameValuePair( "token", token ) );
+    urlParameters.add( new BasicNameValuePair( "login", activeUser.getLoginName() ) );
+	urlParameters.add( new BasicNameValuePair( "free_api_key", "free_api_key" ) );
+	
+    post.setEntity( new UrlEncodedFormEntity( urlParameters ) ) ;
+
+    String response = getResponse( post );
+    int udreadMinutes = 0;
+    int pendingTask = 0;
+
+    JSONObject jsonResponse = new JSONObject( response );
+
+    if( jsonResponse.has( "data" ) )
+    {
+        JSONObject  data = jsonResponse.getJSONObject( "data" );
+        udreadMinutes = data.getInt( "udreadMinutes" );
+        pendingTask = data.getInt( "pendingTask" );
+    }
+
+    counters[0] = udreadMinutes;
+	counters[1] = pendingTask;
+}
+
+Integer[] doWork()
+{
+	try
+	{
+		String token = getToken();
+		getCounters( token );
+	}
+	catch( Exception e )
+	{
+		ApplicationContext.getInstance().logError("Falha na integração com SAIA. Erro: " + e.toString());
+	}
+	
+	return counters;
+}
+
+return doWork();

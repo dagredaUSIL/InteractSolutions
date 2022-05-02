@@ -1,0 +1,468 @@
+/**
+ * Nome do Script: TID-03107 - Informe de riesgos y controles desde Process Manager
+ *
+ * Descrição: Script gera um relatório dos riscos e controles anexados em atividades de processos do BPM
+ *
+ * Criado em: 14/01/2022
+ *
+ * Versão:  1.0
+ *
+ * Autor: Arthur Meurer Saraiva (colocar suas iniciais quando alterar o script)
+ *
+ */
+
+import com.interact.sas.web.zk.cmn.parts.ItemSelector;
+import com.interact.sas.web.zk.ext.sa.FormMarvel;
+import com.interact.sas.bpm.data.ProcessDefinition;
+import com.interact.sas.cmn.data.Atom;
+import com.interact.sas.bpm.data.TreeItem;
+import com.interact.sas.bpm.data.TaskDefinition;
+import com.interact.sas.cmn.data.Category;
+import com.interact.sas.bpm.db.BusinessProcessManager;
+import com.interact.sas.cmn.data.TagMapping;
+import com.interact.sas.cmn.db.CategoryManager;
+import com.interact.sas.cmn.db.TagManager;
+import com.interact.sas.cmn.data.Context;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFDataFormat;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Font;
+import com.interact.sas.web.zk.cmn.util.FileUtilities;
+import com.interact.sas.orm.data.ControlTechnique;
+import com.interact.sas.orm.data.OperationalRisk;
+import com.interact.sas.orm.db.OperationalRiskManager;
+import com.interact.sas.orm.db.ControlTechniqueManager;
+import java.text.SimpleDateFormat;
+import java.io.FileOutputStream;
+import java.io.File;
+
+// logs
+StringBuilder logs = new StringBuilder(); //LogMarvel n funciona com FormMarvel
+
+// selectors
+ItemSelector selector = new ItemSelector();
+
+// variables
+Map mapProcessRisks         = SA.map();
+Map mapProcessControls      = SA.map();
+List processDefinitionIds   = SA.list();
+SimpleDateFormat df = new SimpleDateFormat( "HH:mm:ss" );
+
+String ATRIBUTE_FAMILY  = "INFORME_POLITICAS";
+String PROCESS_TYPE     = "TIPO_PROCESSOS";
+String MACROPROCESS     = "1"; // Macroproceso
+String PROCESS          = "2"; // Proceso
+String FLOWCHART        = "3"; // Flujograma
+String SUBPROCESS       = "4"; // Subproceso
+
+// managers
+BusinessProcessManager businessProcessManager   = com.interact.sas.bpm.ModuleContext.getInstance().getBusinessProcessManager();
+TagManager tagManager                           = com.interact.sas.cmn.ModuleContext.getInstance().getTagManager();
+CategoryManager categoryManager                 = com.interact.sas.cmn.ModuleContext.getInstance().getCategoryManager();
+OperationalRiskManager operationalRiskManager   = com.interact.sas.orm.ModuleContext.getInstance().getOperationalRiskManager();
+ControlTechniqueManager controlTechniqueManager = com.interact.sas.orm.ModuleContext.getInstance().getControlTechniqueManager();
+
+buildPath( ProcessDefinition processDefinition, String processType )
+{
+    TreeItem treeItem = businessProcessManager.getTreeItem( TreeItem.FAMILY_PROCESS, processDefinition.getId() );
+
+    int levels = 0;
+
+    if( processType.equals( MACROPROCESS ) ) levels = 3;
+    if( processType.equals( PROCESS ) ) levels = 4;
+    if( processType.equals( FLOWCHART ) ) levels = 5;
+    if( processType.equals( SUBPROCESS ) ) levels = 6;
+
+    return getPath( treeItem, levels, new String[levels] );
+}
+
+String[] getPath( TreeItem treeItem, int levels, String[] array )
+{
+    if( treeItem == null || levels < 0 )
+    {
+        return array;
+    }
+
+    if( treeItem.getFamily() == TreeItem.FAMILY_CATEGORY )
+    {
+        Category category = categoryManager.getCategory( treeItem.getSourceId() );
+        levels--;
+        array[levels] = category.getName();
+
+        return getPath( businessProcessManager.getTreeItem( treeItem.getParentId() ), levels, array );
+    }
+
+    if( treeItem.getFamily() == TreeItem.FAMILY_PROCESS )
+    {
+        ProcessDefinition processDefinition = businessProcessManager.getProcessDefinition( new Atom( treeItem.getSourceId() ) );
+        String processType = getAttributeValue( processDefinition, ATRIBUTE_FAMILY, PROCESS_TYPE );
+
+        if ( processType != null )
+        {
+            levels--;
+            array[levels] = processDefinition.getName();
+        }
+
+        return getPath( businessProcessManager.getTreeItem( treeItem.getParentId() ), levels, array );
+    }
+}
+
+String getAttributeValue( ProcessDefinition processDefinition, String attributeFamily, String attributeMnemonic )
+{
+    TagMapping mapping = tagManager.getMapping( processDefinition.getTagSubject(), attributeFamily + ":" + attributeMnemonic );
+
+    return mapping == null ? null : mapping.getContent();
+}
+
+File createSheet( String nameFile, String nameSheet, List columns, List registers ) throws Exception
+{
+	//Validações
+	if( nameFile.length() <= 0 )
+	{
+		throw new Exception( "Nome do arquivo vazio!" );
+	} 
+	else if( nameSheet.length() <= 0 )
+	{
+		throw new Exception( "Nome aba da planilha vazio!" );
+	}
+	else if( columns.size() <= 0 )
+	{
+		throw new Exception( "Nenhuma coluna definida no cabeçalho!" );
+	}
+	else if( registers.size() <= 0 )
+	{
+		throw new Exception( "Nenhuma registro na planilha" );
+	}
+
+	// Criando o arquivo
+	File sheetFile = File.createTempFile( nameFile, ".xls" );
+
+	// Criando o arquivo XLS
+	HSSFWorkbook workbook = new HSSFWorkbook();
+
+	int MAX_REGISTER_BY_SHEET = 65500;
+	int sizeData = registers.size();
+
+	int index = 0;
+
+	for( int i = 0; i < sizeData; i+=MAX_REGISTER_BY_SHEET )
+	{
+		index++;
+
+		int actual = i + MAX_REGISTER_BY_SHEET;
+
+		actual = ( actual < MAX_REGISTER_BY_SHEET ) ? MAX_REGISTER_BY_SHEET : ( actual - 1 );
+		actual = ( actual > sizeData ) ? sizeData : actual;
+
+		List partRegisters = registers.subList( i, actual );
+
+		//Criando planilha
+		HSSFSheet sheet = workbook.createSheet( nameSheet + index );
+
+		// Definindo alguns padrões de layout
+		sheet.setDefaultColumnWidth( columns.size() );
+		sheet.setDefaultRowHeight( (short)(partRegisters.size() + 1) );
+
+		int rownum = 0;
+		int cellnum = 0;
+		HSSFCell cell;
+		HSSFRow row;
+
+		//Configurando estilos de células (Cores, alinhamento, formatação, etc..)
+		HSSFDataFormat numberFormat = workbook.createDataFormat();
+
+		//HeaderStyle
+		HSSFCellStyle headerStyle = workbook.createCellStyle();
+		headerStyle.setFillForegroundColor( IndexedColors.DARK_BLUE.getIndex() );
+		headerStyle.setFillPattern( HSSFCellStyle.SOLID_FOREGROUND );
+		headerStyle.setAlignment( HSSFCellStyle.ALIGN_CENTER );
+		headerStyle.setVerticalAlignment( HSSFCellStyle.VERTICAL_CENTER );
+		Font font = workbook.createFont();
+		font.setColor( IndexedColors.WHITE.getIndex() );
+        headerStyle.setFont( font );
+
+		//TextStyleEven
+		HSSFCellStyle textStyleEven = workbook.createCellStyle();
+		textStyleEven.setAlignment( HSSFCellStyle.ALIGN_LEFT );
+		textStyleEven.setVerticalAlignment( HSSFCellStyle.VERTICAL_CENTER );
+
+		//TextStyleOdd
+		HSSFCellStyle textStyleOdd = workbook.createCellStyle();
+		textStyleOdd.setAlignment( HSSFCellStyle.ALIGN_LEFT );
+		textStyleOdd.setVerticalAlignment( HSSFCellStyle.VERTICAL_CENTER );
+		textStyleOdd.setFillForegroundColor( IndexedColors.GREY_25_PERCENT.getIndex() );
+		textStyleOdd.setFillPattern( HSSFCellStyle.SOLID_FOREGROUND );
+
+		row = sheet.createRow( rownum++ );
+
+		for( String column : columns )
+		{
+			cell = row.createCell( cellnum++ );
+			cell.setCellStyle( headerStyle );
+			cell.setCellValue( column );
+		}
+
+		// Adicionando os dados dos produtos na planilha
+		boolean even = true;
+
+		for( List register : partRegisters ) 
+		{
+			row = sheet.createRow( rownum++ );
+			cellnum = 0;
+
+			for( String value : register )
+			{
+				cell = row.createCell( cellnum++ );
+
+				if( even )
+				{
+					cell.setCellStyle( textStyleEven );
+				}
+				else
+				{
+					cell.setCellStyle( textStyleOdd );
+				}
+
+				cell.setCellValue( value == null ? "" : value );
+			}
+
+			even = even ? false : true;
+		}
+
+		//Alinha as colunas
+		for( int i = 0; i < columns.size(); i++ )
+		{
+			sheet.autoSizeColumn( i );
+		}  
+	}
+
+	//Escrevendo o arquivo
+	FileOutputStream out = new FileOutputStream( sheetFile.getAbsolutePath() );
+	workbook.write( out );
+	out.close();
+
+	return sheetFile;
+}
+
+String getRisks( ProcessDefinition processDefinition )
+{
+    String riskText = "";
+    List riskIds = mapProcessRisks.get( processDefinition.getId() );
+
+    if( riskIds != null )
+    {
+        for( int riskId : riskIds )
+        {
+            OperationalRisk risk = operationalRiskManager.getRisk( riskId );
+            
+            if( riskIds.size() > 1 )
+            {
+                riskText += risk.getCode() + " - " + risk.getName() + " / ";
+            }
+            else
+            {
+                riskText = risk.getCode() + " - " + risk.getName();
+            }  
+        }
+    }
+
+    return riskText;
+}
+
+String getControls( ProcessDefinition processDefinition )
+{
+    String controlText = "";
+    List controlIds = mapProcessControls.get( processDefinition.getId() );
+    
+    if( controlIds != null )
+    {
+        for( int controlId : controlIds )
+        {
+            ControlTechnique control = controlTechniqueManager.getControlTechnique( controlId );
+            
+            if( controlIds.size() > 1 )
+            {
+                controlText += control.getCode() + " - " + control.getName() + " / ";
+            }
+            else
+            {
+                controlText = control.getCode() + " - " + control.getName();
+            }   
+        }
+    }
+    return controlText;
+}
+
+/**
+ * Adiciona uma linha de texto aos logs
+ * 
+ * @param text String
+ * @throws Exception
+ */
+void log( String text ) throws Exception
+{
+	logs.append( SA.now().toString() + ": " + text + "\n" );
+}
+
+/**
+* Realiza o download de um arquivo txt
+*
+* @param text String
+*/
+void downloadText( String text, String ext, String fileName )
+{
+    try
+    {
+        java.io.File temp = java.io.File.createTempFile( fileName, ext );
+        java.io.BufferedWriter bw = new BufferedWriter( new java.io.FileWriter( temp.getAbsolutePath() ) );
+        bw.write( text );
+        bw.flush();
+        bw.close();
+        com.interact.sas.web.zk.cmn.util.FileUtilities.downloadFile( temp );
+    }
+    catch( Exception e )
+    {
+        addLog( "[ERRO] Problemas no método downloadText(): " + e.getMessage() );
+        haveError = true;
+    }
+}
+
+void doWork()
+ {
+    log( "Script Started At: " + new SimpleDateFormat( "dd/MM/yyyy HH:mm:ss" ).format( System.currentTimeMillis() ) + "\n\n" );
+    log( "[INFO] REGISTROS DE LOG" );
+    log( "[INFO] SCRIPT - Script");
+    log( "[INFO] CLIENTE - " + SA.context().getOrganizationName() );
+    log( "" );
+
+    ArrayList rows = new ArrayList();
+    ArrayList columns = new ArrayList();
+
+    if( selector.getSelectedValue() != null && !selector.getSelectedValue().isEmpty() )
+    {
+        try
+        {
+            List result = SA.query( "select distinct process.id,\n" + 
+                                    "                context.url\n" + 
+                                    "from   bpm_processes process\n" + 
+                                    "       left join bpm_tasks task\n" + 
+                                    "              on ( process.id = task.ref_process )\n" + 
+                                    "       left join cmn_context context\n" + 
+                                    "              on ( context.ref_source = task.id\n" + 
+                                    "                   and context.family = 50\n" + 
+                                    "                   and ( context.url like 'sas:orm:riskcontext:%'\n" + 
+                                    "                          or context.url like\n" + 
+                                    "                             'sas:orm:controltechniquecontext:%' ) )\n" + 
+                                    "where  process.stage " + ( selector.getSelectedValue().equalsIgnoreCase( "Version em Producción" ) ? " = " + ProcessDefinition.STAGE_PRODUCTION : " is not null " ) ).fetch();
+
+            for( Object [] r : result )
+            {
+                int refSource = SA.cint( r[0] );
+                String url = r[1];
+
+                if( !processDefinitionIds.contains( refSource ) ) processDefinitionIds.add( refSource );
+
+                if( url != null && url.contains( "sas:orm:riskcontext:" ) )
+                {
+                    url = url.replace( "sas:orm:riskcontext:", "" );
+                    String[] split = url.split( "#" );
+                    int riskId = SA.cint( split[0] );
+                    List risks = SA.list();
+
+                    if( mapProcessRisks.containsKey( refSource ) )
+                    {
+                        risks = mapProcessRisks.get( refSource );
+                    }
+
+                    risks.add( riskId );
+                    mapProcessRisks.put( refSource, risks );
+                }
+
+                if( url != null && url.contains( "sas:orm:controltechniquecontext:" ) )
+                {
+                    url = url.replace( "sas:orm:controltechniquecontext:", "" );
+                    String[] split = url.split( "#" );
+                    int controlId = SA.cint( split[0] );
+                    List controls = SA.list();
+
+                    if( mapProcessControls.containsKey( refSource ) )
+                    {
+                        controls = mapProcessControls.get( refSource );
+                    }
+
+                    controls.add( controlId );
+                    mapProcessControls.put( refSource, controls );
+                }
+            }
+            
+            for( int processDefinitionId : processDefinitionIds )
+            {
+                ProcessDefinition processDefinition = businessProcessManager.getProcessDefinition( new Atom( processDefinitionId ) );
+                String processType = getAttributeValue( processDefinition, ATRIBUTE_FAMILY, PROCESS_TYPE );
+
+                if( processType == null )
+                {
+                    continue;
+                }
+
+                String[] path = buildPath( processDefinition, processType );
+                String risks = getRisks( processDefinition );
+                String controls = getControls( processDefinition );
+
+                ArrayList register = new ArrayList();
+
+                register.add( path[0] );
+                register.add( path[1] );
+                register.add( path[2] );
+                register.add( path.length > 3 ?  path[3] : "" );
+                register.add( path.length > 4 ?  path[4] : "" );
+                register.add( path.length > 5 ?  path[5] : "" );
+                register.add( risks );
+                register.add( controls );
+
+                rows.add( register );
+            }
+
+            columns.add( "Unidad" );
+            columns.add( "Categoría" );
+            columns.add( "Macroproceso" );
+            columns.add( "Proceso" );
+            columns.add( "Diagrama de Flujo" );
+            columns.add( "Subproceso" );
+            columns.add( "Riesgos" );
+            columns.add( "Controles" );
+
+            File sheet = createSheet( "Exportación Riesgos y Controles (BPM)", "Riesgos y Controles", columns, rows );
+
+            //Download arquivo
+            FileUtilities.downloadFile( sheet );
+        }
+        catch( Exception e )
+        {
+            SA.prompt( "[ERRO] " + e.toString() );
+            log( "[ERRO] " + e.toString() );
+            downloadText( logs.toString(), ".txt", "logs" );
+        }
+    }
+    else
+    {
+        SA.prompt( "[ERRO] Selector vacio!" );
+    }
+ }
+
+void main()
+{
+    selector.setList( Arrays.asList( new Object[]{ "Version em Producción" , "Todas las Versiones" } ) );
+
+    FormMarvel form = SA.form( "Informe de riesgos y controles", "", "Rellene los parámetros para generar el informe" );
+
+    form.add( "versionType", "Versiones de Proceso", selector );
+
+    form.prompt( "doWork()" );
+}
+
+main();
