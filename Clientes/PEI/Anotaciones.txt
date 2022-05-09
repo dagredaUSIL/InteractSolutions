@@ -1,0 +1,12 @@
+Agregar Alcance
+Agregar campo para proceso
+del proceso
+trocar algunos atributos del proceso
+color un hit con mas detalle sobre la creacion de un proceso
+un hit mas con detalle sobre la lista de anexos
+quitar el / 
+Carga de proceso desde la Suite 
+Carga de proceso desde otras herramientas
+Por favor colocar lor aprobadores que aprobaron el As IS
+Espectativa y comentarios adicionales
+Por favor ingresa los responsables de las areas
