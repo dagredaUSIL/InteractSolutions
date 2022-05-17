@@ -1,0 +1,7 @@
+//Validar Campo input-text vacio dentro de la lista
+if( FORM.getValue( "comentario_bitacora" ).equals("") || FORM.getValue( "comentario_bitacora" ) == null)
+{
+	self.setError("Falta un Valor 1");
+} else {
+	self.setError("hay valor");
+}
