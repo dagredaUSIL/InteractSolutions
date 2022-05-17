@@ -1,0 +1,1 @@
+Vamos bien, ahora es momento de la Implementación de la lógica base del robot
