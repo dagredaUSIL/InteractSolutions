@@ -1,0 +1,228 @@
+```
+/**
+* Filename: Hierarquia de pastas.java
+* 
+* Description: Cria hierarquia de pastas para documentação no repositório.
+* 
+* Revision: 2.0 - Gabriel Dullius (gd@interact.com.br) 14/02/2021 | TID-03540 - Adicionado método para colocar restrições nas pastas.
+* 
+*/
+import com.interact.sas.web.zk.cmn.util.ProtocolHelper;
+import com.interact.sas.web.zk.cmn.ApplicationContext;
+import com.interact.sas.web.zk.cmn.parts.ItemSelector;
+import com.interact.sas.bpm.data.ProcessInstance;
+import com.interact.sas.dms.data.DocumentFolder;
+import com.interact.sas.dms.db.DocumentManager;
+import com.interact.sas.cmn.data.TagMapping;
+import com.interact.sas.cmn.data.Restriction;
+import org.zkoss.zul.Textbox;
+
+
+ItemSelector itemSelector 			= null; // seletor item simples
+Textbox textBox 					= null; // texto simples
+
+attributeAccessor = SA.access("attribute");
+attributeAccessor.attach(CONTEXT.getAttribute("@serial"));
+
+
+pi = CONTEXT.getProcessInstance();
+
+serial = pi.getSerial(); 
+name = pi.getName(); 
+
+idCRM = CONTEXT.getAttribute("idCRM");
+print(idCRM);
+
+b = SA.query( "select id, company_name from crm_accounts where  id = "+ idCRM );
+
+// for ( u : b.fetch() )
+// {
+// 	//  print( u );
+// }
+
+number = b.concat(0, "");
+Name  = b.concat(1, "");
+
+
+FolderName = CONTEXT.getAttribute("numeroPastaFisica") + " - " + Name;
+
+
+dm         = com.interact.sas.dms.ModuleContext.getInstance().getDocumentManager();
+rm         = com.interact.sas.cmn.ModuleContext.getInstance().getRestrictionManager();
+tagManager = com.interact.sas.cmn.ModuleContext.getInstance().getTagManager();
+
+parentFolder = dm.getFolder( 6126 ); //MUDAR AQUI
+//FolderName = "Teste 4"
+
+
+//ID dos grupos de adminstração do SA
+int GROUP_1 = 199; //<---- ID DO GRUPO DE USUÀRIOS
+
+/**
+ * 
+ * Lista para ser colocado as restrições nas pastas
+ * 
+ * groupsAtestadoDeCapacidadeTecnica.add( ) - Toda vez que quiser adicionar um grupo de usuário para restrição.
+ * 
+ */
+List groupsAtestadoDeCapacidadeTecnica = SA.list();
+groupsAtestadoDeCapacidadeTecnica.add( GROUP_1 );
+
+
+List groupsCartasDeReajuste = SA.list();
+groupsCartasDeReajuste.add( GROUP_1 );
+
+
+List groupsContratosFC = SA.list();
+groupsContratosFC.add( GROUP_1 );
+
+
+List groupsDocumentosFinanceiros = SA.list();
+groupsDocumentosFinanceiros.add( GROUP_1 );
+
+
+List groupsOficios = SA.list();
+groupsOficios.add( GROUP_1 );
+
+
+
+Map map = SA.map();
+map.put( "Cartas de reajuste", groupsCartasDeReajuste );
+map.put( "Contratos e FC", groupsContratosFC );
+map.put( "Documentos financeiros", groupsDocumentosFinanceiros );
+map.put( "Ofícios", groupsOficios );
+
+
+
+/**
+ * Coloca uma restriction na pasta do repositório.
+ * 
+ * @param folder DocumentFolder
+ */
+void setFolderRestriction( DocumentFolder folder )
+{
+	if ( folder.getRestriction() == 0 )
+	{
+
+		folder.setRestriction( rm.generateRestrictionId() );
+
+		dm.updateFolder( folder );
+	}
+
+	restrictions = SA.list();
+
+	for( key : map.keySet() )
+	{
+		if ( folder.getName().equals( key ) )
+		{
+			for( groupId : map.get( key ) )
+			{
+				Restriction restriction = new Restriction();
+
+				restriction.setSource( groupId );
+				restriction.setType( Restriction.TYPE_GROUP );
+
+				restrictions.add( restriction );
+			}
+		}
+	}
+	rm.updateRestrictions( folder.getRestriction(), restrictions );
+}
+
+
+if ( parentFolder != null ) 
+{
+
+	folder = dm.getFolderByName( FolderName, parentFolder.getId() ); 
+
+
+	if ( folder == null ) 
+	{   
+		folder = new DocumentFolder( FolderName );
+		dm.addFolder( parentFolder, folder );
+
+		cr = new DocumentFolder("Cartas de reajuste");
+		dm.addFolder(folder, cr);
+		setFolderRestriction( cr );
+
+		cc = new DocumentFolder("Certificados de capacitação");
+		dm.addFolder(folder, cc);
+
+		fc = new DocumentFolder("Contratos e FC");
+		dm.addFolder(folder, fc);
+		setFolderRestriction( fc );
+
+		cos = new DocumentFolder("Customizações e Ordem de Serviços");
+		dm.addFolder(folder, cos);
+
+		//subs do "Customizações e Ordem de Serviços"
+
+		anm = new DocumentFolder("Antecipações de Melhorias - PRF");
+		dm.addFolder(cos, anm);
+
+		prj = new DocumentFolder("Customizações - PRJ");
+		dm.addFolder(cos, prj);
+
+		os = new DocumentFolder("Ordens de Serviços - OS");
+		dm.addFolder(cos, os);
+		
+		
+		bpm = new DocumentFolder("Projetos de BPM");
+		dm.addFolder(cos, bpm);
+				
+		//-----------------------------------------
+		df = new DocumentFolder("Documentos financeiros");
+		dm.addFolder(folder, df);
+		setFolderRestriction( df );
+
+		docT = new DocumentFolder("Documentos técnicos/suporte");
+		dm.addFolder(folder, docT);
+
+		mem = new DocumentFolder("Memorandos");
+		dm.addFolder(folder, mem);
+
+		ofc = new DocumentFolder("Ofícios");
+		dm.addFolder(folder, ofc);
+		setFolderRestriction( ofc );
+
+		prop = new DocumentFolder("Propostas");
+		dm.addFolder(folder, prop);
+
+		//subs do "Customizações e Ordem de Serviços"
+
+		cap = new DocumentFolder("Capacitação");
+		dm.addFolder(prop, cap);
+
+		set = new DocumentFolder("Serviços Técnicos");
+		dm.addFolder(prop, set);
+
+		//------------------------------------------
+		rac = new DocumentFolder("Racs");
+		dm.addFolder(folder, rac);
+
+		sla = new DocumentFolder("Relatório de chamados - SLA");
+		dm.addFolder(folder, sla);
+
+		rs = new DocumentFolder("Relatórios de Status");
+		dm.addFolder(folder, rs);
+
+	}
+
+	folder = dm.getFolder(folder.id);
+	attributeAccessor.value("idDocument", folder.getId());
+
+	tagKind = tagManager.getKind("account:CANAIS.CRM.CONTA"); //("mnemonico_familia:mnemonico_atributo"); // PRECISA MUDARO AQUIII 
+
+	tag = new TagMapping();	
+	tag.setKindId(tagKind.getId());
+	tag.setSourceId(folder.getId());
+	tag.setTagSubject(folder.getTagSubject());
+	tag.setType(folder.getTagSubject().TYPE_DMS_FOLDER);
+	tag.setContent(idCRM);
+	print(idCRM);
+
+	tagManager.addMapping(tag);
+
+}
+
+```

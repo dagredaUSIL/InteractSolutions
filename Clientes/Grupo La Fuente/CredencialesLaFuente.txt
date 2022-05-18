@@ -3,6 +3,7 @@ sas*123
 
 https://172.28.3.30:8443/sa/apps/cmn/LauncherLogin.jsp
 https://172.28.3.32:8443/sa/apps/cmn/LauncherLogin.jsp
+https://172.28.3.32:8444/sa/apps/cmn/CollaboratorApplication.jsp
 
 181.115.156.146
 
