@@ -1,0 +1,4 @@
+Agregar que cada vez que hay un numero de merma va para no conforme
+Validación del reporte , hay finalizar el turno I y II
+Fecha de entrega y hora de entrega unicamente se debe traer la fecha al cierre de un formulario
+nombre del lider ugb

@@ -1,0 +1,13 @@
+fecha
+turno
+Maquina ensobradora 1
+Presion de aire
+Presion tambores
+velocidad
+
+
+Maquina ensobradora 2
+Presion de aire
+velocidad
+frecuenzia 
+desplazamiento fino
