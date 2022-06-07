@@ -1,0 +1,55 @@
+2022-06-02 14:10:31.287 INFO: Executando Script!
+2022-06-02 14:10:31.288 INFO: 
+2022-06-02 14:10:31.31 INFO: [Formulário]
+2022-06-02 14:10:31.31 INFO: Diretório    : D:\prueba--subida-masiva-doc
+2022-06-02 14:10:31.311 INFO: Elaborador   : Daniel Ortiz Soria - 463
+2022-06-02 14:10:31.311 INFO: Data inicial : 2022-06-02
+2022-06-02 14:10:31.311 INFO: Data final   : 2022-06-03
+2022-06-02 14:10:31.311 INFO: Categoria    : Prueba - Copia #11 - 11
+2022-06-02 14:10:31.311 INFO: 
+2022-06-02 14:10:31.692 INFO: Informações do Documento!
+2022-06-02 14:10:31.693 INFO: Nome Documento   : doc3-1
+2022-06-02 14:10:31.693 INFO: Código Documento : GEL-PL-LO-01
+2022-06-02 14:10:31.693 INFO: Pasta            : carpeta 3
+2022-06-02 14:10:31.693 INFO: Responsável      : Daniel Ortiz Soria
+2022-06-02 14:10:31.693 INFO: Categoria        : Prueba - Copia #11
+2022-06-02 14:10:31.698 INFO: Documento publicado!
+2022-06-02 14:10:31.698 INFO: 
+2022-06-02 14:10:31.94 INFO: Informações do Documento!
+2022-06-02 14:10:31.94 INFO: Nome Documento   : doc3-2
+2022-06-02 14:10:31.94 INFO: Código Documento : GEL-PL-LO-02
+2022-06-02 14:10:31.94 INFO: Pasta            : carpeta 3
+2022-06-02 14:10:31.94 INFO: Responsável      : Daniel Ortiz Soria
+2022-06-02 14:10:31.94 INFO: Categoria        : Prueba - Copia #11
+2022-06-02 14:10:31.944 INFO: Documento publicado!
+2022-06-02 14:10:31.944 INFO: 
+2022-06-02 14:10:32.176 INFO: Informações do Documento!
+2022-06-02 14:10:32.176 INFO: Nome Documento   : doc3-3
+2022-06-02 14:10:32.176 INFO: Código Documento : GEL-PL-LO-03
+2022-06-02 14:10:32.176 INFO: Pasta            : carpeta 3
+2022-06-02 14:10:32.176 INFO: Responsável      : Daniel Ortiz Soria
+2022-06-02 14:10:32.176 INFO: Categoria        : Prueba - Copia #11
+2022-06-02 14:10:32.18 INFO: Documento publicado!
+2022-06-02 14:10:32.18 INFO: 
+2022-06-02 14:10:32.435 INFO: Informações do Documento!
+2022-06-02 14:10:32.435 INFO: Nome Documento   : doc2-1
+2022-06-02 14:10:32.435 INFO: Código Documento : GEL-PL-LO-04
+2022-06-02 14:10:32.435 INFO: Pasta            : carpeta 2
+2022-06-02 14:10:32.435 INFO: Responsável      : Daniel Ortiz Soria
+2022-06-02 14:10:32.435 INFO: Categoria        : Prueba - Copia #11
+2022-06-02 14:10:32.438 INFO: Documento publicado!
+2022-06-02 14:10:32.438 INFO: 
+2022-06-02 14:10:32.676 INFO: Informações do Documento!
+2022-06-02 14:10:32.676 INFO: Nome Documento   : doc2-2
+2022-06-02 14:10:32.676 INFO: Código Documento : GEL-PL-LO-05
+2022-06-02 14:10:32.676 INFO: Pasta            : carpeta 2
+2022-06-02 14:10:32.676 INFO: Responsável      : Daniel Ortiz Soria
+2022-06-02 14:10:32.676 INFO: Categoria        : Prueba - Copia #11
+2022-06-02 14:10:32.679 INFO: Documento publicado!
+2022-06-02 14:10:32.679 INFO: 
+2022-06-02 14:10:32.726 INFO: [STATUS]
+2022-06-02 14:10:32.726 INFO: Documentos para importar --------- : 5
+2022-06-02 14:10:32.726 INFO: Documentos importados ------------ : 5
+2022-06-02 14:10:32.726 INFO: Documentos com falha ao importados : 0
+2022-06-02 14:10:32.726 INFO: 
+2022-06-02 14:10:32.731 INFO: Script executado!
