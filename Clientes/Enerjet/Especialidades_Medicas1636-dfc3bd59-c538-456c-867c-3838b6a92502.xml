@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<option id="OP1" name="Especialidades Medicas" family="3" category="">
+  <text type="info"><![CDATA[]]></text>
+  <optionItems>
+    <optionItem label="Alergolog&#237;a" content="Alergolog&#237;a"></optionItem>
+    <optionItem label="Cardiolog&#237;a" content="Cardiolog&#237;a"></optionItem>
+    <optionItem label="Endocrinolog&#237;a" content="Endocrinolog&#237;a"></optionItem>
+    <optionItem label="Gastroenterolog&#237;a" content="Gastroenterolog&#237;a"></optionItem>
+    <optionItem label="Geriatr&#237;a" content="Geriatr&#237;a"></optionItem>
+    <optionItem label="Hematolog&#237;a y hemoterapia" content="Hematolog&#237;a y hemoterapia"></optionItem>
+    <optionItem label="Infectolog&#237;a" content="Infectolog&#237;a"></optionItem>
+    <optionItem label="Nefrolog&#237;a" content="Nefrolog&#237;a"></optionItem>
+    <optionItem label="Neumolog&#237;a" content="Neumolog&#237;a"></optionItem>
+    <optionItem label="Nutriolog&#237;a" content="Nutriolog&#237;a"></optionItem>
+    <optionItem label="Oftalmolog&#237;a" content="Oftalmolog&#237;a"></optionItem>
+    <optionItem label="Oncolog&#237;a" content="Oncolog&#237;a"></optionItem>
+    <optionItem label="Pediatr&#237;a" content="Pediatr&#237;a"></optionItem>
+    <optionItem label="Psiquiatr&#237;a" content="Psiquiatr&#237;a"></optionItem>
+    <optionItem label="Toxicolog&#237;a" content="Toxicolog&#237;a"></optionItem>
+  </optionItems>
+</option>
