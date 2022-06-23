@@ -1,0 +1,253 @@
+/*
+ * Nome Do Script: Importar Normas
+ *
+ * Descrição: Importar normas de uma planilha XLS.
+ *
+ * Criado Em: 29/11/2018
+ *
+ * Versão: 2.0
+ *
+ * Autor: Luís Felipe Dal Molin ( lm@interact.com.br ) <- Coloque suas iniciais ao modificar a regra.
+ *
+ * Versão Mínima Do SA: 7.0.20.0
+ */
+
+import com.interact.sas.cmn.data.Category;
+import com.interact.sas.cmn.data.Requirement;
+import com.interact.sas.cmn.data.Rule;
+import com.interact.sas.web.zk.cmn.util.FileUtilities;
+import com.interact.sas.web.zk.ext.sa.FormMarvel;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.WorkbookSettings;
+
+String CATEGORY = "ISO";
+
+String LEVEL = "ISO 9001:2015";
+
+FormMarvel fm = null;
+
+File file = null;
+
+StringBuilder sb = new StringBuilder();
+
+void doWork()
+{
+	try
+	{
+		addLog( "START: " + new SimpleDateFormat( "dd/MM/yyyy HH:mm:ss" ).format( SA.now() ) );
+		
+		Category category = com.interact.sas.cmn.ModuleContext.getInstance().getCategoryManager().getCategoryByName( CATEGORY, Category.FAMILY_RULES, null );
+
+		Rule rule = ( Rule ) SA.fetch1( "cmn:rule", "select id from cmn_rules where ref_category = " + category.getId() + " and name = '" + LEVEL + "'" );
+	
+		if ( rule != null )
+		{
+			file = ( File ) fm.input( "file" );
+
+			Sheet sheet = getSheet();
+
+			if ( sheet != null )
+			{
+				int ignoreLines = Integer.valueOf( ( String ) fm.input( "line" ) );
+
+				for ( int r = ignoreLines ; r < sheet.getRows() ; r++ )
+				{
+					try
+					{
+						String classification = sheet.getCell( 0, r ).getContents();
+						String name           = sheet.getCell( 1, r ).getContents();
+						String description    = sheet.getCell( 2, r ).getContents();
+
+						if ( classification != null && ! classification.isEmpty() )
+						{                                
+							Requirement requirement = new Requirement();
+
+							requirement.setClassification( classification );
+							requirement.setName( name );
+							requirement.setInfo( description );
+							requirement.setRuleId( rule.getId() );
+
+							com.interact.sas.cmn.ModuleContext.getInstance().getRuleManager().addRequirement( requirement );
+
+							addLog( "Adicionada Norma: " + name + " -> " + description );
+						}
+					}
+
+					catch ( Exception e )
+					{
+						addLog( "ERRO Ao Adicionar Norma Da Linha " + r + ":\n" + getStackTrace( e ) );
+					}
+				}
+			}
+		}
+		
+		addLog( "END: " + new SimpleDateFormat( "dd/MM/yyyy HH:mm:ss" ).format( SA.now() ) );
+		
+		File temp = File.createTempFile( "requirements-import-log-", ".log" );
+
+		BufferedWriter bw = new BufferedWriter( new FileWriter( temp.getAbsolutePath() ) );
+
+		bw.write( sb.toString() );
+
+		bw.flush();
+		bw.close();
+
+		FileUtilities.downloadFile( temp );
+	}
+
+	catch ( Exception e )
+	{
+		addLog( "ERRO Ao Ler Planilha:\n" + getStackTrace( e ) );
+	}
+}
+
+void addLog( String info )
+{
+	print( "\n" + info + "\n" );
+	
+	sb.append( "\n" )
+	  .append( info )
+	  .append( "\n" );
+}
+
+String getStackTrace( Throwable t )
+{
+	StringWriter sw = new StringWriter();
+	PrintWriter  pw = new PrintWriter( sw );
+
+	t.printStackTrace( pw );
+	
+	return sw.toString();
+}
+
+Sheet getSheet() throws Exception
+{
+	Sheet sheet = null;
+
+	WorkbookSettings ws = new WorkbookSettings();
+
+	ws.setLocale( new Locale( "en", "EN" ) );
+	ws.setEncoding( "Latin1" );
+	ws.setCellValidationDisabled( true );
+
+	Workbook workbook = Workbook.getWorkbook( file, ws );
+
+	if ( workbook != null )
+	{
+		int pos = Integer.valueOf( ( String ) fm.input( "tab" ) );
+
+		if ( pos > 0 && workbook.getSheets().length >= pos )
+		{
+			sheet = workbook.getSheet( pos - 1 );
+		}
+	}
+
+	return sheet;
+}
+
+void initTask() throws Exception
+{
+	fm = SA.form( "Importação De Normas", "Importação De Normas", "Selecione O Arquivo XLS." );
+
+	fm.add( FormMarvel.TYPE_FILE, "file", "Caminho", "" );
+	fm.add( FormMarvel.TYPE_STRING, "tab", "Aba  Da Planilha", "1" );
+	fm.add( FormMarvel.TYPE_STRING, "line", "Ignorar Até A Linha", "1" );
+	
+	fm.prompt( "doWork()" );
+}
+
+initTask();
+
+---------------------------------------------------------------------
+789456
+1670216982
+02310232
+
+
+--------------------------------------------------------
+ac = SA.access("component");
+ac.attach("Requerimientos servicios");    // Nombre del componente de negocios
+
+ac.filter().addCondition("legal_name","=",CONTEXT.getAttribute( "Tercero" ));	// Nombre del campo condicional
+ac.filter().addCondition("svc_services_name","=",self.getValue());	// Nombre del campo condicional
+	
+lista = FORM.getList("Revision.Documentos_requeridos");        // Nombre de la lista
+    
+lista.clear();    
+    
+for ( record : ac.getRecords() )
+{
+    item = lista.item();
+    item.put("Nombre_documento",  record.getColumnValue( "svc_service_requirements_name" ) );        // Nombre del atributo en el formulario y nombre de la columna en el componente de negocio
+    lista.addItem( item );    
+}
+    
+lista.refresh();
+Ocultar_Documentos();
+-------------------------------------------------------
+BATERIA 9W50 N2 SO9
+----------------------------------------------
+// validación que exista una factura
+
+if(FORM.getValue( "Factura_Correcta_2" ) == 3){
+
+}else{
+		pi = CONTEXT.getProcessInstance();
+	codigo = FORM.getValue("Facturas.factura_asociada");
+
+	result = SA.query("SA7_BC_Homolog", "select \n" + 
+					  "	count(*)\n" + 
+					  "from\n" + 
+					  "	guest.bc_dbo_factura\n" + 
+					 "where\n" + 
+					  "	factura = '" + codigo + "'").fetch();
+
+
+	count = SA.cint(result.get(0)[0]);
+
+	if(count > 0 )
+	{
+		FORM.setVisible( "Facturas.field_c68ed4d", true );
+		FORM.setVisible( "Facturas.field_9285e5c", false );
+		//FORM.setVisible( "Facturas.area_contabilidad", false);
+		//FORM.setRequired( "Facturas.area_contabilidad", false );
+
+	}else{
+		if(FORM.getValue( "Facturas.Tipo_factura" ) == 5 ||FORM.getValue( "Facturas.Tipo_factura" ) == 6 ){
+		FORM.setVisible( "Facturas.field_9285e5c", true );
+		FORM.getField( "Facturas.usuario_factura" ).clear();
+		FORM.getField( "Facturas.raya" ).clear();
+		FORM.getField( "Facturas.area_factura" ).clear();
+		FORM.setVisible( "Facturas.field_c68ed4d",false );
+		//FORM.setVisible( "Facturas.area_contabilidad", true);
+		//FORM.setRequired( "Facturas.area_contabilidad",true );
+	}
+	}
+	
+}	
+----------------------------------------
+Produccion
+liderproduccion@corporacionenerjet.com.pe,produccion@corporacionenerjet.com.pe,liderproduccion1@corporacionenerjet.com.pe,pcp@corporacionenerjet.com.pe, ugbplacas@corporacionenerjet.com.pe,ugbcya@corporacionenerjet.com.pe,ugbensamble@corporacionenerjet.com.pe,ugbrejillas@corporacionenerjet.com.pe, almacenproduccionpp@corporacionenerjet.com.pe,liderproduccion2@corporacionenerjet.com.pe,vigilanciapp1.enerjetsa@gmail.com
+
+
+Semanal
+liderproduccion@corporacionenerjet.com.pe,produccion@corporacionenerjet.com.pe,liderproduccion1@corporacionenerjet.com.pe,pcp@corporacionenerjet.com.pe,
+almacen@corporacionenerjet.com.pe,ugbplacas@corporacionenerjet.com.pe,ugbcya@corporacionenerjet.com.pe,ugbensamble@corporacionenerjet.com.pe,ugbrejillas@corporacionenerjet.com.pe,almacenproduccionpp@corporacionenerjet.com.pe,liderproduccion2@corporacionenerjet.com.pe,calidad@corporacionenerjet.com.pe,calidad2@corporacionenerjet.com.pe,calidad5@corporacionenerjet.com.pe,calidad8@corporacionenerjet.com.pe,calidad3@corporacionenerjet.com.pe,calidad7@corporacionenerjet.com.pe,calidad6@corporacionenerjet.com.pe,industrial@corporacionenerjet.com.pe,mecanico@corporacionenerjet.com.pe,electricista@corporacionenerjet.com.pe,mantenimiento@corporacionenerjet.com.pe,gestormantenimiento@corporacionenerjet.com.pe,logistica@corporacionenerjet.com.pe,materiaprima@corporacionenerjet.com.pe,supply@corporacionenerjet.com.pe,gestorsig@corporacionenerjet.com.pe,almacen2@corporacionenerjet.com.pe,lidermantenimiento@corporacionenerjet.com.pe 
+----------------------------------------------------
+self.setError("!Este RUC no esta registrado en el padron de la SUNAT, por favor intente con otro número!");
+-----------------------------------------------------------
+ ${programacionsemanal.semana}
+ 
+ 
+ if(FORM.getValue( "maquina" ).equals("n1")){
+	FORM.setValue( "instrumentos_maquina", "PRD-025 y PRD-041" );
+}else{
+	FORM.setValue( "instrumentos_maquina", "PRD-046 y PRD-047" );
+}
+
