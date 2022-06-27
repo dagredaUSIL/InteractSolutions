@@ -1,0 +1,5 @@
+Borrar esas tablas : 
+
+bc_programacion_produccion_moldes
+bc_programacionproduccion
+bc_programacion_semanal
