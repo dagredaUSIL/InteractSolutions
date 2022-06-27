@@ -251,3 +251,10 @@ self.setError("!Este RUC no esta registrado en el padron de la SUNAT, por favor 
 	FORM.setValue( "instrumentos_maquina", "PRD-046 y PRD-047" );
 }
 
+-----------------------------------------------
+codigosap = FORM.getValue( "codigo_sap" );
+codigo_fabricacion = SA.query("SBO_INTERACT_PROD", "EXEC \n" + 
+					  "	RPT_OF_SKU\n" + 
+					  "	@codart ='" + codigosap + "'").fetch();
+codigofabricacion = SA.cint(codigo_fabricacion.get(0)[0]);
+FORM.setValue( "orden_fabricacion", codigofabricacion);
