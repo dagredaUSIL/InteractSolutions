@@ -1,0 +1,18 @@
+SELECT 
+sum(cantidad_tobe_devuelto)  as Cantidad
+FROM bc_inventario_procesos
+
+UNION ALL
+select 
+CASE
+WHEN sum(estado_sa) = 0 THEN 'TOTAL INVENTARIO'
+END AS ESTADO,count(id) as Cantidad
+from bc_inventario_procesos
+where estado_sa = 'No Registrado' OR estado_sa = 'Suspendido'
+
+select * from bc_inventario_procesos 
+
+SELECT 
+count(id) as Cantidad
+FROM bc_inventario_procesos
+where cantidad_tobe_devuelto > 0

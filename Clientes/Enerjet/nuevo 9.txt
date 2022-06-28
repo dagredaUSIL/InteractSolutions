@@ -1,0 +1,1 @@
+self.setError("!Este RUC no esta registrado en el padron de la SUNAT, por favor intente con otro número!");

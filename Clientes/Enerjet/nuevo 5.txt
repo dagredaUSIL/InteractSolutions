@@ -1,0 +1,19 @@
+ac = SA.access("component");
+ac.attach("Requerimientos servicios");    // Nombre del componente de negocios
+
+ac.filter().addCondition("legal_name","=",CONTEXT.getAttribute( "Tercero" ));	// Nombre del campo condicional
+ac.filter().addCondition("svc_services_name","=",self.getValue());	// Nombre del campo condicional
+	
+lista = FORM.getList("Revision.Documentos_requeridos");        // Nombre de la lista
+    
+lista.clear();    
+    
+for ( record : ac.getRecords() )
+{
+    item = lista.item();
+    item.put("Nombre_documento",  record.getColumnValue( "svc_service_requirements_name" ) );        // Nombre del atributo en el formulario y nombre de la columna en el componente de negocio
+    lista.addItem( item );    
+}
+    
+lista.refresh();
+Ocultar_Documentos();

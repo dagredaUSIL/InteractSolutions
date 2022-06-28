@@ -1,0 +1,10 @@
+ ${programacionsemanal.semana}
+ 
+ 
+ if(FORM.getValue( "maquina" ).equals("n1")){
+	FORM.setValue( "instrumentos_maquina", "PRD-025 y PRD-041" );
+}else{
+	FORM.setValue( "instrumentos_maquina", "PRD-046 y PRD-047" );
+}
+
+

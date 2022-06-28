@@ -258,3 +258,107 @@ codigo_fabricacion = SA.query("SBO_INTERACT_PROD", "EXEC \n" +
 					  "	@codart ='" + codigosap + "'").fetch();
 codigofabricacion = SA.cint(codigo_fabricacion.get(0)[0]);
 FORM.setValue( "orden_fabricacion", codigofabricacion);
+
+
+---------------
+Este SP es para jalar los articulos de mantenimiento (repuestos) 	
+RPT_STOCK_SKU_MTTO
+
+
+----------------------------------------------------------
+select descripcion_sap,bc_programacion_produccion_moldes.cantidad_programada from bc_programacion_produccion_moldes
+INNER JOIN bc_programacion_produccion
+ON bc_programacion_produccion_moldes.id = bc_programacion_produccion.id
+where bc_programacion_produccion.semana = '2022 SEMANA DEL 20/06 AL  26/06'
+and bc_programacion_produccion_moldes.cantidad_programada  > 0
+
+
+---------------------------------------------------
+import com.interact.sas.bpm.data.InterfaceListItem;
+
+semanas = FORM.getParent().getValue( "semanas_produccion" );
+
+baterias_programadas = SA.query("SBO_INTERACT_PROD", "select \n" + 
+					  "	descripcion_sap,bc_programacion_produccion_moldes.cantidad_programada\n" + 
+					  "from\n" + 
+					  "	bc_programacion_produccion_moldes\n" + 
+					 "INNER JOIN bc_programacion_produccion\n" + 
+					 "ON bc_programacion_produccion.id = bc_programacion_produccion_moldes.id\n" + 
+					 "where bc_programacion_produccion.semana  = '"+semanas+"'\n" + 
+					  "	and bc_programacion_produccion_moldes.cantidad_programada  > 0").fetch();
+
+//baterias_programadas = SA.cint(cantidadplanificada.get(0)[0]);
+
+listItems = new java.util.ArrayList();
+
+for( bateria_programada : baterias_programadas )
+{
+listItem = new InterfaceListItem(bateria_programada[0], bateria_programada[0]);
+
+
+----------------------------------------------
+import com.interact.sas.bpm.data.InterfaceListItem;
+
+semanas = FORM.getParent().getValue( "semanas_produccion" );
+
+baterias_programadas = SA.query("SBO_INTERACT_PROD", "select \n" + 
+					  "	descripcion_sap,bc_programacion_produccion_moldes.cantidad_programada\n" + 
+					  "from\n" + 
+					  "	bc_programacion_produccion_moldes\n" + 
+					 "INNER JOIN bc_programacion_produccion\n" + 
+					 "ON bc_programacion_produccion.id = bc_programacion_produccion_moldes.id\n" + 
+					 "where bc_programacion_produccion.semana  = '"+semanas+"'\n" + 
+					  "	and bc_programacion_produccion_moldes.cantidad_programada  > 0").fetch();
+
+//baterias_programadas = SA.cint(cantidadplanificada.get(0)[0]);
+
+listItems = new java.util.ArrayList();
+
+for( bateria_programada : baterias_programadas )
+{
+listItem = new InterfaceListItem(bateria_programada[0], bateria_programada[0]);
+listItems.add( listItem );
+}
+FORM.setItems("modelo_bateria", listItems );
+
+
+
+-------------------------------------------------------------------------
+codigosap = FORM.getValue( "codigo_sap" );
+codigos_fabricacion = SA.query("SBO_INTERACT_PROD", "EXEC \n" + 
+					  "	RPT_OF_SKU\n" + 
+					  "	@codart ='" + codigosap + "'").fetch();
+//codigofabricacion = SA.cint(codigo_fabricacion.get(0)[0]);
+//FORM.setValue( "orden_fabricacion", codigofabricacion);
+
+
+import com.interact.sas.bpm.data.InterfaceListItem;
+
+//baterias_programadas = SA.cint(cantidadplanificada.get(0)[0]);
+
+listItems = new java.util.ArrayList();
+
+for( codigo_fabricacion : codigos_fabricacion )
+{
+listItem = new InterfaceListItem(codigo_fabricacion[0], codigo_fabricacion[0]);
+listItems.add( listItem );
+}
+FORM.setItems("orden_fabricacion", listItems );
+
+-------------------------------------------------------
+x Modelo de Bateria
+
+proceso Sellado termico 
+
+prueba destructiva
+tapa dañada por proceso
+
+proceso ensobrado
+placas +
+placas -
+xyz 
+
+
+
+
+

@@ -1,0 +1,28 @@
+childFolder.setInfo("Proyecto: "+proyecto+"\n"+"\n"+"Codigo: "+codigo+"\n"+"\n"+"Datos del terreno: "
++" Urbanización: "+urbanizacion+"\n"+"\n"+" MZ: "+mz+"\n"+"\n"+" Lote: "+lote+"\n"+"\n"+" Categoria: "+categoria+"\n"+"\n"+"Nombre del Cliente: "+nombredelcliente
++"\n"+"\n"+"Número del documento de identidad: "+ndocumentodeidentidad+"\n"+"Código de agenda: "+adenda+"\n"+"\n"+"Tipo de Venta: "+tipodeventa
++"\n"+"\n"+"Cuotas: "+cuotas+"\n"+"\n"+" 1ra Cuota:(a/m/d) "+primeracuota+"\n"+"\n"+"Número de Reserva: "+ndereserva+"\n"+"\n"+"Número de contrato: "+ncontrato
++"\n"+"\n"+"Nombre del oficial: "+nombreoficial+"\n"+"\n"+" Codigo del oficial: "+codigooficial+"\n"+"\n"+"Grupo: "+ grupo+"\n"+||NOMBRE DEL CLIENTE" Fecha: "+ fecharegistro);
+
+
+"||PROYECTO||CÓDIGO"+"\n"+"|"+proyecto+"|"+codigo+"\n"+"\n"+"DATOS DEL TERRENO"+"\n"+"||UV||MZ||LOTE||CATEGORÍA"+"\n"+"|"+urbanizacion+"|"+mz+"|"+lote+"|"+categoria+"\n"+"\n"+"||NOMBRE DEL CLIENTE"+"\n"+"|"+nombredelcliente+"\n"+"\n"+"||N DEL DOCUMENTO DE IDENTIDAD||CÓDIGO DE AGENDA"+"\n"+"|"+ndocumentodeidentidad+"|"+adenda+"\n"+"\n"+"||TIPO DE VENTA||CUOTA||1 CUOTA||N DE RESERVA||N DE CONTRATO"+"\n"+"|"+tipodeventa+"|"+cuotas+"|"+primeracuota+"|"+ndereserva+"|"+ncontrato+"\n"+"\n"+"||NOMBRE DEL OFICIAL||CÓDIGO DEL OFICIAL"+"\n"+"|"+nombreoficial+"|"+codigooficial"+"\n"+"\n"+"||GRUPO||FECHA"+"\n"+"|"+grupo+"|"+fecharegistro
+| | | | | 
+
+"DATOS DEL TERRENO
+||UV||MZ||LOTE||CATEGORÍA	
+| | | | 
+
+||NOMBRE DEL CLIENTE
+| 
+
+||N DEL DOCUMENTO DE IDENTIDAD||CÓDIGO DE AGENDA
+| | 
+
+||TIPO DE VENTA||CUOTA||1 CUOTA||N DE RESERVA||N DE CONTRATO
+| | | | | 
+
+||NOMBRE DEL OFICIAL||CÓDIGO DEL OFICIAL
+| | 
+
+||GRUPO||FECHA
+| | "
