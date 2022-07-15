@@ -1,0 +1,10 @@
+
+Script iniciado em: 2022-07-14 16:11:17
+
+>>ERRO: Linha 1 não inserida: com.interact.sas.cmn.exceptions.SQLCommandException: Duplicate entry '1' for key 'PRIMARY'
+>>ERRO: Linha 2 não inserida: com.interact.sas.cmn.exceptions.SQLCommandException: Duplicate entry '2' for key 'PRIMARY'
+>>ERRO: Linha 3 não inserida: com.interact.sas.cmn.exceptions.SQLCommandException: Duplicate entry '3' for key 'PRIMARY'
+>>ERRO: Linha 4 não inserida: com.interact.sas.cmn.exceptions.SQLCommandException: Duplicate entry '4' for key 'PRIMARY'
+>>ERRO: Linha 5 não inserida: com.interact.sas.cmn.exceptions.SQLCommandException: Duplicate entry '5' for key 'PRIMARY'
+
+Script finalizado em: 2022-07-14 16:11:28

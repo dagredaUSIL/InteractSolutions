@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<option id="OP1" name="Paises" family="3" category="">
+  <text type="info"><![CDATA[]]></text>
+  <optionItems>
+    <optionItem label="Peru" content="Peru"></optionItem>
+  </optionItems>
+</option>
