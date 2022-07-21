@@ -1,0 +1,23 @@
+import com.interact.sas.bpm.data.InterfaceListItem;
+
+semanas = FORM.getParent().getValue( "semanas_produccion" );
+
+baterias_programadas = SA.query("SBO_INTERACT_PROD", "select \n" + 
+					  "	descripcion_sap,bc_programacion_produccion_moldes.cantidad_programada\n" + 
+					  "from\n" + 
+					  "	bc_programacion_produccion_moldes\n" + 
+					 "INNER JOIN bc_programacion_produccion\n" + 
+					 "ON bc_programacion_produccion.id = bc_programacion_produccion_moldes.id\n" + 
+					 "where bc_programacion_produccion.semana  = '"+semanas+"'\n" + 
+					  "	and bc_programacion_produccion_moldes.cantidad_programada  > 0").fetch();
+
+//baterias_programadas = SA.cint(cantidadplanificada.get(0)[0]);
+
+listItems = new java.util.ArrayList();
+
+for( bateria_programada : baterias_programadas )
+{
+listItem = new InterfaceListItem(bateria_programada[0], bateria_programada[0]);
+listItems.add( listItem );
+}
+FORM.setItems("modelo_de_bateria", listItems );

@@ -1,0 +1,38 @@
+// validación que exista una factura
+
+if(FORM.getValue( "Factura_Correcta_2" ) == 3){
+
+}else{
+		pi = CONTEXT.getProcessInstance();
+	codigo = FORM.getValue("Facturas.factura_asociada");
+
+	result = SA.query("SA7_BC_Homolog", "select \n" + 
+					  "	count(*)\n" + 
+					  "from\n" + 
+					  "	guest.bc_dbo_factura\n" + 
+					 "where\n" + 
+					  "	factura = '" + codigo + "'").fetch();
+
+
+	count = SA.cint(result.get(0)[0]);
+
+	if(count > 0 )
+	{
+		FORM.setVisible( "Facturas.field_c68ed4d", true );
+		FORM.setVisible( "Facturas.field_9285e5c", false );
+		//FORM.setVisible( "Facturas.area_contabilidad", false);
+		//FORM.setRequired( "Facturas.area_contabilidad", false );
+
+	}else{
+		if(FORM.getValue( "Facturas.Tipo_factura" ) == 5 ||FORM.getValue( "Facturas.Tipo_factura" ) == 6 ){
+		FORM.setVisible( "Facturas.field_9285e5c", true );
+		FORM.getField( "Facturas.usuario_factura" ).clear();
+		FORM.getField( "Facturas.raya" ).clear();
+		FORM.getField( "Facturas.area_factura" ).clear();
+		FORM.setVisible( "Facturas.field_c68ed4d",false );
+		//FORM.setVisible( "Facturas.area_contabilidad", true);
+		//FORM.setRequired( "Facturas.area_contabilidad",true );
+	}
+	}
+	
+}	

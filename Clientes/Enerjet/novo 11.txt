@@ -1,0 +1,28 @@
+document = new com.interact.sas.dms.data.Document();
+document.setName("boletadepago");
+document.setFolder(idfolder);
+document.setCategoryId(3);
+document.setCreationDate( SA.today());
+document.setOwnerId(autor.getId());
+document.setType( "PDF" );
+
+dm.insertDocument(document);
+dm.importFile(autor,boletadepago,document);
+dm.createElaborationEvents( document, null, autor, null );
+de = DocumentManagerUtilities.getNextElaborationEvent( document );
+currentDate = SA.today();
+todayTimestamp = new Timestamp( currentDate.getTime() );
+de.setOcurredDate( todayTimestamp );
+dm.updateDocumentEvent( de );
+fileboletadepago = dm.getLocalPath( document, dm.getStorageTypeToOpen( document ) );
+md5 = FileUtilities.generateMD5( boletadepago );
+dm.updateDocument(document);
+
+try
+{
+	DocumentManagerUtilities.publishDocument( null, document, boletadepago, 0, autor );
+}
+catch( Exception e )
+{
+	print(e);
+}
